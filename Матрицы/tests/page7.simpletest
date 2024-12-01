@@ -1,0 +1,54 @@
+﻿[Test]
+Programm=SimpleTest
+Version=0.1
+TestName=Нахождение обратной матрицы
+Author=Вагенгейм Александр
+MessageOnComplete=Тест завершен!
+AllowFinish=0
+ShowResult=1
+DisableOpenTest=1
+ExitOnComplete=0
+LastQ=4
+
+[Q0]
+QLabel=Матрица называется вырожденной, если ее определитель равен:
+LastA=4
+A0=*0
+A1=1
+A2=-1
+A3=<span title='MathGene HTML' style=';font-size:100%'>&#8734;</span>
+A4=<span title='MathGene HTML' style='font-size:100%'> <span style='text-align:center;vertical-align:middle;display:inline-block;'><span style='display:table-row;'><span style='font-size:85%;display:table-cell'>1</span></span><span style='display:table-row;vertical-align:top'><span style='font-size:85%;display:table-cell;border-top-style:solid;border-top-width:2px;padding:3px;'><i>n</i></span></span></span> </span>, где n - размерность матрицы
+
+[Q1]
+QLabel=Для того чтобы найти обратную матрицу, необходимо:
+LastA=4
+A0=Перемножить данную матрицу на другую
+A1=Поменять местами строки и столбцы данной матрицы
+A2=Найти обратный элемент каждого элемента матрицы
+A3=*Использовать алгоритм Гаусса для решения системы линейных уравнений
+A4=Вычислить определитель матрицы и разделить каждый элемент матрицы на этот определитель
+
+[Q2]
+QLabel=Обратная матрица всегда существует:
+LastA=4
+A0=для любой квадратной матрицы
+A1=только для симметричных матриц
+A2=только для ортогональных матриц
+A3=*только для невырожденных матриц
+A4=только для верхних треугольных матр
+
+[Q3]
+QLabel=Верно ли, что <span title='MathGene HTML' style='font-size:100%'>(<i>A</i><sup>&minus;1</sup>)<sup><i>T</i></sup> = (<i>A</i><sup><i>T</i></sup>)<sup>&minus;1</sup></span>
+LastA=1
+A0=*Да
+A1=Нет
+
+[Q4]
+QLabel=Для вычисления определителя матрицы используется формула:
+LastA=4
+A0=<span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><span style='display:inline-block;'><span style='vertical-align:middle;text-align:center;display:inline-table;'><span style='display:table-row;font-size:50%'><i>n</i></span><span style='line-height:80%;display:table-row;font-size:125%'>&#8721;</span><span style='line-height:150%;display:table-row;font-size:50%'><i>i</i> = 1</span></span></span> <i>a</i><sub><sub><i>i</i><i>j</i></sub></sub></span>
+A1=<span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><span style='display:inline-block;'><span style='vertical-align:middle;text-align:center;display:inline-table;'><span style='display:table-row;font-size:50%'><i>n</i></span><span style='line-height:80%;display:table-row;font-size:125%'>&#8721;</span><span style='line-height:150%;display:table-row;font-size:50%'><i>j</i> = 1</span></span></span> <i>a</i><sub><sub><i>i</i><i>j</i></sub></sub></span>
+A2=<span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><span style='display:inline-block;'><span style='vertical-align:middle;text-align:center;display:inline-table;'><span style='display:table-row;font-size:50%'><i>n</i></span><span style='line-height:80%;display:table-row;font-size:125%'>&#8719;</span><span style='line-height:150%;display:table-row;font-size:50%'><i>i</i> = 1</span></span></span> <i>a</i><sub><sub><i>i</i><i>j</i></sub></sub></span>
+A3=*<span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><span style='display:inline-block;'><span style='vertical-align:middle;text-align:center;display:inline-table;'><span style='display:table-row;font-size:50%'><i>n</i></span><span style='line-height:80%;display:table-row;font-size:125%'>&#8721;</span><span style='line-height:150%;display:table-row;font-size:50%'><i>i</i> = 1</span></span></span> (&minus;1)<sup><i>i</i>+<i>j</i></sup>&#8226;<i>M</i><sub><sub><i>i</i><i>j</i></sub></sub></span> где <span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><i>M</i><sub><sub><i>i</i><i>j</i></sub></sub></span> - минор элемента <span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><i>a</i><sub><sub><i>i</i><i>j</i></sub></sub></span>
+A4=<span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><span style='display:inline-block;'><span style='vertical-align:middle;text-align:center;display:inline-table;'><span style='display:table-row;font-size:50%'><i>n</i></span><span style='line-height:80%;display:table-row;font-size:125%'>&#8721;</span><span style='line-height:150%;display:table-row;font-size:50%'><i>i</i> = 1</span></span></span> (&minus;1)<sup><i>i</i>+<i>j</i></sup>&#8226;<i>M</i><sub><sub><i>i</i><i>j</i></sub></sub></span> где <span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><i>M</i><sub><sub><i>i</i><i>j</i></sub></sub></span> - минор элемента <span title='MathGene HTML' style='font-family:Times,Serif;font-size:100%'><i>a</i><sub><sub><i>i</i><i>j</i></sub></sub></span>
+

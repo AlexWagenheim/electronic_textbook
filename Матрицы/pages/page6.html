@@ -1,0 +1,224 @@
+﻿<HTML><BODY><html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Если
+число уравнений системы равно числу неизвестных переменных и определитель ее
+основной матрицы не равен нулю, то такие СЛАУ будем называть&nbsp;<b>элементарными</b>.
+Такие системы уравнений имеют единственное решение, причем в случае однородной
+системы все неизвестные переменные равны нулю.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Такие
+СЛАУ мы начинали изучать в средней школе. При их решении мы брали какое-нибудь
+одно уравнение, выражали одну неизвестную переменную через другие и подставляли
+ее в оставшиеся уравнения, следом брали следующее уравнение, выражали следующую
+неизвестную переменную и подставляли в другие уравнения и так далее. Или
+пользовались методом сложения, то есть, складывали два или более уравнений,
+чтобы исключить некоторые неизвестные переменные. Не будем подробно
+останавливаться на этих методах, так как они по сути являются модификациями
+метода Гаусса.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Основными
+методами решения элементарных систем линейных уравнений являются метод Крамера,
+матричный метод и метод Гаусса. Разберем их.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><a
+name="solving_elementary_systems_Cramer_method"></a><span style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Пусть нам требуется
+решить систему линейных алгебраических уравнений</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=240 height=120 id="Рисунок 143"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image001.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+в которой число уравнений равно числу неизвестных переменных и определитель
+основной матрицы системы отличен от нуля, то есть,&nbsp;<img width=52
+height=32 id="Рисунок 144"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image002.png"
+alt=формула>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Пусть&nbsp;<img
+width=17 height=22 id="Рисунок 145"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image003.png"
+alt=формула>&nbsp;- определитель основной матрицы системы, а&nbsp;<img
+width=167 height=29 id="Рисунок 146"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image004.png"
+alt=формула>&nbsp;- определители матриц, которые получаются из&nbsp;<i>А</i>&nbsp;заменой&nbsp;<i>1-ого,
+2-ого, …, n-ого</i>&nbsp;столбца соответственно на столбец свободных членов:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=448 height=239 id="Рисунок 147"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image005.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>При
+таких обозначениях неизвестные переменные вычисляются по формулам метода
+Крамера как&nbsp;<img width=291 height=52 id="Рисунок 148"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image006.png"
+alt=формула>. Так находится решение системы линейных алгебраических уравнений
+методом Крамера.</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Пример.</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Решите систему линейных уравнений методом Крамера&nbsp;<img
+width=145 height=90 id="Рисунок 149"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image007.png"
+alt=формула>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Решение.</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Основная
+матрица системы имеет вид&nbsp;<img width=142 height=87 id="Рисунок 150"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image008.png"
+alt=формула>. Вычислим ее определитель:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=372 height=119 id="Рисунок 151"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image009.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Так
+как определитель основной матрицы системы отличен от нуля, то система имеет
+единственное решение, которое может быть найдено методом Крамера.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Составим
+и вычислим необходимые определители&nbsp;<img width=125 height=29
+id="Рисунок 152"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image010.png"
+alt=формула>&nbsp;(определитель&nbsp;<img width=26 height=29 id="Рисунок 153"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image011.png"
+alt=формула>&nbsp;получаем, заменив в матрице&nbsp;<i>А</i>&nbsp;первый столбец
+на столбец свободных членов&nbsp;<img width=32 height=87 id="Рисунок 154"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image012.png"
+alt=формула>, определитель&nbsp;<img width=30 height=30 id="Рисунок 155"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image013.png"
+alt=формула>&nbsp;- заменив второй столбец на столбец свободных членов,&nbsp;<img
+width=30 height=31 id="Рисунок 156"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image014.png"
+alt=формула>&nbsp;- заменив третий столбец матрицы&nbsp;<i>А</i>&nbsp;на
+столбец свободных членов):</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=390 height=347 id="Рисунок 157"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image015.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Находим неизвестные переменные по формулам&nbsp;<img width=254
+height=59 id="Рисунок 158"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image016.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><br>
+<img width=159 height=160 id="Рисунок 159"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image017.png"
+alt=формула></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Ответ:</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>x<sub>1</sub>&nbsp;= 4, x<sub>2</sub>&nbsp;= 0, x<sub>3</sub>&nbsp;=
+-1</span></i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Основным
+недостатком метода Крамера (если это можно назвать недостатком) является
+трудоемкость вычисления определителей, когда число уравнений системы больше
+трех.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
+
+</BODY></HTML>

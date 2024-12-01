@@ -1,0 +1,748 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Нахождение обратной матрицы методом Гаусса-Жордана - Нахождение обратной матрицы</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+   <body>
+      <!-- section header start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="logo" style="font-size: 28px; color: #ffffff;">
+<!--                     <a href="index.html"><img src="images/logo.png"></a>-->
+                     Нахождение обратной матрицы
+                  </div>
+               </div>
+<!--               <div class="col-md-8">-->
+<!--                  <div class="menu_text">-->
+<!--                     <ul>-->
+<!--                        <li><a style="" href="index.html">Глава 1. Нахождение обратной матрицы</a></li>
+-->
+<!--&lt;!&ndash;                        <li><a href="#"><img src="images/search-icon.png"></a></li>&ndash;&gt;-->
+<!--                     </ul>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="col-md-1">
+                  <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle.png" class="toggle_menu"></span>
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <div class="overlay-content" >
+                        <ul style="list-style: none">
+                           <li><a style="" href="index.html">Глава 1. Нахождение обратной матрицы</a></li>
+<li><a style="" href="page1.html">Основные понятия и определения</a></li>
+<li><a style="" href="page2.html">Нахождение обратной матрицы с помощью матрицы из алгебраических дополнений</a></li>
+<li><a style="" href="page3.html">Свойства обратной матрицы</a></li>
+<li class="active"><a style="" href="page4.html">Нахождение обратной матрицы методом Гаусса-Жордана</a></li>
+<li><a style="" href="page5.html">Нахождение элементов обратной матрицы с помощью решения соответствующих систем линейных алгебраических уравнений</a></li>
+<li><a style="" href="page6.html">Решение систем линейных уравнений методом Крамера</a></li>
+
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li style="font-size: 20pt; color:white;"><a href="../../index.html">На главную</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- section header end -->
+      <!-- our service section start -->
+      <div class="our_section layout_padding">
+         <div class="container">
+            <h1 class="our_text"><strong>Нахождение обратной матрицы методом Гаусса-Жордана</strong></h1>
+            <div class="row padding_top_0">
+               <div class="col-12" style="font-size: 14pt">
+                   <html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Существуют
+альтернативные методы нахождения обратной матрицы, например,&nbsp;<b>метод
+Гаусса - Жордана.</b></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Суть
+метода Гаусса-Жордана заключается в том, что если с единичной матрицей&nbsp;<i>Е</i>&nbsp;провести
+элементарные преобразованиия, которыми невырожденная квадратная матрица&nbsp;<i>А</i>&nbsp;приводится
+к&nbsp;<i>Е</i>, то получится обратная матрица&nbsp;<img width=31 height=31
+id="Рисунок 57"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image001.png"
+alt=формула>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Опишем
+алгоритм приведения матрицы&nbsp;<i>А</i>&nbsp;порядка&nbsp;<i>n</i>&nbsp;на&nbsp;<i>n</i>,
+определитель которой не равен нулю, к единичной матрице методом Гаусса -
+Жордана. После описания алгоритма разберем пример, чтобы все стало понятно.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Сначала
+преобразуем матрицу так, чтобы элемент&nbsp;<img width=24 height=22
+id="Рисунок 58"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image002.png"
+alt=формула>&nbsp;стал равен единице, а все остальные элементы первого столбца
+стали нулевыми.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Если&nbsp;<img
+width=54 height=22 id="Рисунок 59"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image003.png"
+alt=формула>, то на место первой строки ставится&nbsp;<i>k-ая</i>&nbsp;строка (<i>k&gt;1</i>),
+в которой&nbsp;<img width=57 height=25 id="Рисунок 60"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image004.png"
+alt=формула>, а на место&nbsp;<i>k-ой</i>&nbsp;строки ставится первая. (Строка
+с&nbsp;<img width=57 height=25 id="Рисунок 61"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image004.png"
+alt=формула>&nbsp;обязательно существует, в противном случае матрица&nbsp;<i>А</i>&nbsp;–
+вырожденная). После перестановки строк получили «новую» матрицу&nbsp;<i>А</i>,
+у которой&nbsp;<img width=57 height=26 id="Рисунок 62"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image005.png"
+alt=формула>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Теперь
+умножаем каждый элемент первой строки на&nbsp;<img width=30 height=54
+id="Рисунок 63"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image006.png"
+alt=формула>. Так приходим к «новой» матрице&nbsp;<i>А</i>, у которой&nbsp;<img
+width=53 height=26 id="Рисунок 64"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image007.png"
+alt=формула>. Далее к элементам второй строки прибавляем соответствующие
+элементы первой строки, умноженные на&nbsp;<img width=40 height=26
+id="Рисунок 65"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image008.png"
+alt=формула>. К элементам третьей строки – соответствующие элементы первой
+строки, умноженные на&nbsp;<img width=39 height=27 id="Рисунок 66"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image009.png"
+alt=формула>. И продолжаем такой процесс до&nbsp;<i>n-ой</i>&nbsp;строки
+включительно. Так все элементы первого столбца матрицы&nbsp;<i>А</i>, начиная
+со второго, станут нулевыми.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>С
+первым столбцом разобрались, переходим ко второму.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Преобразуем
+матрицу&nbsp;<i>А</i>&nbsp;так, чтобы элемент&nbsp;<img width=30 height=23
+id="Рисунок 67"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image010.png"
+alt=формула>&nbsp;стал равен единице, а все остальные элементы второго столбца,
+начиная с&nbsp;<img width=29 height=21 id="Рисунок 68"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image011.png"
+alt=формула>, стали нулевыми.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Если&nbsp;<img
+width=57 height=22 id="Рисунок 69"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image012.png"
+alt=формула>, то на место второй строки ставится&nbsp;<i>k-ая</i>&nbsp;строка (<i>k&gt;2</i>),
+в которой&nbsp;<img width=59 height=22 id="Рисунок 70"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image013.png"
+alt=формула>, а на место&nbsp;<i>k-ой</i>&nbsp;строки ставится вторая. Так
+получаем преобразованную матрицу&nbsp;<i>А</i>, у которой&nbsp;<img width=62
+height=26 id="Рисунок 71"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image014.png"
+alt=формула>. Умножаем все элементы второй строки на&nbsp;<img width=33
+height=51 id="Рисунок 72"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image015.png"
+alt=формула>. После этого к элементам третьей строки прибавляем соответствующие
+элементы второй строки, умноженные на&nbsp;<img width=41 height=27
+id="Рисунок 73"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image016.png"
+alt=формула>. К элементам четвертой строки – соответствующие элементы второй
+строки, умноженные на&nbsp;<img width=42 height=26 id="Рисунок 74"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image017.png"
+alt=формула>. И продолжаем такой процесс до&nbsp;<i>n-ой</i>&nbsp;строки
+включительно. Так все элементы второго столбца матрицы&nbsp;<i>А</i>, начиная с
+третьего, станут нулевыми, а&nbsp;<img width=30 height=23 id="Рисунок 75"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image010.png"
+alt=формула>&nbsp;будет равен единице.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Со
+вторым столбцом закончили, переходим к третьему и проводим аналогичные
+преобразования.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Так
+продолжаем процесс, пока все элементы главной диагонали матрицы&nbsp;<i>А</i>&nbsp;не
+станут равными единице, а все элементы ниже главной диагонали не станут равными
+нулю.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>С
+этого момента начинаем обратный ход метода Гаусса-Жордана. Теперь преобразуем
+матрицу&nbsp;<i>А</i>&nbsp;так, чтобы все элементы&nbsp;<i>n-ого</i>&nbsp;столбца,
+кроме&nbsp;<img width=29 height=25 id="Рисунок 76"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image018.png"
+alt=формула>, стали нулевыми. Для этого к элементам&nbsp;<i>(n-1)-ой</i>&nbsp;строки
+прибавляем соответствующие элементы&nbsp;<i>n-ой</i>&nbsp;строки, умноженные
+на&nbsp;<img width=51 height=25 id="Рисунок 77"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image019.png"
+alt=формула>. К элементам&nbsp;<i>(n-2)-ой</i>&nbsp;строки – соответствующие
+элементы&nbsp;<i>n-ой</i>&nbsp;строки, умноженные на&nbsp;<img width=55
+height=27 id="Рисунок 78"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image020.png"
+alt=формула>. И продолжаем такой процесс до первой строки включительно. Так все
+элементы&nbsp;<i>n-ого</i>&nbsp;столбца матрицы&nbsp;<i>А</i>&nbsp;(кроме&nbsp;<img
+width=29 height=25 id="Рисунок 79"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image018.png"
+alt=формула>), станут нулевыми.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>С
+последним столбцом разобрались, переходим к&nbsp;<i>(n-1)-ому</i>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Преобразуем
+матрицу&nbsp;<i>А</i>&nbsp;так, чтобы все элементы&nbsp;<i>(n-1)-ого</i>&nbsp;столбца
+до&nbsp;<img width=50 height=24 id="Рисунок 80"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image021.png"
+alt=формула>, стали нулевыми. Для этого к элементам&nbsp;<i>(n-2)-ой</i>&nbsp;строки
+прибавляем соответствующие элементы&nbsp;<i>(n-1)-ой</i>&nbsp;строки,
+умноженные на&nbsp;<img width=65 height=27 id="Рисунок 81"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image022.png"
+alt=формула>. К элементам&nbsp;<i>(n-3)-ой</i>&nbsp;строки – соответствующие
+элементы&nbsp;<i>(n-1)-ой</i>&nbsp;строки, умноженные на&nbsp;<img width=64
+height=29 id="Рисунок 82"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image023.png"
+alt=формула>. И продолжаем такой процесс до первой строки включительно. Так все
+элементы&nbsp;<i>(n-1)-ого</i>&nbsp;столбца матрицы&nbsp;<i>А</i>&nbsp;(кроме&nbsp;<img
+width=50 height=24 id="Рисунок 83"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image021.png"
+alt=формула>), станут нулевыми.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Действуя
+дальше схожим образом, мы получим единичную матрицу.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Пример.</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Приведите матрицу&nbsp;<img width=141 height=87 id="Рисунок 84"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image024.png"
+alt=формула>&nbsp; к единичной с помощью преобразований Гаусса – Жордана.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Решение.</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Так
+как&nbsp;<img width=54 height=22 id="Рисунок 85"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image003.png"
+alt=формула>, а&nbsp;<img width=57 height=27 id="Рисунок 86"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image025.png"
+alt=формула>, то переставим местами первую и вторую строки матрицы, получим матрицу&nbsp;<img
+width=113 height=85 id="Рисунок 87"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image026.png"
+alt=формула>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Умножим
+все элементы первой строки матрицы на&nbsp;<img width=17 height=46
+id="Рисунок 88"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image027.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><img
+width=303 height=120 id="Рисунок 89"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image028.png"
+alt=формула></span><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>К
+элементам второй строки прибавляем соответствующие элементы первой строки,
+умноженные на&nbsp;<i>0</i>, а к элементам третьей строки прибавляем
+соответствующие элементы первой строки, умноженные на&nbsp;<i>(-4)</i>:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=488 height=156 id="Рисунок 90"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image029.png"
+alt=формула></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Переходим
+ко второму столбцу.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Элемент&nbsp;<img
+width=30 height=23 id="Рисунок 91"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image010.png"
+alt=формула>&nbsp;полученной матрицы уже равен единице, поэтому нет
+необходимости производить умножение элементов второй строки на&nbsp;<img
+width=33 height=51 id="Рисунок 92"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image015.png"
+alt=формула>. К элементам третьей строки прибавляем соответствующие элементы
+второй строки, умноженные на&nbsp;<img width=21 height=44 id="Рисунок 93"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image030.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=407 height=121 id="Рисунок 94"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image031.png"
+alt=формула></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Переходим
+к третьему столбцу.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Умножим
+элементы третьей строки на&nbsp;<img width=25 height=45 id="Рисунок 95"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image032.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><img
+width=310 height=120 id="Рисунок 96"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image033.png"
+alt=формула></span><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Единицы
+на главной диагонали матрицы получены, так что приступаем к обратному ходу.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>К
+элементам второй строки прибавляем соответствующие элементы третьей строки,
+умноженные на&nbsp;<i>(-2)</i>, а к элементам первой строки прибавляем
+соответствующие элементы третьей строки, умноженные на&nbsp;<img width=19
+height=47 id="Рисунок 97"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image034.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=396 height=120 id="Рисунок 98"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image035.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>В
+последнем столбце необходимые нулевые элементы получены, переходим к
+предпоследнему (ко второму) столбцу.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>К
+элементам первой строки прибавим соответствующие элементы второй строки,
+умноженные на&nbsp;<img width=31 height=48 id="Рисунок 99"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image036.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><img
+width=438 height=128 id="Рисунок 100"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image037.png"
+alt=формула></span><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Так проведены все преобразования матрицы и получена единичная
+матрица.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Пришло
+время применить метод Гаусса – Жордана к нахождению обратной матрицы.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Пример.</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Найдите обратную матрицу для&nbsp;<img width=181 height=115
+id="Рисунок 101"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image038.png"
+alt=формула>&nbsp;методом Гаусса – Жордана.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Решение.</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>В
+левой части страницы будем проводить преобразования Гаусса – Жордана с
+матрицей&nbsp;<i>А</i>, а в правой части страницы будем проделывать те же
+преобразования с единичной матрицей.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Так
+как&nbsp;<img width=54 height=22 id="Рисунок 102"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image003.png"
+alt=формула>, а&nbsp;<img width=57 height=27 id="Рисунок 103"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image025.png"
+alt=формула>, то переставим первую и вторую строки местами:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=354 height=229
+id="Рисунок 104"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image039.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Умножим
+элементы первой строки матрицы на одну вторую, чтобы элемент&nbsp;<img
+width=24 height=22 id="Рисунок 105"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image002.png"
+alt=формула>&nbsp;стал равен единице:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=452 height=263
+id="Рисунок 106"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image040.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>К
+элементам второй строки прибавим соответствующие элементы первой строки,
+умноженные на&nbsp;<i>0</i>, к элементам третьей строки прибавим
+соответствующие элементы первой строки, умноженные на&nbsp;<i>2</i>, к
+элементам четвертой строки – элементы первой строки, умноженные на&nbsp;<i>5</i>:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=537 height=246
+id="Рисунок 107"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image041.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Так
+в первом столбце матрицы&nbsp;<i>А</i>&nbsp;мы получили нужные нулевые
+элементы. Переходим ко второму столбцу. Добьемся того, чтобы элемент&nbsp;<img
+width=30 height=23 id="Рисунок 108"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image010.png"
+alt=формула>&nbsp;стал равен единице. Для этого умножим элементы второй строки
+матрицы на&nbsp;<img width=17 height=46 id="Рисунок 109"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image027.png"
+alt=формула>, не забываем выполнять такие же преобразования с матрицей в правой
+части:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=502 height=318
+id="Рисунок 110"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image042.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Дальше
+нам нужно сделать элементы&nbsp;<img width=29 height=21 id="Рисунок 111"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image011.png"
+alt=формула>&nbsp;и&nbsp;<img width=30 height=26 id="Рисунок 112"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image043.png"
+alt=формула>&nbsp;нулевыми, для этого к элементам третьей строки прибавляем
+соответствующие элементы второй строки, умноженные на&nbsp;<i>0</i>, а к
+элементам четвертой строки прибавляем соответствующие элементы второй строки,
+умноженные на&nbsp;<img width=37 height=48 id="Рисунок 113"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image044.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=595 height=206
+id="Рисунок 114"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image045.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Так
+второй столбец матрицы&nbsp;<i>А</i>&nbsp;преобразован к нужному виду.
+Переходим к третьему столбцу. Так как элемент&nbsp;<img width=26 height=22
+id="Рисунок 115"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image046.png"
+alt=формула>&nbsp;нулевой, то меняем местами третью и четвертую строки:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=364 height=322
+id="Рисунок 116"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image047.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Умножаем
+элементы третьей строки на&nbsp;<img width=25 height=43 id="Рисунок 117"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image048.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=540 height=278
+id="Рисунок 118"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image049.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Третий
+столбец матрицы&nbsp;<i>А</i>&nbsp;принял нужный вид (элемент&nbsp;<img
+width=28 height=23 id="Рисунок 119"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image050.png"
+alt=формула>&nbsp;нулевой, поэтому не пришлось к элементам четвертой строки
+прибавлять соответствующие элементы третьей строки, умноженные на&nbsp;<img
+width=41 height=26 id="Рисунок 120"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image051.png"
+alt=формула>). Осталось умножить четвертую строку на&nbsp;<img width=17
+height=46 id="Рисунок 121"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image052.png"
+alt=формула>&nbsp;чтобы все элементы главной диагонали стали равны единице:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=385 height=310
+id="Рисунок 122"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image053.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Прямой
+ход метода Гаусса-Жордана завершен, приступаем к обратному ходу. Получаем
+необходимые нулевые элементы в последнем столбце матрицы&nbsp;<i>А</i>. Для
+этого к элементам третьей строки прибавляем соответствующие элементы последней
+строки, умноженные на&nbsp;<img width=24 height=46 id="Рисунок 123"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image054.png"
+alt=формула>, к элементам второй строки – элементы последней строки, умноженные
+на&nbsp;<img width=29 height=46 id="Рисунок 124"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image055.png"
+alt=формула>, к элементам первой строки – элементы последней строки, умноженные
+на&nbsp;<i>0</i>:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=571 height=220
+id="Рисунок 125"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image056.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Получаем
+нули в предпоследнем столбце прибавлением к элементам второй и первой строк
+соответствующие элементы третьей строки, умноженные на&nbsp;<img width=17
+height=46 id="Рисунок 126"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image027.png"
+alt=формула>&nbsp;и&nbsp;<i>0</i>&nbsp;соответственно:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=524 height=223
+id="Рисунок 127"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image057.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Осталось
+последнее преобразование. К элементам первой строки прибавляем элементы второй
+строки, умноженные на&nbsp;<img width=28 height=43 id="Рисунок 128"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image058.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><img width=644 height=219
+id="Рисунок 129"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image059.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Итак, матрица&nbsp;<i>А</i>&nbsp;преобразованиями Гаусса –
+Жордана приведена к единичной матрице, а единичная матрица с помощью таких же
+преобразований приведена к обратной матрице. Таким образом, в правой части
+получена обратная матрица. Можете провести проверку, выполнив умножение
+матрицы&nbsp;<i>А</i>&nbsp;на обратную матрицу.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Ответ:</span></i></p>
+
+<p class=MsoNormal align=center style='margin-bottom:7.5pt;text-align:center;
+line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'><img width=248 height=183 id="Рисунок 130"
+src="Нахождение%20обратной%20матрицы%20методом%20Гаусса-Жордана.files/image060.png"
+alt=формула></span><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- our service section end -->
+      <!-- copyright section start -->
+
+      <div class="copyright_section">
+         <p class="copyright_text">Вагенгейм Александр, ИСС-11</p>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>
+      <div id="footer" style="display: none">
+         <p> | <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> | <a href="http://brullworfel.ru/turbosite">TurboSite</a></p>
+      </div>
+   </body>
+</html>

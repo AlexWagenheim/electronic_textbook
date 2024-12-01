@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Решение систем линейных уравнений методом Крамера - Нахождение обратной матрицы</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+   <body>
+      <!-- section header start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="logo" style="font-size: 28px; color: #ffffff;">
+<!--                     <a href="index.html"><img src="images/logo.png"></a>-->
+                     Нахождение обратной матрицы
+                  </div>
+               </div>
+<!--               <div class="col-md-8">-->
+<!--                  <div class="menu_text">-->
+<!--                     <ul>-->
+<!--                        <li><a style="" href="index.html">Глава 1. Нахождение обратной матрицы</a></li>
+-->
+<!--&lt;!&ndash;                        <li><a href="#"><img src="images/search-icon.png"></a></li>&ndash;&gt;-->
+<!--                     </ul>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="col-md-1">
+                  <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle.png" class="toggle_menu"></span>
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <div class="overlay-content" >
+                        <ul style="list-style: none">
+                           <li><a style="" href="index.html">Глава 1. Нахождение обратной матрицы</a></li>
+<li><a style="" href="page1.html">Основные понятия и определения</a></li>
+<li><a style="" href="page2.html">Нахождение обратной матрицы с помощью матрицы из алгебраических дополнений</a></li>
+<li><a style="" href="page3.html">Свойства обратной матрицы</a></li>
+<li><a style="" href="page4.html">Нахождение обратной матрицы методом Гаусса-Жордана</a></li>
+<li><a style="" href="page5.html">Нахождение элементов обратной матрицы с помощью решения соответствующих систем линейных алгебраических уравнений</a></li>
+<li class="active"><a style="" href="page6.html">Решение систем линейных уравнений методом Крамера</a></li>
+
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li style="font-size: 20pt; color:white;"><a href="../../index.html">На главную</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- section header end -->
+      <!-- our service section start -->
+      <div class="our_section layout_padding">
+         <div class="container">
+            <h1 class="our_text"><strong>Решение систем линейных уравнений методом Крамера</strong></h1>
+            <div class="row padding_top_0">
+               <div class="col-12" style="font-size: 14pt">
+                   <html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Если
+число уравнений системы равно числу неизвестных переменных и определитель ее
+основной матрицы не равен нулю, то такие СЛАУ будем называть&nbsp;<b>элементарными</b>.
+Такие системы уравнений имеют единственное решение, причем в случае однородной
+системы все неизвестные переменные равны нулю.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Такие
+СЛАУ мы начинали изучать в средней школе. При их решении мы брали какое-нибудь
+одно уравнение, выражали одну неизвестную переменную через другие и подставляли
+ее в оставшиеся уравнения, следом брали следующее уравнение, выражали следующую
+неизвестную переменную и подставляли в другие уравнения и так далее. Или
+пользовались методом сложения, то есть, складывали два или более уравнений,
+чтобы исключить некоторые неизвестные переменные. Не будем подробно
+останавливаться на этих методах, так как они по сути являются модификациями
+метода Гаусса.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Основными
+методами решения элементарных систем линейных уравнений являются метод Крамера,
+матричный метод и метод Гаусса. Разберем их.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><a
+name="solving_elementary_systems_Cramer_method"></a><span style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Пусть нам требуется
+решить систему линейных алгебраических уравнений</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=240 height=120 id="Рисунок 143"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image001.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+в которой число уравнений равно числу неизвестных переменных и определитель
+основной матрицы системы отличен от нуля, то есть,&nbsp;<img width=52
+height=32 id="Рисунок 144"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image002.png"
+alt=формула>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Пусть&nbsp;<img
+width=17 height=22 id="Рисунок 145"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image003.png"
+alt=формула>&nbsp;- определитель основной матрицы системы, а&nbsp;<img
+width=167 height=29 id="Рисунок 146"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image004.png"
+alt=формула>&nbsp;- определители матриц, которые получаются из&nbsp;<i>А</i>&nbsp;заменой&nbsp;<i>1-ого,
+2-ого, …, n-ого</i>&nbsp;столбца соответственно на столбец свободных членов:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=448 height=239 id="Рисунок 147"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image005.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>При
+таких обозначениях неизвестные переменные вычисляются по формулам метода
+Крамера как&nbsp;<img width=291 height=52 id="Рисунок 148"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image006.png"
+alt=формула>. Так находится решение системы линейных алгебраических уравнений
+методом Крамера.</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Пример.</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Решите систему линейных уравнений методом Крамера&nbsp;<img
+width=145 height=90 id="Рисунок 149"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image007.png"
+alt=формула>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Решение.</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Основная
+матрица системы имеет вид&nbsp;<img width=142 height=87 id="Рисунок 150"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image008.png"
+alt=формула>. Вычислим ее определитель:</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=372 height=119 id="Рисунок 151"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image009.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Так
+как определитель основной матрицы системы отличен от нуля, то система имеет
+единственное решение, которое может быть найдено методом Крамера.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Составим
+и вычислим необходимые определители&nbsp;<img width=125 height=29
+id="Рисунок 152"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image010.png"
+alt=формула>&nbsp;(определитель&nbsp;<img width=26 height=29 id="Рисунок 153"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image011.png"
+alt=формула>&nbsp;получаем, заменив в матрице&nbsp;<i>А</i>&nbsp;первый столбец
+на столбец свободных членов&nbsp;<img width=32 height=87 id="Рисунок 154"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image012.png"
+alt=формула>, определитель&nbsp;<img width=30 height=30 id="Рисунок 155"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image013.png"
+alt=формула>&nbsp;- заменив второй столбец на столбец свободных членов,&nbsp;<img
+width=30 height=31 id="Рисунок 156"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image014.png"
+alt=формула>&nbsp;- заменив третий столбец матрицы&nbsp;<i>А</i>&nbsp;на
+столбец свободных членов):</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'><br>
+<img width=390 height=347 id="Рисунок 157"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image015.png"
+alt=формула></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Находим неизвестные переменные по формулам&nbsp;<img width=254
+height=59 id="Рисунок 158"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image016.png"
+alt=формула>:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'><br>
+<img width=159 height=160 id="Рисунок 159"
+src="Решение%20систем%20линейных%20уравнений%20методом%20Крамера.files/image017.png"
+alt=формула></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:#32322E'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Ответ:</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>x<sub>1</sub>&nbsp;= 4, x<sub>2</sub>&nbsp;= 0, x<sub>3</sub>&nbsp;=
+-1</span></i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>.</span></p>
+
+<p class=MsoNormal style='text-align:justify;line-height:normal'><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:#32322E'>Основным
+недостатком метода Крамера (если это можно назвать недостатком) является
+трудоемкость вычисления определителей, когда число уравнений системы больше
+трех.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- our service section end -->
+      <!-- copyright section start -->
+
+      <div class="copyright_section">
+         <p class="copyright_text">Вагенгейм Александр, ИСС-11</p>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>
+      <div id="footer" style="display: none">
+         <p> | <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> | <a href="http://brullworfel.ru/turbosite">TurboSite</a></p>
+      </div>
+   </body>
+</html>
