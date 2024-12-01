@@ -1,0 +1,134 @@
+﻿<HTML><BODY><html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 2.0cm 2.0cm 2.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Метод предназначен для решения общей задачи линейного
+программирования.</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Пусть имеем следующую задачу:</span></p>
+
+<p align=center style='text-align:center;text-indent:24.0pt'><span
+style='font-size:14.0pt;color:black'><img width=329 height=29 id="Рисунок 7"
+src="Введение.files/image001.gif"
+alt="http://techn.sstu.ru/kafedri/%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/1/MetMat/shaturn/chmo/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D0%B8/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%206/Image1.gif"></span><span
+style='font-size:14.0pt;color:black'>,</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>с системой ограничений следующего вида:</span></p>
+
+<p align=center style='text-align:center;text-indent:24.0pt'><span
+style='font-size:14.0pt;color:black'><img width=309 height=93 id="Рисунок 6"
+src="Введение.files/image002.gif"
+alt="http://techn.sstu.ru/kafedri/%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/1/MetMat/shaturn/chmo/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D0%B8/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%206/Image2.gif"></span><span
+style='font-size:14.0pt;color:black'>.</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Разрешим эту систему относительно переменных&nbsp;<i>x</i><sub>1</sub>,
+...,<i>x<sub>m</sub></i>:</span></p>
+
+<p align=center style='text-align:center;text-indent:24.0pt'><span
+style='font-size:14.0pt;color:black'><img width=301 height=96 id="Рисунок 5"
+src="Введение.files/image003.gif"
+alt="http://techn.sstu.ru/kafedri/%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/1/MetMat/shaturn/chmo/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D0%B8/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%206/Image3.gif"></span><span
+style='font-size:14.0pt;color:black'>.</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Векторы условий, соответствующие&nbsp;<i>x</i><sub>1</sub>, ...,<i>x<sub>m</sub></i>,
+образуют базис. Переменные&nbsp;<i>x</i><sub>1</sub>, ...,<i>x<sub>m</sub></i>&nbsp;назовем&nbsp;<b>базисными
+переменными</b>. Остальные переменные задачи – небазисные.</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Целевую функцию можно выразить через небазисные переменные:</span></p>
+
+<p align=center style='text-align:center;text-indent:24.0pt'><span
+style='font-size:14.0pt;color:black'><img width=414 height=29 id="Рисунок 4"
+src="Введение.files/image004.gif"
+alt="http://techn.sstu.ru/kafedri/%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/1/MetMat/shaturn/chmo/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D0%B8/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%206/Image4.gif"></span><span
+style='font-size:14.0pt;color:black'>.</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Если приравнять небазисные переменные нулю:&nbsp;<i>x<sub>m</sub></i>+1
+= 0,&nbsp;<i>x<sub>m</sub></i>+2 = 0, ...,&nbsp;<i>x<sub>n</sub></i>&nbsp;= 0, то
+соответствующие базисные переменные примут значения:&nbsp;<img width=234
+height=29 id="Рисунок 3" src="Введение.files/image005.gif"
+alt="http://techn.sstu.ru/kafedri/%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/1/MetMat/shaturn/chmo/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D0%B8/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%206/Image5.gif">.</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Вектор&nbsp;<img width=14 height=25 id="Рисунок 2"
+src="Введение.files/image006.gif"
+alt="http://techn.sstu.ru/kafedri/%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/1/MetMat/shaturn/chmo/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D0%B8/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%206/Image6.gif">&nbsp;с
+такими компонентами представляет собой угловую точку многогранника решений
+(допустимую) при условии, что&nbsp;<img width=49 height=29 id="Рисунок 1"
+src="Введение.files/image007.gif"
+alt="http://techn.sstu.ru/kafedri/%D0%BF%D0%BE%D0%B4%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F/1/MetMat/shaturn/chmo/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D0%B8/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%206/Image7.gif">&nbsp;(опорный
+план).</span></p>
+
+<p style='text-align:justify;text-indent:24.0pt'><span style='font-size:14.0pt;
+color:black'>Теперь необходимо перейти к другой угловой точке с меньшим
+значением целевой функции. Для этого следует выбрать некоторую небазисную
+переменную и некоторую базисную так, чтобы после того, как мы “поменяем их
+местами”, значение целевой функции уменьшилось. Такой направленный перебор в
+конце концов приведет нас к решению задачи.</span></p>
+
+</div>
+
+</body>
+
+</html>
+
+</BODY></HTML>

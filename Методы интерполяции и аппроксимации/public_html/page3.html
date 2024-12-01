@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Тест - Методы интерполяции и аппроксимации</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+   <body>
+      <!-- section header start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="logo" style="font-size: 28px; color: #ffffff;">
+<!--                     <a href="index.html"><img src="images/logo.png"></a>-->
+                     Методы интерполяции и аппроксимации
+                  </div>
+               </div>
+<!--               <div class="col-md-8">-->
+<!--                  <div class="menu_text">-->
+<!--                     <ul>-->
+<!--                        <li><a style="" href="index.html">Главная</a></li>
+-->
+<!--&lt;!&ndash;                        <li><a href="#"><img src="images/search-icon.png"></a></li>&ndash;&gt;-->
+<!--                     </ul>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="col-md-1">
+                  <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle.png" class="toggle_menu"></span>
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <div class="overlay-content" >
+                        <ul style="list-style: none">
+                           <li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Интерполяция</a></li>
+<li><a style="" href="page2.html">Аппроксимация функции</a></li>
+
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li style="font-size: 20pt; color:white;"><a href="../../index.html">На главную</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- section header end -->
+      <!-- our service section start -->
+      <div class="our_section layout_padding">
+         <div class="container">
+            <h1 class="our_text"><strong>Тест</strong></h1>
+            <div class="row padding_top_0">
+               <div class="col-12" style="font-size: 14pt">
+                   <div class="test" id="page3.simpletest" style="clear:both;">
+<div class="question" style="padding-top: 10px; padding-bottom: 10px;" id="Q0">
+<div style="clear:both;"><strong>Что представляет собой интерполяционный полином?</strong></div>
+<input type="hidden" id="Q0_h" value="" />
+<input class="button" id="submit_test" type="radio" onClick="I('Q0_h').value=this.value;" name="Q0-var" value="A0" /> Полином, минимизирующий ошибку<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q0_h').value=this.value;" name="Q0-var" value="A1" /> Полином, проходящий через все заданные узлы<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q0_h').value=this.value;" name="Q0-var" value="A2" /> Полином, аппроксимирующий данные<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q0_h').value=this.value;" name="Q0-var" value="A3" /> Полином высшего порядка<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q0_h').value=this.value;" name="Q0-var" value="A4" /> Экспоненциальный полином<br />
+</div><div class="question" style="padding-top: 10px; padding-bottom: 10px;" id="Q1">
+<div style="clear:both;"><strong>Что такое интерполяционный узел?</strong></div>
+<input type="hidden" id="Q1_h" value="" />
+<input class="button" id="submit_test" type="radio" onClick="I('Q1_h').value=this.value;" name="Q1-var" value="A0" /> Набор данных<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q1_h').value=this.value;" name="Q1-var" value="A1" /> Точка, значение которой используется для создания интерполяционного полинома<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q1_h').value=this.value;" name="Q1-var" value="A2" /> Полином, полученный на основе данных<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q1_h').value=this.value;" name="Q1-var" value="A3" /> Начальная точка интервалов<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q1_h').value=this.value;" name="Q1-var" value="A4" /> Метод статистического анализа<br />
+</div><div class="question" style="padding-top: 10px; padding-bottom: 10px;" id="Q2">
+<div style="clear:both;"><strong>Что такое ошибка интерполяции?</strong></div>
+<input type="hidden" id="Q2_h" value="" />
+<input class="button" id="submit_test" type="radio" onClick="I('Q2_h').value=this.value;" name="Q2-var" value="A0" /> Разница между истинным значением и приближенным<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q2_h').value=this.value;" name="Q2-var" value="A1" /> Разница между двумя приближенными значениями<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q2_h').value=this.value;" name="Q2-var" value="A2" /> Разница между данными и моделью<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q2_h').value=this.value;" name="Q2-var" value="A3" /> Размер выборки<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q2_h').value=this.value;" name="Q2-var" value="A4" /> Ошибка округления<br />
+</div><div class="question" style="padding-top: 10px; padding-bottom: 10px;" id="Q3">
+<div style="clear:both;"><strong>Что является основной задачей интерполяции?</strong></div>
+<input type="hidden" id="Q3_h" value="" />
+<input class="button" id="submit_test" type="radio" onClick="I('Q3_h').value=this.value;" name="Q3-var" value="A0" /> Построение модели<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q3_h').value=this.value;" name="Q3-var" value="A1" /> Оценка параметров<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q3_h').value=this.value;" name="Q3-var" value="A2" /> Прогнозирование будущих значений<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q3_h').value=this.value;" name="Q3-var" value="A3" /> Оценка значений между известными данными<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q3_h').value=this.value;" name="Q3-var" value="A4" /> Расчет статистической значимости<br />
+</div><div class="question" style="padding-top: 10px; padding-bottom: 10px;" id="Q4">
+<div style="clear:both;"><strong>Что такое кусочно-линейная интерполяция?</strong></div>
+<input type="hidden" id="Q4_h" value="" />
+<input class="button" id="submit_test" type="radio" onClick="I('Q4_h').value=this.value;" name="Q4-var" value="A0" /> Использование линейной функции для описания всей функции<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q4_h').value=this.value;" name="Q4-var" value="A1" /> Простейший вид интерполяции, при котором заданные точки соединяются прямолинейными отрезками, и функция приближается полученной ломаной<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q4_h').value=this.value;" name="Q4-var" value="A2" /> Объединение нескольких полиномов<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q4_h').value=this.value;" name="Q4-var" value="A3" /> Анализ временных рядов<br />
+<input class="button" id="submit_test" type="radio" onClick="I('Q4_h').value=this.value;" name="Q4-var" value="A4" /> Моделирование сложных функций<br />
+</div><div id="test_result" style="clear:both"><input class="submit" type="submit" onclick="checkTest();" value="Завершить тест" /></div>
+</div>
+<script src="user-tests/page3.simpletest.js" type="text/javascript"></script>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- our service section end -->
+      <!-- copyright section start -->
+
+      <div class="copyright_section">
+         <p class="copyright_text">Вагенгейм Александр, ИСС-11</p>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>
+      <div id="footer" style="display: none">
+         <p> | <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> | <a href="http://brullworfel.ru/turbosite">TurboSite</a></p>
+      </div>
+   </body>
+</html>

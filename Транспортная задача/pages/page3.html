@@ -1,0 +1,280 @@
+﻿<HTML><BODY><html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>В методе минимального
+элемента выбор пунктов отправления и пунктов назначения производится
+ориентируясь на тарифы перевозок, т.е. в каждом шаге нужно выбрать клетку с
+минимальным тарифом перевозок. Если таких клеток несколько, то выбираем один из
+них. </span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Рассмотрим метод
+минимального элемента на примере.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;text-align:justify;line-height:
+normal;background:#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Пример</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Найти опорный план
+транспортной задачи представленной в таблице условий ниже методом минимального
+элемента:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=386 height=181
+  id="Рисунок 18" src="Метод%20минимального%20элемента.files/image001.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img18.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Число пунктов
+отправления&nbsp;<i>m</i>=3, а число пунктов назначения&nbsp;<i>n</i>=4.
+Следовательно опорный план задачи определяется числами, стоящими в&nbsp;<i>m+n</i>&#8722;1=3+4&#8722;1=6
+заполненых клетках таблицы. Тарифы перевозок единицы груза из кажного пункта
+отправления во все пункты назначения задаются матрицей</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=160 height=82
+  id="Рисунок 19" src="Метод%20минимального%20элемента.files/image002.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img19.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Наличие груза у поставщиков
+равно:&nbsp;<img width=192 height=27 id="Рисунок 20"
+src="Метод%20минимального%20элемента.files/image003.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img20.jpg">.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Общая потребность в грузе в
+пунктах назначения равна:&nbsp;<img width=212 height=23 id="Рисунок 21"
+src="Метод%20минимального%20элемента.files/image004.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img21.jpg">.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'><img width=89 height=22
+id="Рисунок 22" src="Метод%20минимального%20элемента.files/image005.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img22.jpg"></span><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>&nbsp;Модель
+транспортной задачи является закрытой. Следовательно она разрешима.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Минимальный тариф равный 1
+находится в клетке (<i>A</i><sub>1</sub>,&nbsp;<i>B</i><sub>3</sub>). Поэтому
+заполняем эту клетку.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><i><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>A</span></i><sub><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>1</span></sub><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>&gt;<i>B</i><sub>3</sub>.
+Следовательно в клетку (<i>A</i><sub>1</sub>,&nbsp;<i>B</i><sub>3</sub>)
+помещаем число 70. Потребности пункта&nbsp;<i>B</i><sub>3</sub>&nbsp;полностью
+удовлетворены. Поэтому исключаем из рассмотрения столбец&nbsp;<i>B</i><sub>3</sub>&nbsp;и
+будем считать запасы пункта&nbsp;<i>A</i><sub>1</sub>&nbsp;равными
+150&#8722;70=80.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=411 height=272
+  id="Рисунок 23" src="Метод%20минимального%20элемента.files/image006.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img23.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Минимальный тариф равный 1
+находится в клетке (<i>A</i><sub>2</sub>,&nbsp;<i>B</i><sub>4</sub>). Поэтому
+заполняем эту клетку.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><i><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>A</span></i><sub><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>2</span></sub><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>&gt;<i>B</i><sub>4</sub>.
+Следовательно в клетку (<i>A</i><sub>2</sub>,&nbsp;<i>B</i><sub>4</sub>)
+помещаем число 40. Потребности пункта&nbsp;<i>B</i><sub>4</sub>&nbsp;полностью
+удовлетворены. Поэтому исключаем из рассмотрения столбец&nbsp;<i>B</i><sub>4</sub>&nbsp;и
+будем считать запасы пункта&nbsp;<i>A</i><sub>2</sub>&nbsp;равными
+100&#8722;40=60.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=409 height=274
+  id="Рисунок 24" src="Метод%20минимального%20элемента.files/image007.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img24.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Таким образом, продолжая
+процедуру в m+n&#8722;1-ом шаге получим:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=414 height=276
+  id="Рисунок 25" src="Метод%20минимального%20элемента.files/image008.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img25.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Запишем полученный опорный
+план:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=209 height=85
+  id="Рисунок 26" src="Метод%20минимального%20элемента.files/image009.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img26.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При этом плане стоимость
+перевозок вычисляется так:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><i><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'>F=</span></i><span style='font-size:
+  14.0pt;font-family:"Times New Roman","serif"'><img width=185 height=26
+  id="Рисунок 27" src="Метод%20минимального%20элемента.files/image010.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img27_1.jpg"><img
+  width=153 height=28 id="Рисунок 28"
+  src="Метод%20минимального%20элемента.files/image011.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img27_2.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
+
+</BODY></HTML>

@@ -1,0 +1,12 @@
+[Test]
+Programm=SimpleTest
+Version=0.1
+TestName=Приближённое вычисление площади
+Author=Вагенгейм Александр
+MessageOnComplete=Тест завершен!
+AllowFinish=0
+ShowResult=1
+DisableOpenTest=1
+ExitOnComplete=0
+LastQ=-1
+

@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Решение задач - Введение в теорию графов</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+   <body>
+      <!-- section header start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="logo" style="font-size: 28px; color: #ffffff;">
+<!--                     <a href="index.html"><img src="images/logo.png"></a>-->
+                     Введение в теорию графов
+                  </div>
+               </div>
+<!--               <div class="col-md-8">-->
+<!--                  <div class="menu_text">-->
+<!--                     <ul>-->
+<!--                        <li><a style="" href="index.html">Главная</a></li>
+-->
+<!--&lt;!&ndash;                        <li><a href="#"><img src="images/search-icon.png"></a></li>&ndash;&gt;-->
+<!--                     </ul>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="col-md-1">
+                  <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle.png" class="toggle_menu"></span>
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <div class="overlay-content" >
+                        <ul style="list-style: none">
+                           <li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Введение</a></li>
+<li><a style="" href="page2.html">Примеры задач</a></li>
+<li class="active"><a style="" href="page3.html">Решение задач</a></li>
+
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li style="font-size: 20pt; color:white;"><a href="../../index.html">На главную</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- section header end -->
+      <!-- our service section start -->
+      <div class="our_section layout_padding">
+         <div class="container">
+            <h1 class="our_text"><strong>Решение задач</strong></h1>
+            <div class="row padding_top_0">
+               <div class="col-12" style="font-size: 14pt">
+                   <html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-link:"Основной текст Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:22.6pt;
+	margin-bottom:.0001pt;
+	text-indent:-11.05pt;
+	text-autospace:none;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+span.a
+	{mso-style-name:"Основной текст Знак";
+	mso-style-link:"Основной текст";
+	font-family:"Times New Roman","serif";}
+span.a0
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 2.0cm 2.0cm 2.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>Задача 1</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>Между населёнными пунктами A,
+B, C, D, E, F построены дороги, протяжённость которых приведена в<span
+style='letter-spacing:-2.6pt'> </span>таблице.<span style='letter-spacing:-.2pt'>
+</span>(Отсутствие числа<span style='letter-spacing:-.05pt'> </span>в таблице<span
+style='letter-spacing:-.15pt'> </span>означает, что<span style='letter-spacing:
+-.05pt'> </span>прямой<span style='letter-spacing:-.05pt'> </span>дороги<span
+style='letter-spacing:-.05pt'> </span>между<span style='letter-spacing:-.1pt'> </span>пунктами<span
+style='letter-spacing:-.1pt'> </span>нет.)</span></p>
+
+<p class=MsoBodyText style='margin-top:.55pt'><img width=437 height=157
+src="Решение%20задач.files/image001.jpg"><br clear=ALL>
+</p>
+
+<p class=MsoBodyText style='margin-top:4.6pt;margin-right:6.4pt;margin-bottom:
+0cm;margin-left:0cm;margin-bottom:.0001pt'><span style='font-size:14.0pt'>Определите
+длину кратчайшего пути между пунктами A и F (при условии, что передвигаться
+можно только<span style='letter-spacing:-2.6pt'> </span>по<span
+style='letter-spacing:-.05pt'> </span>построенным<span style='letter-spacing:
+-.15pt'> </span>дорогам).</span></p>
+
+<p class=MsoBodyText style='margin-top:4.6pt;margin-right:6.4pt;margin-bottom:
+0cm;margin-left:0cm;margin-bottom:.0001pt'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.6pt;line-height:12.55pt'><b><span
+style='font-size:14.0pt'>1. </span></b><span style='font-size:14.0pt'>11  <b>2.<span
+style='letter-spacing:-.15pt'> </span></b>12  <b>3.<span style='letter-spacing:
+-.1pt'> </span></b>13 <b>4.<span style='letter-spacing:-.2pt'> </span></b>18</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Решение:</span></b></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=484
+height=281 id="Рисунок 1" src="Решение%20задач.files/image002.png"></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>Ответ: </span></b><b><span
+lang=EN-US style='font-size:14.0pt'>2) </span></b><b><span style='font-size:
+14.0pt'>1</span></b><b><span lang=EN-US style='font-size:14.0pt'>2</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>Задача 2</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>На
+рисунке справа схема дорог Н-ского района изображена в виде графа, в таблице
+содержатся сведения о длинах этих дорог (в километрах). Так как таблицу и схему
+рисовали независимо друг от друга, то нумерация населённых пунктов в таблице
+никак не связана с буквенными обозначениями на графе.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>Определите,
+какова длина дороги из пункта В в пункт Г. В ответе запишите целое число – так,
+как оно указано в таблице.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=643
+height=190 id="Рисунок 2" src="Решение%20задач.files/image003.jpg"></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Решение:</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>П6 = В (единственная вершина
+с 5-ю рёбрами)</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>П4 = Е (единственная вершина
+с 4-мя рёбрами)</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>П2 = Г (единственная вершина
+с 3-мя рёбрами)</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>Значит, путь В-&gt;Г равен
+пути П6 -&gt; П2 и составляет 55</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Ответ:
+55</span></b></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>Задача 3</span></b></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>В
+таблицах приведена протяженность автомагистралей между соседними населенными
+пунктами. Если пересечение строки и столбца пусто, то соответствующие
+населенные пункты не соединены автомагистралями. Укажите номер таблицы, для
+которой выполняется условие «Максимальная протяженность маршрута от пункта А до
+пункта С не больше 5». Протяженность маршрута складывается из протяженности
+автомагистралей между соответствующими соседними населенными пунктами. При этом
+любой населенный пункт должен встречаться на маршруте не более одного раза.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><img width=642 height=140
+id="Рисунок 5" src="Решение%20задач.files/image004.jpg"></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Решение:</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><img width=643 height=151
+id="Рисунок 6" src="Решение%20задач.files/image005.jpg"></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt'>1)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:14.0pt'>A-&gt;B-&gt;D-&gt;C</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:0cm'><span lang=EN-US style='font-size:14.0pt'>2+3+3 = 8 &gt; 5</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt'>2)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:14.0pt'>A-&gt;B-&gt;D-&gt;C</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:0cm'><span lang=EN-US style='font-size:14.0pt'>2+1+3 = 6 &gt; 5</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt'>3)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:14.0pt'>A-&gt;D-&gt;B-&gt;C</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:0cm'><span lang=EN-US style='font-size:14.0pt'>2+2+2 = 6 &gt; 5</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:-18.0pt'><span lang=EN-US style='font-size:14.0pt'>4)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-US style='font-size:14.0pt'>A-&gt;B-&gt;C</span></p>
+
+<p class=MsoListParagraph style='margin-left:36.0pt;text-align:justify;
+text-indent:0cm'><span lang=EN-US style='font-size:14.0pt'>3+2 = 5</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Ответ:
+</span></b><b><span lang=EN-US style='font-size:14.0pt'>4</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>Задача </span></b><b><span
+lang=EN-US style='font-size:14.0pt'>4</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>У
+исполнителя Арифметик две команды, которым присвоены номера:</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>         1.прибавь
+2,</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>         2.умножь
+на 3.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>Первая
+из них увеличивает число на экране на 2, вторая утраивает его.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>Например,
+21211 – это программа</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>умножь
+на 3</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>прибавь
+2</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>умножь
+на 3</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>прибавь
+2</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>прибавь
+2,</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>которая
+преобразует число 1 в число 19.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>Запишите
+порядок команд в программе преобразования числа 3 в число 69, содержащей не
+более 5 команд, указывая лишь номера команд. Если таких программ более одной,
+то запишите любую из них.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Решение:</span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=585
+height=83 id="Рисунок 7" src="Решение%20задач.files/image006.png"></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Ответ:
+</span></b><b><span lang=EN-US style='font-size:14.0pt'>11212</span></b></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:14.0pt'>Задача </span></b><b><span
+lang=EN-US style='font-size:14.0pt'>5</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt'>На
+рисунке – схема дорог, связывающих города А, Б, В, Г, Д, Е, Ж, И, К. По каждой
+дороге можно двигаться только в одном направлении, указанном стрелкой. Сколько
+существует различных путей из города А в город К?</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><img width=584
+height=230 id="Рисунок 8" src="Решение%20задач.files/image007.png"></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Решение:</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt'><img width=584 height=230 id="Рисунок 9"
+src="Решение%20задач.files/image008.png"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.55pt'><b><span style='font-size:14.0pt'>Ответ:
+</span></b><b><span lang=EN-US style='font-size:14.0pt'>13</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='font-size:14.0pt'>&nbsp;</span></p>
+
+</div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- our service section end -->
+      <!-- copyright section start -->
+
+      <div class="copyright_section">
+         <p class="copyright_text">Вагенгейм Александр, ИСС-11</p>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>
+      <div id="footer" style="display: none">
+         <p> | <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> | <a href="http://brullworfel.ru/turbosite">TurboSite</a></p>
+      </div>
+   </body>
+</html>

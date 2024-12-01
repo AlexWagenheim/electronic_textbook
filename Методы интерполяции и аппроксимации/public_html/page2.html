@@ -1,0 +1,1103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Аппроксимация функции - Методы интерполяции и аппроксимации</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+   <body>
+      <!-- section header start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="logo" style="font-size: 28px; color: #ffffff;">
+<!--                     <a href="index.html"><img src="images/logo.png"></a>-->
+                     Методы интерполяции и аппроксимации
+                  </div>
+               </div>
+<!--               <div class="col-md-8">-->
+<!--                  <div class="menu_text">-->
+<!--                     <ul>-->
+<!--                        <li><a style="" href="index.html">Главная</a></li>
+-->
+<!--&lt;!&ndash;                        <li><a href="#"><img src="images/search-icon.png"></a></li>&ndash;&gt;-->
+<!--                     </ul>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="col-md-1">
+                  <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle.png" class="toggle_menu"></span>
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <div class="overlay-content" >
+                        <ul style="list-style: none">
+                           <li><a style="" href="index.html">Главная</a></li>
+<li><a style="" href="page1.html">Интерполяция</a></li>
+<li class="active"><a style="" href="page2.html">Аппроксимация функции</a></li>
+
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li style="font-size: 20pt; color:white;"><a href="../../index.html">На главную</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- section header end -->
+      <!-- our service section start -->
+      <div class="our_section layout_padding">
+         <div class="container">
+            <h1 class="our_text"><strong>Аппроксимация функции</strong></h1>
+            <div class="row padding_top_0">
+               <div class="col-12" style="font-size: 14pt">
+                   <!DOCTYPE html><!--[if IE]>  <html class="stl_ie"> <![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>
+		</title>
+		<link rel="stylesheet" type="text/css" href="Converted_files/style.css" />
+	</head>
+	<body>
+		<div class="stl_ stl_02" style="margin-top: -950px;">
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="left:9.4442em;top:49.5638em;"><span class="stl_13 stl_08 stl_47" style="word-spacing:0.2419em;">Аппроксимация – замена одних математических объектов другими, в &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:50.9038em;"><span class="stl_13 stl_08 stl_146" style="word-spacing:0.0071em;">том или ином смысле близкими к исходным. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:52.2638em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:0.3841em;">При интерполировании интерполирующая функция строго проходит &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:53.6038em;"><span class="stl_13 stl_08 stl_69" style="word-spacing:0.9826em;">через узловые точки таблицы вследствие того, что количество &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:54.9455em;"><span class="stl_13 stl_08 stl_39" style="word-spacing:0.1688em;">коэффициентов в интерполирующей функции равно количеству табличных &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:56.2855em;"><span class="stl_13 stl_08 stl_73">значений. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:57.6255em;"><span class="stl_13 stl_08 stl_12" style="word-spacing:0.2849em;">Аппроксимация – метод приближения, при котором для нахождения &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:58.9655em;"><span class="stl_13 stl_08 stl_16" style="word-spacing:0.1876em;">дополнительных значений, отличных от табличных данных, приближенная &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:60.3055em;"><span class="stl_13 stl_08 stl_15" style="word-spacing:0.0053em;">функция проходит не через узлы интерполяции, а между ними (рис. 4). &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_12.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_12.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="left:15.2217em;top:5.2655em;z-index:604;"><span class="stl_21 stl_08 stl_18">y</span></div>
+					<div class="stl_01" style="left:15.3742em;top:5.4893em;z-index:595;"><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">7</span></div>
+					<div class="stl_01" style="left:15.3742em;top:7.6509em;"><span class="stl_192 stl_08 stl_18">6</span></div>
+					<div class="stl_01" style="left:15.3742em;top:9.8109em;"><span class="stl_192 stl_08 stl_18">5</span></div>
+					<div class="stl_01" style="left:15.3742em;top:11.9726em;"><span class="stl_192 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:15.3742em;top:14.1351em;"><span class="stl_192 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:15.3742em;top:16.2968em;"><span class="stl_192 stl_08 stl_18">2</span></div>
+					<div class="stl_01" style="left:15.3742em;top:18.4575em;"><span class="stl_194 stl_08 stl_18">1</span></div>
+					<div class="stl_01" style="left:15.3742em;top:20.6193em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:16.5658em;top:21.8926em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:20.0942em;top:21.8926em;"><span class="stl_192 stl_08 stl_18">1</span></div>
+					<div class="stl_01" style="left:23.6217em;top:21.8926em;"><span class="stl_192 stl_08 stl_18">2</span></div>
+					<div class="stl_01" style="left:27.15em;top:21.8926em;"><span class="stl_192 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:30.6758em;top:21.8926em;"><span class="stl_192 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:34.2042em;top:21.8926em;"><span class="stl_192 stl_08 stl_18">5</span></div>
+					<div class="stl_01" style="left:37.7317em;top:21.8926em;z-index:602;"><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">6</span></div>
+					<div class="stl_01" style="left:37.6683em;top:21.9713em;z-index:606;"><span class="stl_21 stl_08 stl_18">x</span></div>
+					<div class="stl_01" style="left:20.2483em;top:24.4781em;"><span class="stl_870 stl_08 stl_29" style="word-spacing:0.0145em;">– интерполирующая функция &nbsp;</span></div>
+					<div class="stl_01" style="left:20.3283em;top:25.6206em;"><span class="stl_870 stl_08 stl_189" style="word-spacing:0.015em;">– аппроксимирующая функция &nbsp;</span></div>
+					<div class="stl_01" style="left:19.5283em;top:27.2893em;"><span class="stl_72 stl_08 stl_172" style="word-spacing:0.0068em;">Рис. 4. Вид интерполирующей &nbsp;</span></div>
+					<div class="stl_01" style="left:19.2883em;top:28.5293em;"><span class="stl_72 stl_08 stl_18" style="word-spacing:0.0109em;">и аппроксимирующей функций &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:30.278em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:0.9234em;">Если аналитическое выражение функции, описывающей закон &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:31.638em;"><span class="stl_13 stl_08 stl_81" style="word-spacing:0.2728em;">изменение </span><span class="stl_21 stl_08 stl_40">y</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:0.4195em;">i </span></sub><span class="stl_19 stl_08 stl_20">(</span><span class="stl_21 stl_08 stl_871">i=</span><span class="stl_19 stl_08 stl_143" style="word-spacing:0.2721em;">1, 2</span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.278em;">, </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.2759em;">…, </span><span class="stl_21 stl_08 stl_364">n</span><span class="stl_13 stl_08 stl_80" style="word-spacing:0.2694em;">) неизвестно или весьма сложно, то возникает &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:32.9796em;"><span class="stl_13 stl_08 stl_68" style="word-spacing:0.0022em;">задача найти такую эмпирическую формулу &nbsp;</span></div>
+					<div class="stl_01 stl_872" style="left:25.7814em;top:34.6339em;"><span class="stl_873 stl_08 stl_18" style="word-spacing:0.1928em;">f </span><span class="stl_874 stl_87 stl_18" style="word-spacing:0.0613em;"> </span><span class="stl_873 stl_08 stl_875">y</span><span class="stl_876 stl_08 stl_736">(</span><span class="stl_877 stl_08 stl_313">х</span><span class="stl_876 stl_08 stl_313">) &nbsp;</span></div>
+					<div class="stl_01" style="left:29.7917em;top:34.8396em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01" style="left:7.082em;top:36.8996em;"><span class="stl_13 stl_08 stl_172" style="word-spacing:0.0111em;">значения которой при </span><span class="stl_21 stl_08 stl_34">x=x</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:0.1564em;">i </span></sub><span class="stl_13 stl_08 stl_44" style="word-spacing:-0.0018em;">мало отличались бы от опытных данных. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:38.2396em;"><span class="stl_13 stl_08 stl_45" style="word-spacing:0.5997em;">Геометрически задача построения функции </span><span class="stl_21 stl_08 stl_878">f</span><span class="stl_19 stl_08 stl_20">(</span><span class="stl_21 stl_08 stl_22">x</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.5894em;">) </span><span class="stl_13 stl_08 stl_74" style="word-spacing:0.5913em;">по эмпирической &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:39.5813em;"><span class="stl_13 stl_08 stl_43" style="word-spacing:0.1832em;">формуле состоит в проведении усредненной кривой – кривой, проходящей &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:40.9213em;"><span class="stl_13 stl_08 stl_68" style="word-spacing:0.0086em;">через середину области значений (табл. </span><span class="stl_19 stl_08 stl_18">8</span><span class="stl_13 stl_08 stl_55" style="word-spacing:0.0121em;">) (рис. </span><span class="stl_19 stl_08 stl_189">5). &nbsp;</span></div>
+					<div class="stl_01" style="left:41.0358em;top:42.2613em;"><span class="stl_13 stl_08 stl_30" style="word-spacing:0.0174em;">Таблица </span><span class="stl_19 stl_08 stl_30" style="word-spacing:0.0174em;">8 &nbsp;</span></div>
+					<div class="stl_01" style="left:19.5283em;top:44.1213em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.0076em;">Экспериментальные данные &nbsp;</span></div>
+					<div class="stl_01" style="left:17.3058em;top:46.1213em;"><span class="stl_21 stl_08 stl_18">x</span></div>
+					<div class="stl_01" style="left:17.3058em;top:47.8038em;"><span class="stl_21 stl_08 stl_18">y</span></div>
+					<div class="stl_01" style="left:20.5483em;top:46.1213em;"><span class="stl_19 stl_08 stl_18">1</span></div>
+					<div class="stl_01" style="left:24.11em;top:46.1213em;"><span class="stl_19 stl_08 stl_18">2</span></div>
+					<div class="stl_01" style="left:24.11em;top:47.8038em;"><span class="stl_19 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:27.77em;top:46.1213em;"><span class="stl_19 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:31.4317em;top:46.1213em;"><span class="stl_19 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:31.4317em;top:47.8038em;"><span class="stl_19 stl_08 stl_18">5</span></div>
+					<div class="stl_01" style="left:34.9742em;top:46.1213em;"><span class="stl_19 stl_08 stl_18">5</span></div>
+					<div class="stl_01" style="left:20.1083em;top:47.8038em;"><span class="stl_19 stl_08 stl_191">2,5 &nbsp;</span></div>
+					<div class="stl_01" style="left:27.33em;top:47.8038em;"><span class="stl_19 stl_08 stl_191">3,5 &nbsp;</span></div>
+					<div class="stl_01" style="left:34.5342em;top:47.8038em;"><span class="stl_19 stl_08 stl_191">5,5 &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_13.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_13.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="left:15.2242em;top:5.2068em;z-index:889;"><span class="stl_193 stl_08 stl_18">y</span></div>
+					<div class="stl_01" style="left:15.3742em;top:5.2568em;z-index:880;"><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">6</span></div>
+					<div class="stl_01" style="left:15.3742em;top:7.4151em;"><span class="stl_192 stl_08 stl_18">5</span></div>
+					<div class="stl_01" style="left:15.3742em;top:9.5726em;"><span class="stl_192 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:15.3742em;top:11.7326em;"><span class="stl_192 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:15.3742em;top:13.8909em;"><span class="stl_192 stl_08 stl_18">2</span></div>
+					<div class="stl_01" style="left:15.3742em;top:16.0493em;"><span class="stl_192 stl_08 stl_18">1</span></div>
+					<div class="stl_01" style="left:15.3742em;top:18.2068em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:37.5842em;top:19.2992em;z-index:891;"><span class="stl_233 stl_08 stl_18">x</span></div>
+					<div class="stl_01" style="left:37.7317em;top:19.4809em;z-index:887;"><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">6</span></div>
+					<div class="stl_01" style="left:16.5658em;top:19.4809em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:20.0942em;top:19.4809em;"><span class="stl_192 stl_08 stl_18">1</span></div>
+					<div class="stl_01" style="left:23.6217em;top:19.4809em;"><span class="stl_192 stl_08 stl_18">2</span></div>
+					<div class="stl_01" style="left:27.15em;top:19.4809em;"><span class="stl_192 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:30.6758em;top:19.4809em;"><span class="stl_192 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:34.2042em;top:19.4809em;"><span class="stl_192 stl_08 stl_18">5</span></div>
+					<div class="stl_01" style="left:16.1258em;top:21.3668em;"><span class="stl_72 stl_08 stl_879" style="word-spacing:0.023em;">Рис. </span><span class="stl_192 stl_08 stl_18">5</span><span class="stl_72 stl_08 stl_143" style="word-spacing:0.0041em;">. Пример аппроксимирующей функции &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:23.1155em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:1.031em;">Интерполяцией данные описываются более точно, чем при &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:24.4555em;"><span class="stl_13 stl_08 stl_15" style="word-spacing:0.0048em;">аппроксимации, но в ряде случаев обосновано применение аппроксимации: &nbsp;</span></div>
+					<div class="stl_01" style="left:7.944em;top:25.798em;"><span class="stl_880 stl_87 stl_18" style="word-spacing:0.7902em;"> </span><span class="stl_13 stl_08 stl_14" style="word-spacing:0.3552em;">при значительном количестве табличных данных (интерполирующая &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:27.138em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.0111em;">функция становится громоздкой)</span><span class="stl_19 stl_08 stl_35" style="word-spacing:0.0111em;">; &nbsp;</span></div>
+					<div class="stl_01" style="left:7.944em;top:28.478em;"><span class="stl_880 stl_87 stl_18" style="word-spacing:0.7902em;"> </span><span class="stl_13 stl_08 stl_34" style="word-spacing:0.9327em;">интерполирующей функцией невозможно описать данные при &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:29.818em;"><span class="stl_13 stl_08 stl_14" style="word-spacing:0.6766em;">повторении эксперимента в одних тех же начальных условиях &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:31.158em;"><span class="stl_13 stl_08 stl_172" style="word-spacing:0.0116em;">(требуется статистическая обработка; &nbsp;</span></div>
+					<div class="stl_01" style="left:7.944em;top:32.4996em;"><span class="stl_880 stl_87 stl_18" style="word-spacing:0.7902em;"> </span><span class="stl_13 stl_08 stl_53" style="word-spacing:0.248em;">для сглаживания погрешностей эксперимента. Данные </span><span class="stl_21 stl_08 stl_22">x</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:0.527em;">i </span></sub><span class="stl_13 stl_08 stl_18" style="word-spacing:0.2493em;">и </span><span class="stl_21 stl_08 stl_22">y</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:0.5248em;">i </span></sub><span class="stl_13 stl_08 stl_69">обычно &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:33.8596em;"><span class="stl_13 stl_08 stl_37" style="word-spacing:0.2246em;">содержат ошибки, поэтому интерполяционная формула повторяет эти &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:35.1996em;"><span class="stl_13 stl_08 stl_73" style="word-spacing:0.4464em;">ошибки. Из рисунка (рис. </span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.4515em;">6) </span><span class="stl_13 stl_08 stl_545" style="word-spacing:0.4466em;">видно, что значения </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.4455em;">y </span><span class="stl_13 stl_08 stl_80" style="word-spacing:0.4503em;">постоянно и &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:36.5396em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.1055em;">равномерно увеличивается при росте </span><span class="stl_21 stl_08 stl_22">x</span><span class="stl_13 stl_08 stl_417" style="word-spacing:0.0909em;">, а разброс данных относительно &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:37.8796em;"><span class="stl_13 stl_08 stl_480" style="word-spacing:1.1007em;">аппроксимирующей функции можно объяснить погрешностью &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:39.2196em;"><span class="stl_13 stl_08 stl_172">эксперимента. &nbsp;</span></div>
+					<div class="stl_01" style="left:15.2217em;top:41.1138em;z-index:938;"><span class="stl_21 stl_08 stl_18">y</span></div>
+					<div class="stl_01" style="left:15.3742em;top:41.2551em;z-index:929;"><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">5</span></div>
+					<div class="stl_01" style="left:15.3742em;top:43.9051em;"><span class="stl_192 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:15.3742em;top:46.5551em;"><span class="stl_192 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:15.3742em;top:49.2026em;"><span class="stl_192 stl_08 stl_18">2</span></div>
+					<div class="stl_01" style="left:15.3742em;top:51.8526em;"><span class="stl_192 stl_08 stl_18">1</span></div>
+					<div class="stl_01" style="left:15.3742em;top:54.5026em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:16.5658em;top:55.7751em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:20.0942em;top:55.7751em;"><span class="stl_192 stl_08 stl_18">1</span></div>
+					<div class="stl_01" style="left:23.6217em;top:55.7751em;"><span class="stl_192 stl_08 stl_18">2</span></div>
+					<div class="stl_01" style="left:27.15em;top:55.7751em;"><span class="stl_192 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:30.6758em;top:55.7751em;"><span class="stl_192 stl_08 stl_18">4</span></div>
+					<div class="stl_01" style="left:34.2042em;top:55.7751em;"><span class="stl_192 stl_08 stl_18">5</span></div>
+					<div class="stl_01" style="left:37.7317em;top:55.7751em;z-index:936;"><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">6</span></div>
+					<div class="stl_01" style="left:37.5em;top:55.888em;z-index:940;"><span class="stl_21 stl_08 stl_18">x</span></div>
+					<div class="stl_01" style="left:13.3458em;top:59.2968em;"><span class="stl_72 stl_08 stl_879" style="word-spacing:0.0207em;">Рис. </span><span class="stl_192 stl_08 stl_18">6</span><span class="stl_72 stl_08 stl_30" style="word-spacing:0.0064em;">. Пример построения аппроксимирующей функции &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:61.0456em;"><span class="stl_13 stl_08 stl_47" style="word-spacing:0.0026em;">При построении аппроксимирующей зависимости определяют: &nbsp;</span></div>
+					<div class="stl_01" style="left:7.944em;top:62.5076em;"><span class="stl_880 stl_87 stl_18" style="word-spacing:0.7902em;"> </span><span class="stl_13 stl_08 stl_15" style="word-spacing:0.9882em;">аналитический характер эмпирической формулы. Предпочтение &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:63.9876em;"><span class="stl_13 stl_08 stl_43" style="word-spacing:0.0094em;">отдается простым формулам, обладающим хорошей точностью; &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_14.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_14.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="left:7.944em;top:4.6513em;"><span class="stl_880 stl_87 stl_18" style="word-spacing:0.7902em;"> </span><span class="stl_13 stl_08 stl_45" style="word-spacing:0.0061em;">наилучшие параметры эмпирической зависимости. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:6.1313em;"><span class="stl_13 stl_08 stl_47" style="word-spacing:0.1411em;">Существует несколько методов аппроксимации, рассмотрим некоторые &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:7.6113em;"><span class="stl_13 stl_08 stl_57" style="word-spacing:0.0182em;">из них. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:9.6113em;"><span class="stl_75 stl_08 stl_53" style="word-spacing:-0.0047em;">2.1. </span><span class="stl_07 stl_08 stl_35" style="word-spacing:0.0162em;">Метод наименьших квадратов &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:11.1938em;"><span class="stl_13 stl_08 stl_17" style="word-spacing:0.2284em;">Суть метода наименьших квадратов заключается в нахождении таких &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:12.5338em;"><span class="stl_13 stl_08 stl_77" style="word-spacing:0.1093em;">значений </span><span class="stl_11 stl_08 stl_22">х</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_38">i</span></sub><span class="stl_13 stl_08 stl_80" style="word-spacing:0.1225em;">, при которых сумма квадратов отклонений (ошибок) </span><span class="stl_21 stl_08 stl_22">e</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_38">i</span></sub><span class="stl_19 stl_08 stl_65">=</span><span class="stl_21 stl_08 stl_22">y</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:0.3143em;">i </span></sub><span class="stl_13 stl_08 stl_18" style="word-spacing:0.1121em;">– </span><span class="stl_21 stl_08 stl_26">f</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_38">i</span></sub><span class="stl_19 stl_08 stl_20">(</span><span class="stl_21 stl_08 stl_22">x</span><span class="stl_19 stl_08 stl_22">) &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:13.8738em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:0.0029em;">будет стремиться к минимуму &nbsp;</span></div>
+					<div class="stl_01 stl_881" style="left:21.6437em;top:15.815em;z-index:288;"><span class="stl_882 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_881" style="left:25.363em;top:15.815em;z-index:290;"><span class="stl_882 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_881" style="left:22.5454em;top:16.5875em;z-index:305;"><span class="stl_883 stl_08 stl_884">e</span><sup style="top: -0.5176em;"><span class="stl_885 stl_08 stl_18" style="word-spacing:0.2189em;">2 </span></sup><span class="stl_886 stl_87 stl_18" style="word-spacing:1.0982em;"> </span><span class="stl_887 stl_08 stl_888">(</span><span class="stl_883 stl_08 stl_18" style="word-spacing:0.3236em;">y </span><span class="stl_886 stl_87 stl_18" style="word-spacing:0.1278em;"> </span><span class="stl_883 stl_08 stl_18" style="word-spacing:-0.015em;">f </span><span class="stl_887 stl_08 stl_736">(</span><span class="stl_883 stl_08 stl_18" style="word-spacing:0.1264em;">x </span><span class="stl_887 stl_08 stl_510">))</span><sup style="top: -0.5176em;"><span class="stl_885 stl_08 stl_18" style="word-spacing:0.1988em;">2 </span></sup><span class="stl_886 stl_87 stl_18" style="word-spacing:-0.0153em;"> </span><span class="stl_887 stl_08 stl_889">m</span><span class="stl_887 stl_08 stl_890">i</span><span class="stl_887 stl_08 stl_890">n &nbsp;</span></div>
+					<div class="stl_01" style="left:36.2342em;top:16.7138em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01" style="left:44.7183em;top:16.7138em;"><span class="stl_19 stl_08 stl_29">(9) &nbsp;</span></div>
+					<div class="stl_01 stl_881" style="left:21.3349em;top:16.4439em;z-index:281;"><span class="stl_891 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_881" style="left:25.0543em;top:16.4439em;z-index:282;"><span class="stl_891 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_881" style="left:23.0525em;top:17.2306em;"><span class="stl_882 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_881" style="left:27.3403em;top:17.2306em;"><span class="stl_882 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_881" style="left:30.6751em;top:17.2306em;"><span class="stl_882 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_881" style="left:35.0104em;top:17.8489em;"><span class="stl_882 stl_08 stl_18">x</span></div>
+					<div class="stl_01 stl_881" style="left:21.2347em;top:18.0679em;"><span class="stl_882 stl_08 stl_892">i</span><span class="stl_893 stl_87 stl_894"></span><span class="stl_895 stl_08 stl_894">1 &nbsp;</span></div>
+					<div class="stl_01 stl_881" style="left:24.9541em;top:18.0679em;"><span class="stl_882 stl_08 stl_892">i</span><span class="stl_893 stl_87 stl_894"></span><span class="stl_895 stl_08 stl_894">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:19.7755em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.9276em;">Т.к. каждое значение </span><span class="stl_21 stl_08 stl_40">x</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:1.5774em;">i </span></sub><span class="stl_13 stl_08 stl_417" style="word-spacing:0.9218em;">в общем случае «сопровождается» &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:21.1355em;"><span class="stl_13 stl_08 stl_45" style="word-spacing:0.1052em;">соответствующим коэффициентом </span><span class="stl_11 stl_08 stl_18">а</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:0.288em;">i </span></sub><span class="stl_19 stl_08 stl_20">(</span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.0929em;">i </span><span class="stl_13 stl_08 stl_74" style="word-spacing:0.0931em;">= 0, 1, 2, …</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.0862em;">, </span><span class="stl_21 stl_08 stl_34">n</span><span class="stl_13 stl_08 stl_26" style="word-spacing:0.0934em;">), то задача сводится к &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:22.4755em;"><span class="stl_13 stl_08 stl_12" style="word-spacing:0.002em;">нахождению данных коэффициентов. Введем обозначение функции &nbsp;</span></div>
+					<div class="stl_01 stl_896" style="left:30.1797em;top:24.408em;z-index:495;"><span class="stl_897 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_896" style="left:20.7151em;top:25.0201em;"><span class="stl_898 stl_08 stl_899">F</span><span class="stl_900 stl_08 stl_878">(</span><span class="stl_898 stl_08 stl_18" style="word-spacing:0.0887em;">a </span><span class="stl_900 stl_08 stl_18" style="word-spacing:0.3633em;">, </span><span class="stl_898 stl_08 stl_18" style="word-spacing:-0.0063em;">a </span><span class="stl_900 stl_08 stl_517" style="word-spacing:0.2698em;">, ...,</span><span class="stl_898 stl_08 stl_18" style="word-spacing:0.1247em;">a </span><span class="stl_900 stl_08 stl_18" style="word-spacing:-0.0495em;">) </span><span class="stl_901 stl_87 stl_18" style="word-spacing:1.0706em;"> </span><span class="stl_900 stl_08 stl_902">(</span><span class="stl_898 stl_08 stl_18" style="word-spacing:0.1774em;">y </span><span class="stl_901 stl_87 stl_18" style="word-spacing:0.0989em;"> </span><span class="stl_898 stl_08 stl_18" style="word-spacing:-0.0212em;">f </span><span class="stl_900 stl_08 stl_903">(</span><span class="stl_898 stl_08 stl_18" style="word-spacing:-0.0122em;">x </span><span class="stl_900 stl_08 stl_904">))</span><sup style="top: -0.5276em;"><span class="stl_905 stl_08 stl_906">2</span></sup><span class="stl_900 stl_08 stl_490">. &nbsp;</span></div>
+					<div class="stl_01" style="left:44.1358em;top:25.158em;"><span class="stl_19 stl_08 stl_907">(10) &nbsp;</span></div>
+					<div class="stl_01 stl_896" style="left:29.7249em;top:24.6992em;z-index:510;"><span class="stl_908 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_896" style="left:22.5449em;top:25.9027em;"><span class="stl_909 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_896" style="left:24.5241em;top:25.9027em;"><span class="stl_909 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_896" style="left:27.7336em;top:25.9027em;"><span class="stl_897 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_896" style="left:32.1154em;top:25.9027em;"><span class="stl_897 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_896" style="left:35.2954em;top:25.9027em;"><span class="stl_897 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_896" style="left:29.922em;top:26.636em;"><span class="stl_897 stl_08 stl_910">i</span><span class="stl_911 stl_87 stl_912"></span><span class="stl_909 stl_08 stl_912">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:28.058em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:0.22em;">Тогда, на основе обращения в точке минимума функции </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.1909em;">F </span><span class="stl_13 stl_08 stl_641" style="word-spacing:0.1989em;">в нуль ее &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:29.398em;"><span class="stl_13 stl_08 stl_15">производных, &nbsp;</span></div>
+					<div class="stl_01" style="left:15.7971em;top:29.398em;"><span class="stl_13 stl_08 stl_37">для &nbsp;</span></div>
+					<div class="stl_01" style="left:19.3536em;top:29.398em;"><span class="stl_13 stl_08 stl_35">определения &nbsp;</span></div>
+					<div class="stl_01" style="left:27.4852em;top:29.398em;"><span class="stl_13 stl_08 stl_70">вышеупомянутых &nbsp;</span></div>
+					<div class="stl_01" style="left:38.199em;top:29.398em;"><span class="stl_13 stl_08 stl_76">коэффициентов &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:30.738em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.015em;">составляется нормальная система</span><span class="stl_19 stl_08 stl_74" style="word-spacing:0.015em;">: &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:25.106em;top:32.6674em;"><span class="stl_914 stl_08 stl_915">dF &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:24.9336em;top:34.3058em;"><span class="stl_914 stl_08 stl_916">da</span><sub style="top: 0.2912em;"><span class="stl_917 stl_08 stl_918">0 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_913" style="left:25.0269em;top:36.0927em;"><span class="stl_914 stl_08 stl_915">dF &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:32.633em;z-index:663;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:33.7596em;z-index:661;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:34.8887em;z-index:660;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:27.0838em;top:33.2627em;"><span class="stl_919 stl_87 stl_18" style="word-spacing:0.0026em;"> </span><span class="stl_920 stl_08 stl_921">0; &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:26.9256em;top:36.6862em;"><span class="stl_919 stl_87 stl_18" style="word-spacing:0.0026em;"> </span><span class="stl_920 stl_08 stl_921">0; &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:36.0178em;z-index:659;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:36.9696em;z-index:658;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:37.8458em;z-index:662;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:24.9336em;top:37.7291em;"><span class="stl_914 stl_08 stl_915">da &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:26.029em;top:38.2463em;"><span class="stl_922 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:38.9748em;z-index:656;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:24.7754em;top:39.504em;"><span class="stl_920 stl_08 stl_65">... &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:40.1037em;z-index:655;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:25.1203em;top:41.2585em;"><span class="stl_914 stl_08 stl_915">dF &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:41.2326em;z-index:654;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:27.1122em;top:41.8541em;"><span class="stl_919 stl_87 stl_18" style="word-spacing:0.0026em;"> </span><span class="stl_920 stl_08 stl_107">0. &nbsp;</span></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:42.3616em;z-index:653;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_913" style="left:24.9336em;top:42.897em;"><span class="stl_914 stl_08 stl_496">da</span><sub style="top: 0.2934em;"><span class="stl_923 stl_08 stl_924">n &nbsp;</span></sub></div>
+					<div class="stl_01 stl_913" style="left:24.2601em;top:43.0605em;z-index:657;"><span class="stl_919 stl_87 stl_18"></span></div>
+					<div class="stl_01" style="left:9.4442em;top:45.0213em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.0783em;">Существенным недостатком метода является громоздкость вычислений, &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:46.3813em;"><span class="stl_13 stl_08 stl_26" style="word-spacing:1.2178em;">вследствие чего</span><span class="stl_13 stl_08 stl_18" style="word-spacing:3.1628em;">&nbsp;</span><span class="stl_13 stl_08 stl_142" style="word-spacing:1.2059em;">нему прибегают при достаточно точных &nbsp;</span></div>
+					<div class="stl_01" style="left:18.0927em;top:46.3813em;"><span class="stl_13 stl_08 stl_18">к</span></div>
+					<div class="stl_01" style="left:7.082em;top:47.7238em;"><span class="stl_13 stl_08 stl_39" style="word-spacing:0.3193em;">экспериментальных данных при необходимости получения очень точных &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:49.0638em;"><span class="stl_13 stl_08 stl_15" style="word-spacing:0.0028em;">значений функции. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:50.9038em;"><span class="stl_07 stl_08 stl_35" style="word-spacing:0.005em;">2.2. Линейная аппроксимация &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:52.4838em;"><span class="stl_13 stl_08 stl_17" style="word-spacing:0.4195em;">В ряде экспериментов данные распределяются таким образом, что &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:53.8238em;"><span class="stl_13 stl_08 stl_80" style="word-spacing:0.4404em;">оказывается возможным описать их изменение линейной зависимостью &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:55.1855em;"><span class="stl_13 stl_08 stl_81" style="word-spacing:0.0136em;">(линейным уравнением) (рис. </span><span class="stl_19 stl_08 stl_18">7) &nbsp;</span></div>
+					<div class="stl_01" style="left:25.27em;top:56.7129em;"><span class="stl_21 stl_08 stl_472">P</span><span class="stl_19 stl_08 stl_20">(</span><span class="stl_21 stl_08 stl_22">x</span><span class="stl_19 stl_08 stl_925">)</span><span class="stl_21 stl_08 stl_365">=a</span><span class="stl_342 stl_87 stl_926" style="font-style:italic;"></span><span class="stl_21 stl_08 stl_63">x+b</span><span class="stl_19 stl_08 stl_63">. &nbsp;</span></div>
+					<div class="stl_01" style="left:44.1558em;top:56.8455em;"><span class="stl_19 stl_08 stl_927">(11) &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:58.4455em;"><span class="stl_13 stl_08 stl_12" style="word-spacing:0.2391em;">Формулы для расчета коэффициентов </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.2328em;">a </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.2321em;">и </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.2328em;">b </span><span class="stl_13 stl_08 stl_149" style="word-spacing:0.231em;">определяются по методу &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:59.7855em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:-0.0013em;">наименьших квадратов (9), подставив (11) в (10) &nbsp;</span></div>
+					<div class="stl_01 stl_928" style="left:22.7415em;top:61.215em;z-index:1153;"><span class="stl_929 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_928" style="left:20.4145em;top:61.9878em;z-index:1165;"><span class="stl_930 stl_08 stl_18" style="word-spacing:0.0571em;">F </span><span class="stl_931 stl_87 stl_18" style="word-spacing:1.0196em;"> </span><span class="stl_932 stl_08 stl_650">(</span><span class="stl_930 stl_08 stl_18" style="word-spacing:0.3183em;">y </span><span class="stl_931 stl_87 stl_18" style="word-spacing:-0.0362em;"> </span><span class="stl_930 stl_08 stl_18" style="word-spacing:-0.0658em;">a </span><span class="stl_931 stl_87 stl_18" style="word-spacing:-0.0324em;"> </span><span class="stl_930 stl_08 stl_18" style="word-spacing:0.3028em;">x </span><span class="stl_931 stl_87 stl_18" style="word-spacing:-0.0679em;"> </span><span class="stl_930 stl_08 stl_933">b</span><span class="stl_932 stl_08 stl_934">)</span><sup style="top: -0.5176em;"><span class="stl_935 stl_08 stl_18" style="word-spacing:0.132em;">2 </span></sup><span class="stl_931 stl_87 stl_18" style="word-spacing:-0.055em;"> </span><span class="stl_932 stl_08 stl_889">m</span><span class="stl_932 stl_08 stl_936">i</span><span class="stl_932 stl_08 stl_936">n &nbsp;</span></div>
+					<div class="stl_01" style="left:34.8542em;top:62.1276em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01" style="left:44.1358em;top:62.1276em;"><span class="stl_19 stl_08 stl_907">(12) &nbsp;</span></div>
+					<div class="stl_01 stl_928" style="left:22.4394em;top:61.8439em;z-index:1146;"><span class="stl_937 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_928" style="left:24.6683em;top:62.6306em;"><span class="stl_929 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_928" style="left:28.073em;top:62.6306em;"><span class="stl_929 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_928" style="left:22.3557em;top:63.4701em;"><span class="stl_929 stl_08 stl_938">i</span><span class="stl_939 stl_87 stl_940"></span><span class="stl_941 stl_08 stl_940">1 &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_16.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_16.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="left:25.09em;top:19.4355em;"><span class="stl_13 stl_08 stl_28" style="visibility:hidden;">Рис.5.6 &nbsp;</span></div>
+					<div class="stl_01" style="left:18.9683em;top:23.4468em;"><span class="stl_72 stl_08 stl_879" style="word-spacing:0.0207em;">Рис. </span><span class="stl_192 stl_08 stl_18" style="word-spacing:0em;">7. </span><span class="stl_72 stl_08 stl_69" style="word-spacing:0.0085em;">Линейная аппроксимация &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:25.718em;"><span class="stl_13 stl_08 stl_47" style="word-spacing:0.3182em;">Для решения (12) составляется система из двух уравнений с двумя &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:27.058em;"><span class="stl_13 stl_08 stl_68">неизвестными &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:27.2923em;top:28.9928em;"><span class="stl_943 stl_08 stl_944">dF &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:27.4046em;top:30.6256em;"><span class="stl_943 stl_08 stl_944">da &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:27.2923em;top:32.12em;"><span class="stl_943 stl_08 stl_944">dF &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:27.4148em;top:33.7529em;"><span class="stl_943 stl_08 stl_944">db &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:26.5819em;top:28.9511em;z-index:115;"><span class="stl_945 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_942" style="left:29.0765em;top:29.5884em;"><span class="stl_945 stl_87 stl_18" style="word-spacing:-0.0348em;"> </span><span class="stl_946 stl_08 stl_634">0; &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:29.0765em;top:32.7156em;"><span class="stl_945 stl_87 stl_18" style="word-spacing:-0.0348em;"> </span><span class="stl_946 stl_08 stl_944">0. &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:26.5819em;top:30.075em;z-index:117;"><span class="stl_945 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_942" style="left:26.5819em;top:30.4211em;z-index:118;"><span class="stl_945 stl_87 stl_18"></span></div>
+					<div class="stl_01" style="left:44.1358em;top:31.238em;"><span class="stl_19 stl_08 stl_907">(13) &nbsp;</span></div>
+					<div class="stl_01" style="left:44.1358em;top:40.1813em;"><span class="stl_19 stl_08 stl_907">(14) &nbsp;</span></div>
+					<div class="stl_01 stl_942" style="left:26.5819em;top:31.2945em;z-index:119;"><span class="stl_945 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_942" style="left:26.5819em;top:32.4184em;z-index:120;"><span class="stl_945 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_942" style="left:26.5819em;top:33.4648em;z-index:122;"><span class="stl_945 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_942" style="left:26.5819em;top:33.6379em;z-index:123;"><span class="stl_945 stl_87 stl_18"></span></div>
+					<div class="stl_01" style="left:9.4442em;top:35.6396em;"><span class="stl_13 stl_08 stl_47" style="word-spacing:0.0009em;">Подставляя в (13) формулу (12), получаем &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:26.5342em;top:37.583em;z-index:197;"><span class="stl_948 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_947" style="left:20.6781em;top:37.5161em;z-index:171;"><span class="stl_949 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:21.6374em;top:37.7704em;"><span class="stl_950 stl_08 stl_35">dF &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:21.7581em;top:39.4196em;"><span class="stl_950 stl_08 stl_35">db &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:23.3801em;top:38.3721em;"><span class="stl_949 stl_87 stl_951" style="word-spacing:-0.0202em;"> </span><span class="stl_952 stl_08 stl_953">2</span><span class="stl_949 stl_87 stl_18" style="word-spacing:0.9621em;"> </span><span class="stl_952 stl_08 stl_954">(</span><span class="stl_950 stl_08 stl_18" style="word-spacing:0.3059em;">y </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0452em;"> </span><span class="stl_950 stl_08 stl_18" style="word-spacing:-0.072em;">a </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0384em;"> </span><span class="stl_950 stl_08 stl_18" style="word-spacing:0.2924em;">x </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.076em;"> </span><span class="stl_950 stl_08 stl_63">b</span><span class="stl_952 stl_08 stl_18" style="word-spacing:-0.0899em;">) </span><span class="stl_949 stl_87 stl_955"></span><span class="stl_952 stl_08 stl_956">1</span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0613em;"> </span><span class="stl_952 stl_08 stl_697">0, &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:26.2315em;top:38.2255em;z-index:189;"><span class="stl_957 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:20.6781em;top:38.65em;z-index:169;"><span class="stl_949 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:28.4672em;top:39.0274em;"><span class="stl_948 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_947" style="left:31.881em;top:39.0274em;"><span class="stl_948 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_947" style="left:20.6781em;top:39.3478em;z-index:168;"><span class="stl_949 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:26.1477em;top:39.8825em;"><span class="stl_948 stl_08 stl_958">i</span><span class="stl_959 stl_87 stl_960"></span><span class="stl_961 stl_08 stl_960">1 &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:20.6781em;top:40.2301em;z-index:170;"><span class="stl_949 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:20.6781em;top:41.3641em;z-index:166;"><span class="stl_949 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:26.2417em;top:40.8915em;z-index:192;"><span class="stl_948 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_947" style="left:21.3449em;top:41.0809em;"><span class="stl_950 stl_08 stl_35">dF &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:21.4534em;top:42.728em;"><span class="stl_950 stl_08 stl_35">da &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:23.0856em;top:41.6805em;"><span class="stl_949 stl_87 stl_254" style="word-spacing:-0.0236em;"> </span><span class="stl_952 stl_08 stl_962">2</span><span class="stl_949 stl_87 stl_18" style="word-spacing:0.9621em;"> </span><span class="stl_952 stl_08 stl_954">(</span><span class="stl_950 stl_08 stl_18" style="word-spacing:0.3078em;">y </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0454em;"> </span><span class="stl_950 stl_08 stl_18" style="word-spacing:-0.0741em;">a </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0363em;"> </span><span class="stl_950 stl_08 stl_18" style="word-spacing:0.291em;">x </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0746em;"> </span><span class="stl_950 stl_08 stl_65">b</span><span class="stl_952 stl_08 stl_18" style="word-spacing:-0.0899em;">) </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0377em;"> </span><span class="stl_950 stl_08 stl_18" style="word-spacing:0.2924em;">x </span><span class="stl_949 stl_87 stl_18" style="word-spacing:-0.0613em;"> </span><span class="stl_952 stl_08 stl_684">0. &nbsp;</span></div>
+					<div class="stl_01 stl_947" style="left:25.937em;top:41.536em;z-index:188;"><span class="stl_957 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:28.1726em;top:42.3357em;"><span class="stl_948 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_947" style="left:31.5885em;top:42.3357em;"><span class="stl_948 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_947" style="left:35.3478em;top:42.3357em;"><span class="stl_948 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_947" style="left:20.6781em;top:42.498em;z-index:165;"><span class="stl_949 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:20.6781em;top:42.9422em;z-index:167;"><span class="stl_949 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_947" style="left:25.8532em;top:43.193em;"><span class="stl_948 stl_08 stl_712">i</span><span class="stl_959 stl_87 stl_963"></span><span class="stl_961 stl_08 stl_963">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:26.27em;top:44.9213em;"><span class="stl_13 stl_08 stl_18">и</span></div>
+					<div class="stl_01 stl_964" style="left:25.228em;top:46.9089em;z-index:271;"><span class="stl_965 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_964" style="left:29.4852em;top:46.9089em;z-index:268;"><span class="stl_965 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_964" style="left:32.877em;top:46.9089em;z-index:264;"><span class="stl_965 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_964" style="left:23.6385em;top:46.8449em;z-index:242;"><span class="stl_966 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:24.2215em;top:47.6877em;"><span class="stl_967 stl_08 stl_294" style="word-spacing:0.7723em;">a x</span><sup style="top: -0.521em;"><span class="stl_968 stl_08 stl_18" style="word-spacing:0.1527em;">2 </span></sup><span class="stl_966 stl_87 stl_18" style="word-spacing:-0.0511em;"> </span><span class="stl_967 stl_08 stl_18" style="word-spacing:0.8987em;">b x</span><span class="stl_967 stl_08 stl_18" style="word-spacing:0.3044em;">&nbsp;</span><span class="stl_966 stl_87 stl_18" style="word-spacing:1.022em;"> </span><span class="stl_969 stl_08 stl_970">(</span><span class="stl_967 stl_08 stl_18" style="word-spacing:0.2571em;">x </span><span class="stl_966 stl_87 stl_18" style="word-spacing:0.015em;"> </span><span class="stl_967 stl_08 stl_18" style="word-spacing:0.1144em;">y </span><span class="stl_969 stl_08 stl_18" style="word-spacing:0.1144em;">) &nbsp;</span></div>
+					<div class="stl_01 stl_964" style="left:24.9212em;top:47.5433em;z-index:252;"><span class="stl_971 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:29.1804em;top:47.5433em;z-index:250;"><span class="stl_971 stl_87 stl_18" style="word-spacing:1.2765em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_964" style="left:23.6385em;top:47.9638em;z-index:240;"><span class="stl_966 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:23.6385em;top:48.8544em;z-index:239;"><span class="stl_966 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:23.6385em;top:49.7248em;z-index:241;"><span class="stl_966 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:26.6907em;top:48.3347em;"><span class="stl_965 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_964" style="left:30.95em;top:48.3347em;"><span class="stl_965 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_964" style="left:34.7427em;top:48.3347em;"><span class="stl_965 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_964" style="left:36.4855em;top:48.3347em;"><span class="stl_965 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_964" style="left:24.8393em;top:49.1803em;"><span class="stl_965 stl_08 stl_972">i</span><span class="stl_973 stl_87 stl_974"></span><span class="stl_975 stl_08 stl_974">1 &nbsp;</span></div>
+					<div class="stl_01 stl_964" style="left:29.0965em;top:49.1803em;"><span class="stl_965 stl_08 stl_272">i</span><span class="stl_973 stl_87 stl_974"></span><span class="stl_975 stl_08 stl_974">1 &nbsp;</span></div>
+					<div class="stl_01 stl_964" style="left:32.4864em;top:49.1803em;"><span class="stl_965 stl_08 stl_976">i</span><span class="stl_973 stl_87 stl_940"></span><span class="stl_975 stl_08 stl_940">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:37.4342em;top:49.6438em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01" style="left:44.1358em;top:49.6438em;"><span class="stl_19 stl_08 stl_907">(15) &nbsp;</span></div>
+					<div class="stl_01 stl_964" style="left:25.228em;top:50.5785em;z-index:261;"><span class="stl_965 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_964" style="left:31.1749em;top:50.5785em;z-index:258;"><span class="stl_965 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_964" style="left:23.6385em;top:50.8456em;z-index:237;"><span class="stl_966 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:23.6385em;top:51.9645em;z-index:236;"><span class="stl_966 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:24.2215em;top:51.3572em;"><span class="stl_967 stl_08 stl_18" style="word-spacing:0.9143em;">a x</span><span class="stl_967 stl_08 stl_18" style="word-spacing:0.487em;">&nbsp;</span><span class="stl_966 stl_87 stl_18" style="word-spacing:-0.0197em;"> </span><span class="stl_967 stl_08 stl_458" style="word-spacing:-0.0561em;">nb </span><span class="stl_966 stl_87 stl_458" style="word-spacing:-0.0561em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_964" style="left:32.1814em;top:51.4916em;"><span class="stl_967 stl_08 stl_18">y</span></div>
+					<div class="stl_01 stl_964" style="left:32.7116em;top:52.0043em;"><span class="stl_965 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_964" style="left:24.9212em;top:51.2128em;z-index:249;"><span class="stl_971 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:30.8702em;top:51.2128em;z-index:248;"><span class="stl_971 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_964" style="left:26.6907em;top:52.0547em;"><span class="stl_965 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_964" style="left:23.6385em;top:52.6047em;z-index:238;"><span class="stl_966 stl_87 stl_18" style="word-spacing:0.2767em;"> </span><sup style="top: -0.004em;"><span class="stl_977 stl_08 stl_972">i</span></sup><span class="stl_973 stl_87 stl_974"></span><span class="stl_975 stl_08 stl_974">1 &nbsp;</span></div>
+					<div class="stl_01 stl_964" style="left:30.7863em;top:52.8498em;"><span class="stl_965 stl_08 stl_972">i</span><span class="stl_973 stl_87 stl_974"></span><span class="stl_975 stl_08 stl_974">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:54.6455em;"><span class="stl_13 stl_08 stl_76" style="word-spacing:0.5712em;">Решая полученную систему (15) методом подстановки</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.5862em;">, </span><span class="stl_13 stl_08 stl_70">получаем &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:55.9855em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.011em;">формулы для нахождения коэффициентов </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.0101em;">a </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.0079em;">и </span><span class="stl_21 stl_08 stl_18">b</span><span class="stl_19 stl_08 stl_18">: &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:24.1937em;top:57.8563em;z-index:435;"><span class="stl_979 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_978" style="left:30.1668em;top:57.8563em;z-index:432;"><span class="stl_979 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_978" style="left:33.1179em;top:57.8563em;z-index:429;"><span class="stl_979 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_978" style="left:22.5336em;top:58.6366em;"><span class="stl_980 stl_08 stl_18" style="word-spacing:-0.077em;">n </span><span class="stl_981 stl_87 stl_18" style="word-spacing:0.9835em;"> </span><span class="stl_982 stl_08 stl_983">(</span><span class="stl_980 stl_08 stl_18" style="word-spacing:0.2609em;">x </span><span class="stl_981 stl_87 stl_18" style="word-spacing:0.0165em;"> </span><span class="stl_980 stl_08 stl_18" style="word-spacing:0.1183em;">y </span><span class="stl_982 stl_08 stl_18" style="word-spacing:-0.035em;">) </span><span class="stl_981 stl_87 stl_18" style="word-spacing:1.0897em;"> </span><span class="stl_980 stl_08 stl_18" style="word-spacing:0.2607em;">x </span><span class="stl_981 stl_87 stl_18" style="word-spacing:0.2607em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:34.1316em;top:58.7714em;"><span class="stl_980 stl_08 stl_18">y</span></div>
+					<div class="stl_01 stl_978" style="left:34.6651em;top:59.2821em;"><span class="stl_979 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_978" style="left:23.8859em;top:58.4907em;z-index:417;"><span class="stl_984 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_978" style="left:29.8592em;top:58.4907em;z-index:415;"><span class="stl_984 stl_87 stl_18" style="word-spacing:0.9806em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:26.0713em;top:59.2821em;"><span class="stl_979 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_978" style="left:27.8237em;top:59.2821em;"><span class="stl_979 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_978" style="left:31.6407em;top:59.2821em;"><span class="stl_979 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_978" style="left:23.8018em;top:60.1294em;"><span class="stl_979 stl_08 stl_272">i</span><span class="stl_985 stl_87 stl_986"></span><span class="stl_987 stl_08 stl_986">1 &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:29.775em;top:60.1294em;"><span class="stl_979 stl_08 stl_988">i</span><span class="stl_985 stl_87 stl_989"></span><span class="stl_987 stl_08 stl_989">1 &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:32.7261em;top:60.1294em;"><span class="stl_979 stl_08 stl_976">i</span><span class="stl_985 stl_87 stl_990"></span><span class="stl_987 stl_08 stl_990">1 &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:20.6806em;top:60.3371em;"><span class="stl_980 stl_08 stl_18" style="word-spacing:-0.0161em;">a </span><span class="stl_981 stl_87 stl_18" style="word-spacing:-0.0161em;"> &nbsp;</span></div>
+					<div class="stl_01" style="left:35.2942em;top:60.4655em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01" style="left:44.1358em;top:60.4655em;"><span class="stl_19 stl_08 stl_927">(16) &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:32.1942em;top:61.6295em;z-index:401;"><span class="stl_981 stl_87 stl_991"></span><sup style="top: -0.727em;"><span class="stl_992 stl_08 stl_537">2 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_978" style="left:25.9728em;top:61.6974em;z-index:426;"><span class="stl_979 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_978" style="left:30.2043em;top:61.6974em;z-index:423;"><span class="stl_979 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_978" style="left:29.2481em;top:61.6295em;z-index:405;"><span class="stl_981 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_978" style="left:27.5406em;top:62.3114em;"><span class="stl_987 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_978" style="left:29.2481em;top:62.3747em;z-index:403;"><span class="stl_981 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_978" style="left:32.1942em;top:62.3747em;z-index:399;"><span class="stl_981 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_978" style="left:31.1622em;top:62.6106em;"><span class="stl_980 stl_08 stl_18">x</span></div>
+					<div class="stl_01 stl_978" style="left:24.3148em;top:62.4758em;"><span class="stl_980 stl_08 stl_18" style="word-spacing:-0.0787em;">n </span><span class="stl_981 stl_87 stl_18" style="word-spacing:1.0461em;"> </span><span class="stl_980 stl_08 stl_18" style="word-spacing:0.5357em;">x </span><span class="stl_981 stl_87 stl_18" style="word-spacing:0.5357em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:25.6671em;top:62.3318em;z-index:414;"><span class="stl_984 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_978" style="left:29.2481em;top:62.3271em;z-index:413;"><sub style="top: 0.3131em;"><span class="stl_993 stl_87 stl_18" style="word-spacing:-0.0841em;"> </span></sub><span class="stl_984 stl_87 stl_18" style="word-spacing:-0.0654em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:31.6773em;top:62.9756em;z-index:398;"><sup style="top: -0.212em;"><span class="stl_994 stl_08 stl_18" style="word-spacing:0.0294em;">i </span></sup><span class="stl_981 stl_87 stl_18" style="word-spacing:0.0231em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:27.4462em;top:63.1233em;"><span class="stl_979 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_978" style="left:25.5829em;top:63.9685em;"><span class="stl_979 stl_08 stl_272">i</span><span class="stl_985 stl_87 stl_986"></span><span class="stl_987 stl_08 stl_986">1 &nbsp;</span></div>
+					<div class="stl_01 stl_978" style="left:29.2481em;top:63.7257em;z-index:404;"><span class="stl_981 stl_87 stl_995"></span><sup style="top: -0.0061em;"><span class="stl_994 stl_08 stl_976">i</span></sup><span class="stl_985 stl_87 stl_989"></span><span class="stl_987 stl_08 stl_18" style="word-spacing:0.9092em;">1 </span><span class="stl_981 stl_87 stl_18" style="word-spacing:0.7147em;"> &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_17.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_17.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01 stl_996" style="left:16.9217em;top:4.7355em;z-index:71;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:21.0049em;top:4.7355em;z-index:68;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:24.5461em;top:4.7355em;z-index:65;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:27.5382em;top:4.7355em;z-index:62;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:31.1779em;top:4.7355em;z-index:59;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:34.0986em;top:4.7355em;z-index:55;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:17.9251em;top:5.5164em;"><span class="stl_998 stl_08 stl_18" style="word-spacing:0.3166em;">y </span><span class="stl_999 stl_87 stl_18" style="word-spacing:-0.0388em;"> </span><span class="stl_998 stl_08 stl_18" style="word-spacing:0.9073em;">a x &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:25.5499em;top:5.5164em;z-index:10;"><span class="stl_998 stl_08 stl_18" style="word-spacing:0.2698em;">y </span><span class="stl_999 stl_87 stl_18" style="word-spacing:1.0353em;"> </span><span class="stl_998 stl_08 stl_1000">x</span><sup style="top: -0.521em;"><span class="stl_1001 stl_08 stl_18" style="word-spacing:0.1506em;">2 </span></sup><span class="stl_999 stl_87 stl_18" style="word-spacing:1.0777em;"> </span><span class="stl_998 stl_08 stl_18" style="word-spacing:0.2557em;">x </span><span class="stl_999 stl_87 stl_18" style="word-spacing:0.9752em;"> </span><span class="stl_1002 stl_08 stl_906">(</span><span class="stl_998 stl_08 stl_18" style="word-spacing:0.2543em;">x </span><span class="stl_999 stl_87 stl_18" style="word-spacing:0.0129em;"> </span><span class="stl_998 stl_08 stl_18" style="word-spacing:0.113em;">y </span><span class="stl_1002 stl_08 stl_18" style="word-spacing:0.113em;">) &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:16.6172em;top:5.3698em;z-index:40;"><span class="stl_1003 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_996" style="left:20.7025em;top:5.3698em;z-index:39;"><span class="stl_1003 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_996" style="left:24.2423em;top:5.3698em;z-index:37;"><span class="stl_1003 stl_87 stl_18" style="word-spacing:1.0168em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:30.8757em;top:5.3698em;z-index:35;"><span class="stl_1003 stl_87 stl_18" style="word-spacing:0.9668em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:18.4524em;top:6.1613em;"><span class="stl_997 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_996" style="left:22.464em;top:6.1613em;"><span class="stl_997 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_996" style="left:26.077em;top:6.1613em;z-index:64;"><span class="stl_997 stl_08 stl_18" style="word-spacing:2.6341em;">i i</span><span class="stl_997 stl_08 stl_18" style="word-spacing:3.4098em;">&nbsp;</span><span class="stl_997 stl_08 stl_18" style="word-spacing:3.0674em;">i i</span><span class="stl_997 stl_08 stl_18" style="word-spacing:1.3507em;">&nbsp;</span><span class="stl_997 stl_08 stl_18" style="word-spacing:3.0674em;">i &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:14.7432em;top:7.2168em;"><span class="stl_998 stl_08 stl_18" style="word-spacing:-0.037em;">b </span><span class="stl_999 stl_87 stl_18" style="word-spacing:0.0134em;"> </span><sup style="top: -0.4584em;"><span class="stl_1004 stl_08 stl_1005">i</span><span class="stl_1006 stl_87 stl_841"></span><span class="stl_1001 stl_08 stl_841">1 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_996" style="left:23.2062em;top:7.2181em;"><span class="stl_999 stl_87 stl_18" style="word-spacing:0.013em;"> </span><sup style="top: -0.4584em;"><span class="stl_1004 stl_08 stl_1007">i</span><span class="stl_1006 stl_87 stl_1008"></span><span class="stl_1001 stl_08 stl_1008">1 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_996" style="left:20.6186em;top:7.0089em;"><span class="stl_997 stl_08 stl_972">i</span><span class="stl_1009 stl_87 stl_841"></span><span class="stl_1010 stl_08 stl_841">1 &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:27.1522em;top:7.0089em;"><span class="stl_997 stl_08 stl_1007">i</span><span class="stl_1009 stl_87 stl_167"></span><span class="stl_1010 stl_08 stl_167">1 &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:30.7919em;top:7.0089em;"><span class="stl_997 stl_08 stl_1007">i</span><span class="stl_1009 stl_87 stl_167"></span><span class="stl_1010 stl_08 stl_167">1 &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:33.7117em;top:7.0089em;"><span class="stl_997 stl_08 stl_1007">i</span><span class="stl_1009 stl_87 stl_1008"></span><span class="stl_1010 stl_08 stl_1008">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:38.7542em;top:7.3313em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01" style="left:44.1358em;top:7.3313em;"><span class="stl_19 stl_08 stl_927">(17) &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:34.693em;top:8.5087em;z-index:19;"><span class="stl_999 stl_87 stl_1011"></span><sup style="top: -0.727em;"><span class="stl_1001 stl_08 stl_1012">2 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_996" style="left:19.4211em;top:8.2538em;"><span class="stl_998 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:28.5395em;top:8.5766em;z-index:52;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:32.7254em;top:8.5766em;z-index:49;"><span class="stl_997 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_996" style="left:31.779em;top:8.5087em;z-index:23;"><span class="stl_999 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_996" style="left:30.0912em;top:9.1906em;"><span class="stl_1010 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_996" style="left:29.9965em;top:10.0025em;"><span class="stl_997 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_996" style="left:31.779em;top:9.2539em;z-index:21;"><span class="stl_999 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_996" style="left:34.693em;top:9.2539em;z-index:17;"><span class="stl_999 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_996" style="left:33.6735em;top:9.4898em;"><span class="stl_998 stl_08 stl_18">x</span></div>
+					<div class="stl_01 stl_996" style="left:26.8965em;top:9.3555em;"><span class="stl_998 stl_08 stl_18" style="word-spacing:-0.0823em;">n </span><span class="stl_999 stl_87 stl_18" style="word-spacing:1.0374em;"> </span><span class="stl_998 stl_08 stl_18" style="word-spacing:0.527em;">x </span><span class="stl_999 stl_87 stl_18" style="word-spacing:0.527em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:28.2356em;top:9.211em;z-index:34;"><span class="stl_1003 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_996" style="left:31.779em;top:9.2077em;z-index:33;"><sub style="top: 0.3131em;"><span class="stl_1013 stl_87 stl_18" style="word-spacing:-0.0877em;"> </span></sub><span class="stl_1003 stl_87 stl_18" style="word-spacing:-0.0681em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:34.1825em;top:9.8562em;z-index:16;"><sup style="top: -0.212em;"><span class="stl_1004 stl_08 stl_18" style="word-spacing:0.0249em;">i </span></sup><span class="stl_999 stl_87 stl_18" style="word-spacing:0.0196em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:28.1518em;top:10.8481em;"><span class="stl_997 stl_08 stl_1014">i</span><span class="stl_1009 stl_87 stl_1008"></span><span class="stl_1010 stl_08 stl_1008">1 &nbsp;</span></div>
+					<div class="stl_01 stl_996" style="left:31.779em;top:10.6049em;z-index:22;"><span class="stl_999 stl_87 stl_1015"></span><sup style="top: -0.0061em;"><span class="stl_1004 stl_08 stl_1007">i</span></sup><span class="stl_1009 stl_87 stl_167"></span><span class="stl_1010 stl_08 stl_18" style="word-spacing:0.8984em;">1 </span><span class="stl_999 stl_87 stl_18" style="word-spacing:0.7062em;"> &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:12.5738em;"><span class="stl_07 stl_08 stl_195">Пример &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:13.8938em;"><span class="stl_13 stl_08 stl_81" style="word-spacing:0.1016em;">Дана табличная зависимость мощности </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.1002em;">N </span><span class="stl_13 stl_08 stl_195">токарно</span><span class="stl_19 stl_08 stl_925">-</span><span class="stl_13 stl_08 stl_24" style="word-spacing:0.0743em;">винторезных станков &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:15.2338em;"><span class="stl_13 stl_08 stl_80" style="word-spacing:0.2003em;">от максимального диаметра обрабатываемой заготовки </span><span class="stl_21 stl_08 stl_18">d</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.2241em;">, </span><span class="stl_13 stl_08 stl_17">устанавливаемой &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:16.5738em;"><span class="stl_13 stl_08 stl_143" style="word-spacing:0.0126em;">над станиной, для десяти моделей (табл. </span><span class="stl_19 stl_08 stl_189">9). &nbsp;</span></div>
+					<div class="stl_01" style="left:41.0358em;top:19.2555em;"><span class="stl_13 stl_08 stl_30" style="word-spacing:0.0174em;">Таблица </span><span class="stl_19 stl_08 stl_30" style="word-spacing:0.0174em;">9 &nbsp;</span></div>
+					<div class="stl_01" style="left:10.7242em;top:21.0955em;"><span class="stl_13 stl_08 stl_172" style="word-spacing:0.0142em;">Значения максимального диаметра заготовки, устанавливаемой &nbsp;</span></div>
+					<div class="stl_01" style="left:12.3242em;top:22.4355em;"><span class="stl_13 stl_08 stl_68" style="word-spacing:0.0075em;">над станиной, и мощности токарно</span><span class="stl_19 stl_08 stl_20">-</span><span class="stl_13 stl_08 stl_76" style="word-spacing:-0.0155em;">винторезных станков &nbsp;</span></div>
+					<div class="stl_01" style="left:7.542em;top:24.3006em;"><span class="stl_1016 stl_08 stl_894">Модель &nbsp;</span></div>
+					<div class="stl_01" style="left:7.744em;top:25.2431em;"><span class="stl_1016 stl_08 stl_1017">станка &nbsp;</span></div>
+					<div class="stl_01" style="left:10.9842em;top:24.7806em;"><span class="stl_1016 stl_08 stl_642" style="word-spacing:0.4146em;">250ИТВМ.03 КА280 1В62Г</span><span class="stl_1016 stl_08 stl_18" style="word-spacing:0.6987em;">&nbsp;</span><span class="stl_1016 stl_08 stl_1018" style="word-spacing:0.852em;">16К250 1М63 16К40 1Н65 СА650</span><span class="stl_1016 stl_08 stl_18" style="word-spacing:0.4906em;">&nbsp;</span><span class="stl_1016 stl_08 stl_58" style="word-spacing:0.7802em;">1А660 1А670 &nbsp;</span></div>
+					<div class="stl_01" style="left:7.964em;top:26.2431em;"><span class="stl_1019 stl_08 stl_26">d</span><span class="stl_1016 stl_08 stl_1020" style="word-spacing:0.0266em;">, мм &nbsp;</span></div>
+					<div class="stl_01" style="left:7.682em;top:27.2431em;"><span class="stl_1019 stl_08 stl_47">N</span><span class="stl_1016 stl_08 stl_586" style="word-spacing:0.0558em;">, кВТ &nbsp;</span></div>
+					<div class="stl_01" style="left:12.7242em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">240 &nbsp;</span></div>
+					<div class="stl_01" style="left:13.1258em;top:27.2431em;"><span class="stl_701 stl_08 stl_18">3</span></div>
+					<div class="stl_01" style="left:16.8058em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">400 &nbsp;</span></div>
+					<div class="stl_01" style="left:16.9058em;top:27.2431em;"><span class="stl_701 stl_08 stl_1021">7,5 &nbsp;</span></div>
+					<div class="stl_01" style="left:19.7483em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">445 &nbsp;</span></div>
+					<div class="stl_01" style="left:19.6483em;top:27.2431em;"><span class="stl_701 stl_08 stl_24">8,37 &nbsp;</span></div>
+					<div class="stl_01" style="left:23.0083em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">500 &nbsp;</span></div>
+					<div class="stl_01" style="left:23.2083em;top:27.2431em;"><span class="stl_701 stl_08 stl_18">11 &nbsp;</span></div>
+					<div class="stl_01" style="left:26.25em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">630 &nbsp;</span></div>
+					<div class="stl_01" style="left:26.45em;top:27.2431em;"><span class="stl_701 stl_08 stl_18">15 &nbsp;</span></div>
+					<div class="stl_01" style="left:29.2117em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">800 &nbsp;</span></div>
+					<div class="stl_01" style="left:29.1117em;top:27.2431em;"><span class="stl_701 stl_08 stl_24">18,5 &nbsp;</span></div>
+					<div class="stl_01" style="left:32.0717em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">1000 &nbsp;</span></div>
+					<div class="stl_01" style="left:32.4917em;top:27.2431em;"><span class="stl_701 stl_08 stl_18">22 &nbsp;</span></div>
+					<div class="stl_01" style="left:35.1142em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">1080 &nbsp;</span></div>
+					<div class="stl_01" style="left:35.5142em;top:27.2431em;"><span class="stl_701 stl_08 stl_18">22 &nbsp;</span></div>
+					<div class="stl_01" style="left:38.0742em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">1250 &nbsp;</span></div>
+					<div class="stl_01" style="left:38.4742em;top:27.2431em;"><span class="stl_701 stl_08 stl_18">30 &nbsp;</span></div>
+					<div class="stl_01" style="left:41.2158em;top:26.2431em;"><span class="stl_701 stl_08 stl_18">2000 &nbsp;</span></div>
+					<div class="stl_01" style="left:41.6358em;top:27.2431em;"><span class="stl_701 stl_08 stl_18">55 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:28.778em;"><span class="stl_13 stl_08 stl_28" style="word-spacing:0.7172em;">Требуется найти мощность проектируемого токарно</span><span class="stl_19 stl_08 stl_933">-</span><span class="stl_13 stl_08 stl_17">винторезного &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:30.138em;"><span class="stl_13 stl_08 stl_146" style="word-spacing:0.0073em;">станка для обработки заготовки максимального диаметра 700 мм. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:31.478em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.005em;">Построим область значений распределения данных (рис. 8). &nbsp;</span></div>
+					<div class="stl_01" style="left:7.388em;top:34.4068em;"><span class="stl_193 stl_08 stl_545">N</span><span class="stl_72 stl_08 stl_1022" style="word-spacing:0.0038em;">, кВт &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:34.6193em;z-index:1136;"><span class="stl_192 stl_08 stl_44" style="visibility:hidden;">60 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:37.6393em;"><span class="stl_192 stl_08 stl_44">50 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:40.6593em;"><span class="stl_192 stl_08 stl_44">40 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:43.6793em;"><span class="stl_192 stl_08 stl_44">30 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:46.6993em;"><span class="stl_192 stl_08 stl_44">20 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:49.7193em;"><span class="stl_192 stl_08 stl_44">10 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.3817em;top:52.7393em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:40.0842em;top:53.8693em;z-index:1180;"><span class="stl_193 stl_08 stl_18">d</span><span class="stl_72 stl_08 stl_173" style="word-spacing:0.0046em;">, мм &nbsp;</span></div>
+					<div class="stl_01" style="left:23.5483em;top:54.0109em;z-index:1169;"><span class="stl_192 stl_08 stl_18" style="word-spacing:1.1258em;">800 1000</span><span class="stl_192 stl_08 stl_18" style="word-spacing:0.8796em;">&nbsp;</span><span class="stl_192 stl_08 stl_18" style="word-spacing:0.8778em;">1200 1400 1600 </span><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">1800 &nbsp;</span></div>
+					<div class="stl_01" style="left:10.5758em;top:54.0109em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:13.4117em;top:54.0109em;"><span class="stl_192 stl_08 stl_18">200 &nbsp;</span></div>
+					<div class="stl_01" style="left:16.79em;top:54.0109em;"><span class="stl_192 stl_08 stl_18">400 &nbsp;</span></div>
+					<div class="stl_01" style="left:20.1683em;top:54.0109em;"><span class="stl_192 stl_08 stl_44">600 &nbsp;</span></div>
+					<div class="stl_01" style="left:12.9042em;top:55.8568em;"><span class="stl_72 stl_08 stl_145" style="word-spacing:0.012em;">Рис. 8. Область распределения табличных данных (табл. 9) &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:57.6055em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:0.288em;">Анализ диаграммы (рис. 8) позволяет сделать вывод, что изменение &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:58.9455em;"><span class="stl_13 stl_08 stl_24" style="word-spacing:0.5461em;">табличных данных можно с достаточной степенью точности описать &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:60.2855em;"><span class="stl_13 stl_08 stl_43" style="word-spacing:0.3008em;">уравнением прямой (11). В связи с этим, для нахождения эмпирической &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:61.6456em;"><span class="stl_13 stl_08 stl_53" style="word-spacing:0.5264em;">зависимости, описывающей изменение данных, можно воспользоваться &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:62.9876em;"><span class="stl_13 stl_08 stl_45" style="word-spacing:0.0063em;">методом линейной аппроксимации. &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_18.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_18.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="left:9.4442em;top:4.6713em;"><span class="stl_13 stl_08 stl_80" style="word-spacing:0.007em;">Для удобства перепишем вышеприведенные формулы (</span><span class="stl_19 stl_08 stl_34" style="word-spacing:0.0128em;">16, 17): &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:15.6947em;top:7.3357em;z-index:67;"><span class="stl_1024 stl_08 stl_458">1</span><span class="stl_1024 stl_08 stl_1025">0</span><span class="stl_1026 stl_87 stl_18" style="word-spacing:0.0026em;"> </span><sup style="top: -1.137em;"><span class="stl_1027 stl_08 stl_1028" style="word-spacing:0.1417em;">10 </span></sup><span class="stl_1024 stl_08 stl_727">(</span><span class="stl_1029 stl_08 stl_18" style="word-spacing:0.3091em;">d </span><span class="stl_1026 stl_87 stl_18" style="word-spacing:-0.0304em;"> </span><span class="stl_1029 stl_08 stl_18" style="word-spacing:0.1597em;">N </span><span class="stl_1024 stl_08 stl_18" style="word-spacing:-0.0369em;">) </span><span class="stl_1026 stl_87 stl_18" style="word-spacing:0.0447em;"> </span><sup style="top: -1.137em;"><span class="stl_1027 stl_08 stl_1028" style="word-spacing:0.1616em;">10 </span></sup><span class="stl_1029 stl_08 stl_18" style="word-spacing:0.3091em;">d </span><span class="stl_1026 stl_87 stl_18" style="word-spacing:0.0023em;"> </span><sup style="top: -1.137em;"><span class="stl_1027 stl_08 stl_1028">10 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_1023" style="left:28.2677em;top:7.4714em;"><span class="stl_1029 stl_08 stl_18">N</span></div>
+					<div class="stl_01 stl_1023" style="left:29.1215em;top:7.9821em;"><span class="stl_1030 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1031" style="left:32.5114em;top:6.8896em;z-index:121;"><span class="stl_1032 stl_08 stl_944">10 &nbsp;</span></div>
+					<div class="stl_01 stl_1031" style="left:36.7956em;top:6.8896em;z-index:123;"><span class="stl_1032 stl_08 stl_944">10 &nbsp;</span></div>
+					<div class="stl_01 stl_1031" style="left:33.6834em;top:7.4937em;"><span class="stl_1033 stl_08 stl_18" style="word-spacing:0.2345em;">N </span><span class="stl_1034 stl_87 stl_18" style="word-spacing:-0.0644em;"> </span><span class="stl_1033 stl_08 stl_18" style="word-spacing:0.955em;">a d &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:17.6249em;top:7.1907em;z-index:94;"><span class="stl_1035 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1023" style="left:23.9608em;top:7.1907em;z-index:92;"><span class="stl_1035 stl_87 stl_18" style="word-spacing:1.0223em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:19.8919em;top:7.9821em;"><span class="stl_1030 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1023" style="left:21.9151em;top:7.9821em;"><span class="stl_1030 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1023" style="left:25.8212em;top:7.9821em;"><span class="stl_1030 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1031" style="left:32.2603em;top:7.1781em;z-index:142;"><span class="stl_1036 stl_87 stl_18" style="word-spacing:1.4633em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_1031" style="left:34.5001em;top:8.364em;"><span class="stl_1037 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1031" style="left:38.5056em;top:8.364em;"><span class="stl_1037 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1023" style="left:17.5401em;top:8.8286em;"><span class="stl_1030 stl_08 stl_272">i</span><span class="stl_1038 stl_87 stl_974"></span><span class="stl_1039 stl_08 stl_974">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:23.876em;top:8.8286em;"><span class="stl_1030 stl_08 stl_1007">i</span><span class="stl_1038 stl_87 stl_940"></span><span class="stl_1039 stl_08 stl_940">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:26.9118em;top:8.8286em;"><span class="stl_1030 stl_08 stl_1040">i</span><span class="stl_1038 stl_87 stl_1041"></span><span class="stl_1039 stl_08 stl_1041">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1031" style="left:32.4542em;top:9.0853em;"><span class="stl_1037 stl_08 stl_1042">i</span><span class="stl_1043 stl_87 stl_762"></span><span class="stl_1032 stl_08 stl_762">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1031" style="left:36.7194em;top:9.0853em;"><span class="stl_1037 stl_08 stl_820">i</span><span class="stl_1043 stl_87 stl_676"></span><span class="stl_1032 stl_08 stl_676">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:29.7517em;top:9.1513em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01 stl_1031" style="left:30.4431em;top:9.0166em;"><span class="stl_1033 stl_08 stl_18" style="word-spacing:-0.0339em;">b </span><span class="stl_1034 stl_87 stl_18" style="word-spacing:-0.0339em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1031" style="left:38.9629em;top:9.1505em;"><span class="stl_1044 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1023" style="left:13.9609em;top:9.0361em;"><span class="stl_1029 stl_08 stl_18" style="word-spacing:-0.0178em;">a </span><span class="stl_1026 stl_87 stl_18" style="word-spacing:-0.0178em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:23.3656em;top:10.3295em;z-index:82;"><span class="stl_1026 stl_87 stl_18" style="word-spacing:-0.0566em;"> </span><sup style="top: -0.2869em;"><span class="stl_1027 stl_08 stl_1028" style="word-spacing:1.4074em;">10 </span></sup><span class="stl_1026 stl_87 stl_991"></span><sup style="top: -0.727em;"><span class="stl_1027 stl_08 stl_537">2 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_1031" style="left:34.9023em;top:10.05em;"><span class="stl_1044 stl_08 stl_646">10 &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:19.6915em;top:10.3974em;z-index:57;"><span class="stl_1039 stl_08 stl_1028">10 &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:21.6505em;top:11.0114em;"><span class="stl_1039 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1023" style="left:23.3656em;top:11.0747em;z-index:80;"><span class="stl_1026 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1023" style="left:26.3972em;top:11.0747em;z-index:76;"><span class="stl_1026 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1023" style="left:25.2336em;top:11.3106em;"><span class="stl_1029 stl_08 stl_18">d</span></div>
+					<div class="stl_01 stl_1023" style="left:17.7261em;top:11.1748em;"><span class="stl_1024 stl_08 stl_458">1</span><span class="stl_1024 stl_08 stl_1025">0</span><span class="stl_1026 stl_87 stl_18" style="word-spacing:0.9974em;"> </span><span class="stl_1029 stl_08 stl_18" style="word-spacing:0.6153em;">d </span><span class="stl_1026 stl_87 stl_18" style="word-spacing:0.6153em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:19.6563em;top:11.0318em;z-index:91;"><span class="stl_1035 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1023" style="left:23.3656em;top:11.0247em;z-index:90;"><sub style="top: 0.3131em;"><span class="stl_1045 stl_87 stl_18" style="word-spacing:-0.0841em;"> </span></sub><span class="stl_1035 stl_87 stl_18" style="word-spacing:-0.0654em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:25.8783em;top:11.6731em;z-index:75;"><sup style="top: -0.212em;"><span class="stl_1046 stl_08 stl_18" style="word-spacing:0.0276em;">i </span></sup><span class="stl_1026 stl_87 stl_18" style="word-spacing:0.0217em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:21.5162em;top:11.8233em;"><span class="stl_1030 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1023" style="left:19.5716em;top:12.6678em;"><span class="stl_1030 stl_08 stl_272">i</span><span class="stl_1038 stl_87 stl_974"></span><span class="stl_1039 stl_08 stl_974">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1023" style="left:23.3656em;top:12.4257em;z-index:81;"><span class="stl_1026 stl_87 stl_995"></span><sup style="top: -0.0061em;"><span class="stl_1046 stl_08 stl_1007">i</span></sup><span class="stl_1038 stl_87 stl_989"></span><span class="stl_1039 stl_08 stl_18" style="word-spacing:0.9802em;">1 </span><span class="stl_1026 stl_87 stl_18" style="word-spacing:0.7705em;"> &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:14.3938em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.6665em;">Проведем расчеты и решим задачу, проиллюстрировав решение &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:15.7338em;"><span class="stl_13 stl_08 stl_44">графически</span><span class="stl_19 stl_08 stl_44">. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:17.0738em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.0075em;">Значения коэффициентов: &nbsp;</span></div>
+					<div class="stl_01" style="left:21.9883em;top:18.9155em;"><span class="stl_11 stl_08 stl_18">а</span><span class="stl_19 stl_08 stl_12" style="word-spacing:0.0163em;">=0,032, </span><span class="stl_21 stl_08 stl_18">b</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.0136em;">= </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.0101em;">– </span><span class="stl_19 stl_08 stl_871">6,62. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:20.7555em;"><span class="stl_13 stl_08 stl_143" style="word-spacing:0.0112em;">Уравнение прямой для данного примера примет вид &nbsp;</span></div>
+					<div class="stl_01" style="left:21.6083em;top:22.5429em;"><span class="stl_21 stl_08 stl_139">N</span><span class="stl_19 stl_08 stl_20">(</span><span class="stl_21 stl_08 stl_18">d</span><span class="stl_19 stl_08 stl_1047">)</span><span class="stl_21 stl_08 stl_1022">=</span><span class="stl_19 stl_08 stl_649">0,032</span><span class="stl_342 stl_87 stl_79" style="font-style:italic;"></span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.0086em;">d </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.0101em;">– </span><span class="stl_19 stl_08 stl_34">6,62. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:24.5355em;"><span class="stl_13 stl_08 stl_34" style="word-spacing:0.097em;">Подставив в последнее выражение значение диаметра 700 мм, получим &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:25.878em;"><span class="stl_13 stl_08 stl_81" style="word-spacing:0.0115em;">значение мощности проектируемого станка – </span><span class="stl_21 stl_08 stl_139">N</span><span class="stl_19 stl_08 stl_53" style="word-spacing:0.0053em;">=15,78 </span><span class="stl_13 stl_08 stl_469">кВт. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:27.218em;"><span class="stl_13 stl_08 stl_45" style="word-spacing:0.2554em;">Проведя аппроксимирующую функцию (прямую), можно убедиться в &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:28.558em;"><span class="stl_13 stl_08 stl_77" style="word-spacing:0.0093em;">правильности решения (рис. 9). &nbsp;</span></div>
+					<div class="stl_01" style="left:7.388em;top:31.4951em;"><span class="stl_193 stl_08 stl_545">N</span><span class="stl_72 stl_08 stl_1022" style="word-spacing:0.0038em;">, кВт &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:31.705em;z-index:928;"><span class="stl_194 stl_08 stl_143" style="visibility:hidden;">60 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:34.725em;"><span class="stl_194 stl_08 stl_143">50 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:37.7451em;"><span class="stl_192 stl_08 stl_44">40 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:40.7651em;"><span class="stl_192 stl_08 stl_44">30 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:43.7851em;"><span class="stl_192 stl_08 stl_44">20 &nbsp;</span></div>
+					<div class="stl_01" style="left:8.84em;top:46.8051em;"><span class="stl_192 stl_08 stl_44">10 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.3817em;top:49.8251em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:40.0842em;top:50.9551em;z-index:972;"><span class="stl_193 stl_08 stl_18">d</span><span class="stl_72 stl_08 stl_173" style="word-spacing:0.0046em;">, мм &nbsp;</span></div>
+					<div class="stl_01" style="left:23.5483em;top:51.0993em;z-index:961;"><span class="stl_192 stl_08 stl_18" style="word-spacing:1.1258em;">800 1000</span><span class="stl_192 stl_08 stl_18" style="word-spacing:0.8796em;">&nbsp;</span><span class="stl_192 stl_08 stl_18" style="word-spacing:0.8778em;">1200 1400 1600 </span><span class="stl_192 stl_08 stl_18" style="visibility:hidden;">1800 &nbsp;</span></div>
+					<div class="stl_01" style="left:10.5758em;top:51.0993em;"><span class="stl_192 stl_08 stl_18">0</span></div>
+					<div class="stl_01" style="left:13.4117em;top:51.0993em;"><span class="stl_192 stl_08 stl_18">200 &nbsp;</span></div>
+					<div class="stl_01" style="left:16.79em;top:51.0993em;"><span class="stl_192 stl_08 stl_18">400 &nbsp;</span></div>
+					<div class="stl_01" style="left:20.1683em;top:51.0993em;"><span class="stl_192 stl_08 stl_44">600 &nbsp;</span></div>
+					<div class="stl_01" style="left:11.2842em;top:52.9351em;"><span class="stl_72 stl_08 stl_73" style="word-spacing:0.0096em;">Рис. 9. Диаграмма, построенная средствами </span><span class="stl_192 stl_08 stl_148" style="word-spacing:0.0121em;">Microsoft Office Excel &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:54.7055em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:0.2634em;">Из диаграммы видно, что при значении диаметра заготовки 700 мм, &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:56.0455em;"><span class="stl_13 stl_08 stl_77" style="word-spacing:0.0064em;">мощность станка ориентировочно составит 16 к Вт. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:57.8855em;"><span class="stl_75 stl_08 stl_196">2.</span><span class="stl_07 stl_08 stl_15" style="word-spacing:0.0054em;">3. Параболическая аппроксимация &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:59.4655em;"><span class="stl_13 stl_08 stl_130">Если &nbsp;</span></div>
+					<div class="stl_01" style="left:13.7014em;top:59.4655em;"><span class="stl_13 stl_08 stl_53">линейным &nbsp;</span></div>
+					<div class="stl_01" style="left:20.6567em;top:59.4655em;"><span class="stl_13 stl_08 stl_80">полиномом &nbsp;</span></div>
+					<div class="stl_01" style="left:28.1712em;top:59.4655em;"><span class="stl_13 stl_08 stl_52">не &nbsp;</span></div>
+					<div class="stl_01" style="left:31.1686em;top:59.4655em;"><span class="stl_13 stl_08 stl_927">удается &nbsp;</span></div>
+					<div class="stl_01" style="left:36.7942em;top:59.4655em;"><span class="stl_13 stl_08 stl_35">точно &nbsp;</span></div>
+					<div class="stl_01" style="left:41.5158em;top:59.4655em;"><span class="stl_13 stl_08 stl_39">точности &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:60.8056em;"><span class="stl_13 stl_08 stl_34" style="word-spacing:0.6266em;">аппроксимировать экспериментальные данные, применяют нелинейную &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:62.1676em;"><span class="stl_13 stl_08 stl_16" style="word-spacing:0.919em;">аппроксимацию – аппроксимацию второго и большего порядков. &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:63.5076em;"><span class="stl_13 stl_08 stl_15" style="word-spacing:0.0064em;">Аппроксимация второго порядка (параболическая) опишется многочленом &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_19.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_19.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01 stl_1048" style="left:23.6758em;top:4.8609em;"><span class="stl_1049 stl_08 stl_620">P</span><sub style="top: 0.2847em;"><span class="stl_1050 stl_08 stl_18" style="word-spacing:-0.0605em;">2 </span></sub><span class="stl_1051 stl_08 stl_906">(</span><span class="stl_1049 stl_08 stl_1052">x</span><span class="stl_1051 stl_08 stl_18" style="word-spacing:-0.0225em;">) </span><span class="stl_1053 stl_87 stl_18" style="word-spacing:-0.0185em;"> </span><span class="stl_1049 stl_08 stl_1054">a</span><sub style="top: 0.2847em;"><span class="stl_1050 stl_08 stl_18" style="word-spacing:0.2192em;">0 </span></sub><span class="stl_1053 stl_87 stl_18" style="word-spacing:-0.0064em;"> </span><span class="stl_1049 stl_08 stl_1055">a</span><sub style="top: 0.2847em;"><span class="stl_1050 stl_08 stl_18" style="word-spacing:0.0804em;">1 </span></sub><span class="stl_1053 stl_87 stl_18" style="word-spacing:-0.0138em;"> </span><span class="stl_1049 stl_08 stl_18" style="word-spacing:-0.0086em;">x </span><span class="stl_1053 stl_87 stl_18" style="word-spacing:-0.0067em;"> </span><span class="stl_1049 stl_08 stl_1056">a</span><sub style="top: 0.2847em;"><span class="stl_1050 stl_08 stl_18" style="word-spacing:0.1619em;">2 </span></sub><span class="stl_1053 stl_87 stl_18" style="word-spacing:-0.0157em;"> </span><span class="stl_1049 stl_08 stl_580">x</span><sup style="top: -0.5085em;"><span class="stl_1050 stl_08 stl_1057">2 &nbsp;</span></sup></div>
+					<div class="stl_01" style="left:36.9942em;top:4.9713em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01" style="left:44.1358em;top:4.9713em;"><span class="stl_19 stl_08 stl_907">(18) &nbsp;</span></div>
+					<div class="stl_01" style="left:44.1358em;top:11.7338em;"><span class="stl_19 stl_08 stl_907">(19) &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:8.8913em;"><span class="stl_13 stl_08 stl_43" style="word-spacing:0.0122em;">Коэффициенты </span><span class="stl_11 stl_08 stl_18">а</span><sub style="top: 0.16em;"><span class="stl_25 stl_08 stl_18" style="word-spacing:0.1597em;">i </span></sub><span class="stl_13 stl_08 stl_17" style="word-spacing:-0.0043em;">определятся по методу наименьших квадратов &nbsp;</span></div>
+					<div class="stl_01 stl_1058" style="left:23.1349em;top:10.8358em;z-index:78;"><span class="stl_1059 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1058" style="left:20.716em;top:11.609em;z-index:91;"><span class="stl_1060 stl_08 stl_18" style="word-spacing:0.092em;">F </span><span class="stl_1061 stl_87 stl_18" style="word-spacing:1.0929em;"> </span><span class="stl_1062 stl_08 stl_817">(</span><span class="stl_1060 stl_08 stl_18" style="word-spacing:0.3236em;">y </span><span class="stl_1061 stl_87 stl_18" style="word-spacing:-0.0606em;"> </span><span class="stl_1060 stl_08 stl_18" style="word-spacing:0.4716em;">a </span><span class="stl_1061 stl_87 stl_18" style="word-spacing:-0.0603em;"> </span><span class="stl_1060 stl_08 stl_18" style="word-spacing:0.2915em;">a </span><span class="stl_1061 stl_87 stl_18" style="word-spacing:-0.0583em;"> </span><span class="stl_1060 stl_08 stl_18" style="word-spacing:0.3079em;">x </span><span class="stl_1061 stl_87 stl_18" style="word-spacing:-0.0608em;"> </span><span class="stl_1060 stl_08 stl_18" style="word-spacing:0.4382em;">a </span><span class="stl_1061 stl_87 stl_18" style="word-spacing:-0.0583em;"> </span><span class="stl_1060 stl_08 stl_555">x</span><sup style="top: -0.5176em;"><span class="stl_1063 stl_08 stl_18" style="word-spacing:-0.0874em;">2 </span></sup><span class="stl_1062 stl_08 stl_1064">)</span><sup style="top: -0.5176em;"><span class="stl_1063 stl_08 stl_18" style="word-spacing:0.197em;">2 </span></sup><span class="stl_1061 stl_87 stl_18" style="word-spacing:-0.0153em;"> </span><span class="stl_1062 stl_08 stl_1065">m</span><span class="stl_1062 stl_08 stl_890">i</span><span class="stl_1062 stl_08 stl_890">n &nbsp;</span></div>
+					<div class="stl_01" style="left:40.5358em;top:11.7338em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1058" style="left:22.8317em;top:11.4647em;z-index:108;"><span class="stl_1066 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1058" style="left:25.1em;top:12.2515em;"><span class="stl_1059 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1058" style="left:27.2138em;top:12.2515em;"><span class="stl_1067 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1058" style="left:29.4153em;top:12.2515em;"><span class="stl_1067 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1058" style="left:31.1443em;top:12.2515em;"><span class="stl_1059 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1058" style="left:33.2724em;top:12.2515em;"><span class="stl_1067 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1058" style="left:35.0725em;top:12.2515em;"><span class="stl_1059 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1058" style="left:39.2676em;top:12.8697em;"><span class="stl_1059 stl_08 stl_18">x</span></div>
+					<div class="stl_01 stl_1058" style="left:22.732em;top:13.0913em;"><span class="stl_1059 stl_08 stl_892">i</span><span class="stl_1068 stl_87 stl_735"></span><span class="stl_1067 stl_08 stl_735">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:14.7938em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.0036em;">Составляем систему уравнений, приравняв частные производные нулю: &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:22.0076em;top:16.8874em;z-index:212;"><span class="stl_1070 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:16.702em;z-index:264;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:17.8169em;z-index:275;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:18.9314em;z-index:276;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:20.0459em;z-index:277;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:21.1584em;z-index:288;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:22.273em;z-index:289;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:23.3875em;z-index:290;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:24.5em;z-index:301;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:15.8384em;top:25.6125em;z-index:302;"><span class="stl_1071 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:16.9733em;top:16.9009em;"><span class="stl_1072 stl_08 stl_143">dF &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:18.8218em;top:17.4909em;"><span class="stl_1071 stl_87 stl_26" style="word-spacing:-0.0313em;"> </span><span class="stl_1073 stl_08 stl_838">2</span><span class="stl_1071 stl_87 stl_18" style="word-spacing:1.055em;"> </span><span class="stl_1073 stl_08 stl_1074">(</span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1955em;">y </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0552em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.3044em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0552em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1584em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0534em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1785em;">x </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0542em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.2644em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0514em;"> </span><span class="stl_1072 stl_08 stl_487">x</span><sup style="top: -0.5171em;"><span class="stl_1075 stl_08 stl_18" style="word-spacing:-0.0783em;">2 </span></sup><span class="stl_1073 stl_08 stl_1076">)</span><span class="stl_1071 stl_87 stl_1077"></span><span class="stl_1073 stl_08 stl_817">1</span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0388em;"> </span><span class="stl_1073 stl_08 stl_1078">0; &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:21.5536em;top:17.1754em;z-index:303;"><span class="stl_1079 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:23.946em;top:18.3581em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:25.9175em;top:18.3581em;"><span class="stl_1080 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1069" style="left:27.9534em;top:18.3581em;"><span class="stl_1080 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1069" style="left:29.5177em;top:18.3581em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:31.4987em;top:18.3581em;"><span class="stl_1080 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1069" style="left:33.1136em;top:18.3581em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:16.8813em;top:18.5215em;"><span class="stl_1072 stl_08 stl_206">da</span><sub style="top: 0.2994em;"><span class="stl_1075 stl_08 stl_209">0 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1069" style="left:21.7479em;top:19.078em;"><span class="stl_1070 stl_08 stl_558">i</span><span class="stl_1081 stl_87 stl_1082"></span><span class="stl_1080 stl_08 stl_1082">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:21.6988em;top:20.3545em;z-index:217;"><span class="stl_1070 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1069" style="left:16.7218em;top:20.3683em;"><span class="stl_1072 stl_08 stl_143">dF &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:18.5151em;top:20.9582em;"><span class="stl_1071 stl_87 stl_130" style="word-spacing:-0.0277em;"> </span><span class="stl_1073 stl_08 stl_1083">2</span><span class="stl_1071 stl_87 stl_18" style="word-spacing:1.0533em;"> </span><span class="stl_1073 stl_08 stl_829">(</span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1956em;">y </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0553em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.3045em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0553em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1585em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0535em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1786em;">x </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0543em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.2645em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0515em;"> </span><span class="stl_1072 stl_08 stl_1084">x</span><sup style="top: -0.5179em;"><span class="stl_1075 stl_08 stl_18" style="word-spacing:-0.0779em;">2 </span></sup><span class="stl_1073 stl_08 stl_1085">)</span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0515em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.2036em;">x </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0386em;"> </span><span class="stl_1073 stl_08 stl_1078">0; &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:21.2449em;top:20.6424em;z-index:304;"><span class="stl_1079 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:23.6373em;top:21.8251em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:25.6085em;top:21.8251em;"><span class="stl_1080 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1069" style="left:27.6443em;top:21.8251em;"><span class="stl_1080 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1069" style="left:29.209em;top:21.8251em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:31.1897em;top:21.8251em;"><span class="stl_1080 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1069" style="left:32.8049em;top:21.8251em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:34.9062em;top:21.8251em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:16.6891em;top:21.9885em;"><span class="stl_1072 stl_08 stl_960">da</span><sub style="top: 0.2993em;"><span class="stl_1075 stl_08 stl_1086">1 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1069" style="left:21.4412em;top:22.5449em;"><span class="stl_1070 stl_08 stl_94">i</span><span class="stl_1081 stl_87 stl_1087"></span><span class="stl_1080 stl_08 stl_1087">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:21.6723em;top:23.8114em;z-index:223;"><span class="stl_1070 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1069" style="left:16.6338em;top:23.8252em;"><span class="stl_1072 stl_08 stl_143">dF &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:18.4885em;top:24.415em;"><span class="stl_1071 stl_87 stl_130" style="word-spacing:-0.0277em;"> </span><span class="stl_1073 stl_08 stl_1083">2</span><span class="stl_1071 stl_87 stl_18" style="word-spacing:1.0533em;"> </span><span class="stl_1073 stl_08 stl_829">(</span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1956em;">y </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0553em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.3045em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0553em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1585em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0535em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.1786em;">x </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0543em;"> </span><span class="stl_1072 stl_08 stl_18" style="word-spacing:0.2645em;">a </span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0515em;"> </span><span class="stl_1072 stl_08 stl_1084">x</span><sup style="top: -0.5178em;"><span class="stl_1075 stl_08 stl_18" style="word-spacing:-0.0779em;">2 </span></sup><span class="stl_1073 stl_08 stl_1085">)</span><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0515em;"> </span><span class="stl_1072 stl_08 stl_1088">x</span><sup style="top: -0.5178em;"><span class="stl_1075 stl_08 stl_18" style="word-spacing:0.2656em;">2 </span></sup><span class="stl_1071 stl_87 stl_18" style="word-spacing:-0.0386em;"> </span><span class="stl_1073 stl_08 stl_18">0. &nbsp;</span></div>
+					<div class="stl_01 stl_1069" style="left:21.2183em;top:24.0993em;z-index:305;"><span class="stl_1079 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1069" style="left:23.6107em;top:25.282em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:25.5836em;top:25.282em;"><span class="stl_1080 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1069" style="left:27.6194em;top:25.282em;"><span class="stl_1080 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1069" style="left:29.1824em;top:25.282em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:31.1647em;top:25.282em;"><span class="stl_1080 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1069" style="left:32.7783em;top:25.282em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:34.8796em;top:25.282em;"><span class="stl_1070 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1069" style="left:16.5377em;top:25.4454em;"><span class="stl_1072 stl_08 stl_253">da</span><sub style="top: 0.2994em;"><span class="stl_1075 stl_08 stl_96">2 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1069" style="left:21.4146em;top:26.0018em;"><span class="stl_1070 stl_08 stl_94">i</span><span class="stl_1081 stl_87 stl_1087"></span><span class="stl_1080 stl_08 stl_1087">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:27.638em;"><span class="stl_13 stl_08 stl_28" style="word-spacing:0.1962em;">После преобразований получим систему линейных уравнений с тремя &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:28.978em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.0032em;">неизвестными (</span><span class="stl_11 stl_08 stl_18">а</span><sub style="top: 0.16em;"><span class="stl_23 stl_08 stl_18">0</span></sub><span class="stl_19 stl_08 stl_18" style="word-spacing:0.0172em;">, </span><span class="stl_11 stl_08 stl_18">а</span><sub style="top: 0.16em;"><span class="stl_23 stl_08 stl_18">1</span></sub><span class="stl_19 stl_08 stl_18" style="word-spacing:0.0172em;">, </span><span class="stl_11 stl_08 stl_34">а</span><sub style="top: 0.16em;"><span class="stl_23 stl_08 stl_18">2</span></sub><span class="stl_19 stl_08 stl_20">): &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:23.9297em;top:30.9821em;z-index:504;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:29.2032em;top:30.9821em;z-index:501;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:33.005em;top:30.9821em;z-index:498;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:30.9185em;z-index:395;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:32.0363em;z-index:393;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:33.1538em;z-index:392;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:18.3221em;top:31.7603em;"><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.4222em;">a </span><span class="stl_1091 stl_87 stl_962"></span><span class="stl_1092 stl_08 stl_18" style="word-spacing:-0.0631em;">n </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0458em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.2848em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.0478em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.3025em;">x </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0471em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.4341em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.0494em;"> </span><span class="stl_1092 stl_08 stl_1093">x</span><sup style="top: -0.5207em;"><span class="stl_1094 stl_08 stl_18" style="word-spacing:0.2126em;">2 </span></sup><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.1942em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.1285em;">y </span><span class="stl_1095 stl_08 stl_18" style="word-spacing:0.1285em;">, &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:23.6205em;top:31.6175em;z-index:426;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:28.8947em;top:31.6175em;z-index:425;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:32.6965em;top:31.6175em;z-index:424;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:18.9363em;top:32.4064em;"><span class="stl_1097 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1089" style="left:22.3881em;top:32.4064em;"><span class="stl_1097 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1089" style="left:25.4283em;top:32.4064em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:27.5906em;top:32.4064em;"><span class="stl_1097 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1089" style="left:30.702em;top:32.4064em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:34.5795em;top:32.4064em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:23.5223em;top:33.2471em;"><span class="stl_1090 stl_08 stl_1098">i</span><span class="stl_1099 stl_87 stl_1100"></span><span class="stl_1097 stl_08 stl_1100">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:28.7965em;top:33.2471em;"><span class="stl_1090 stl_08 stl_1101">i</span><span class="stl_1099 stl_87 stl_1102"></span><span class="stl_1097 stl_08 stl_1102">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:32.5983em;top:33.2471em;"><span class="stl_1090 stl_08 stl_1101">i</span><span class="stl_1099 stl_87 stl_1102"></span><span class="stl_1097 stl_08 stl_1102">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:34.2735em;z-index:391;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:34.7517em;z-index:390;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:20.5496em;top:34.6441em;z-index:495;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:25.6494em;top:34.6441em;z-index:492;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:31.1894em;top:34.6441em;z-index:489;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:34.9338em;top:34.6441em;z-index:485;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:18.3221em;top:35.4219em;z-index:461;"><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.4222em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.0478em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.3027em;">x </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0475em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.2865em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.048em;"> </span><span class="stl_1092 stl_08 stl_1093">x</span><sup style="top: -0.5206em;"><span class="stl_1094 stl_08 stl_18" style="word-spacing:0.1371em;">2 </span></sup><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0471em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.4341em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.048em;"> </span><span class="stl_1092 stl_08 stl_1103">x</span><sup style="top: -0.5206em;"><span class="stl_1094 stl_08 stl_18" style="word-spacing:0.1812em;">3 </span></sup><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.0862em;"> </span><span class="stl_1095 stl_08 stl_591">(</span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.2557em;">x </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0111em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.1427em;">y </span><span class="stl_1095 stl_08 stl_129">), &nbsp;</span></div>
+					<div class="stl_01" style="left:44.1358em;top:35.4996em;"><span class="stl_19 stl_08 stl_927">(20) &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:35.2736em;z-index:423;"><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.3828em;"> </span><span class="stl_1096 stl_87 stl_18" style="word-spacing:1.0759em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:25.3423em;top:35.2778em;z-index:422;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:30.8825em;top:35.2778em;z-index:421;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:34.6269em;top:35.2778em;z-index:420;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:18.9363em;top:36.0666em;"><span class="stl_1097 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1089" style="left:22.0482em;top:36.0666em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:24.1098em;top:36.0666em;"><span class="stl_1097 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1089" style="left:27.1481em;top:36.0666em;z-index:494;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:29.5759em;top:36.0666em;"><span class="stl_1097 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1089" style="left:32.6898em;top:36.0666em;z-index:491;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:36.8359em;top:36.0666em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:38.5476em;top:36.0666em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:20.1422em;top:36.9091em;"><span class="stl_1090 stl_08 stl_1098">i</span><span class="stl_1099 stl_87 stl_209"></span><span class="stl_1097 stl_08 stl_209">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:25.242em;top:36.9091em;"><span class="stl_1090 stl_08 stl_1098">i</span><span class="stl_1099 stl_87 stl_408"></span><span class="stl_1097 stl_08 stl_408">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:30.7818em;top:36.9091em;"><span class="stl_1090 stl_08 stl_1104">i</span><span class="stl_1099 stl_87 stl_56"></span><span class="stl_1097 stl_08 stl_56">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:34.5262em;top:36.9091em;"><span class="stl_1090 stl_08 stl_811">i</span><span class="stl_1099 stl_87 stl_1102"></span><span class="stl_1097 stl_08 stl_1102">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:36.741em;z-index:388;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:37.8587em;z-index:387;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:20.5496em;top:38.304em;z-index:482;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:25.9155em;top:38.304em;z-index:479;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:31.3981em;top:38.304em;z-index:476;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:35.1999em;top:38.304em;z-index:472;"><span class="stl_1090 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1089" style="left:18.3221em;top:39.0818em;"><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.4222em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.0478em;"> </span><span class="stl_1092 stl_08 stl_1105">x</span><sup style="top: -0.5206em;"><span class="stl_1094 stl_08 stl_18" style="word-spacing:0.1372em;">2 </span></sup><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0475em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.2865em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.048em;"> </span><span class="stl_1092 stl_08 stl_1103">x</span><sup style="top: -0.5206em;"><span class="stl_1094 stl_08 stl_18" style="word-spacing:0.1057em;">3 </span></sup><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0471em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.4341em;">a </span><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.048em;"> </span><span class="stl_1092 stl_08 stl_1093">x</span><sup style="top: -0.5206em;"><span class="stl_1094 stl_08 stl_18" style="word-spacing:0.2126em;">4 </span></sup><span class="stl_1091 stl_87 stl_18" style="word-spacing:1.0862em;"> </span><span class="stl_1095 stl_08 stl_970">(</span><span class="stl_1092 stl_08 stl_1093">x</span><sup style="top: -0.5206em;"><span class="stl_1094 stl_08 stl_18" style="word-spacing:0.0751em;">2 </span></sup><span class="stl_1091 stl_87 stl_18" style="word-spacing:-0.0111em;"> </span><span class="stl_1092 stl_08 stl_18" style="word-spacing:0.1427em;">y </span><span class="stl_1095 stl_08 stl_1106">). &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:38.9785em;z-index:386;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:20.2425em;top:38.9398em;z-index:419;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:25.6085em;top:38.9398em;z-index:418;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:31.0912em;top:38.9398em;z-index:417;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:34.893em;top:38.9398em;z-index:416;"><span class="stl_1096 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:18.9363em;top:39.7284em;"><span class="stl_1097 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1089" style="left:22.0482em;top:39.7284em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:24.376em;top:39.7284em;"><span class="stl_1097 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1089" style="left:27.4142em;top:39.7284em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:29.7846em;top:39.7284em;"><span class="stl_1097 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1089" style="left:32.8986em;top:39.7284em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:37.1021em;top:39.7284em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:39.0815em;top:39.7284em;"><span class="stl_1090 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:39.9893em;z-index:385;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:17.7386em;top:40.3263em;z-index:389;"><span class="stl_1091 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1089" style="left:20.1422em;top:40.571em;"><span class="stl_1090 stl_08 stl_1098">i</span><span class="stl_1099 stl_87 stl_209"></span><span class="stl_1097 stl_08 stl_209">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:25.5082em;top:40.571em;"><span class="stl_1090 stl_08 stl_1098">i</span><span class="stl_1099 stl_87 stl_408"></span><span class="stl_1097 stl_08 stl_408">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:30.9931em;top:40.571em;"><span class="stl_1090 stl_08 stl_1101">i</span><span class="stl_1099 stl_87 stl_1107"></span><span class="stl_1097 stl_08 stl_1107">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1089" style="left:34.7924em;top:40.571em;"><span class="stl_1090 stl_08 stl_1104">i</span><span class="stl_1099 stl_87 stl_686"></span><span class="stl_1097 stl_08 stl_686">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:42.3213em;"><span class="stl_13 stl_08 stl_44" style="word-spacing:0.0113em;">Введем обозначения: &nbsp;</span></div>
+					<div class="stl_01 stl_1108" style="left:23.5571em;top:44.2795em;z-index:566;"><span class="stl_1109 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1110" style="left:17.822em;top:44.3358em;z-index:555;"><span class="stl_1111 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1112" style="left:29.5077em;top:44.3358em;z-index:578;"><span class="stl_1113 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1114" style="left:35.4591em;top:44.3358em;z-index:590;"><span class="stl_1109 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1108" style="left:20.6773em;top:45.0672em;"><span class="stl_1115 stl_08 stl_18" style="word-spacing:0.5833em;">S </span><span class="stl_1116 stl_87 stl_18" style="word-spacing:1.1679em;"> </span><span class="stl_1115 stl_08 stl_1117">x</span><sup style="top: -0.526em;"><span class="stl_1118 stl_08 stl_1119">2 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_1110" style="left:15.1762em;top:45.1111em;"><span class="stl_1120 stl_08 stl_18" style="word-spacing:0.4297em;">S </span><span class="stl_1121 stl_87 stl_18" style="word-spacing:0.4297em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1110" style="left:18.7854em;top:45.2422em;"><span class="stl_1120 stl_08 stl_18">x</span></div>
+					<div class="stl_01" style="left:19.8883em;top:45.2413em;"><span class="stl_19 stl_08 stl_18">;</span></div>
+					<div class="stl_01" style="left:25.95em;top:45.2413em;"><span class="stl_19 stl_08 stl_18">;</span></div>
+					<div class="stl_01 stl_1108" style="left:25.0582em;top:45.7183em;"><span class="stl_1109 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1112" style="left:26.7388em;top:45.1078em;"><span class="stl_1122 stl_08 stl_18" style="word-spacing:0.4978em;">S </span><span class="stl_1123 stl_87 stl_18" style="word-spacing:1.1331em;"> </span><span class="stl_1122 stl_08 stl_1124">x</span><sup style="top: -0.5175em;"><span class="stl_1125 stl_08 stl_1126">3 &nbsp;</span></sup></div>
+					<div class="stl_01" style="left:31.8117em;top:45.2413em;"><span class="stl_19 stl_08 stl_18">;</span></div>
+					<div class="stl_01 stl_1114" style="left:32.5773em;top:45.1087em;"><span class="stl_1115 stl_08 stl_18" style="word-spacing:0.6217em;">S </span><span class="stl_1116 stl_87 stl_18" style="word-spacing:1.1435em;"> </span><span class="stl_1115 stl_08 stl_1127">x</span><sup style="top: -0.5175em;"><span class="stl_1118 stl_08 stl_1128">4 &nbsp;</span></sup></div>
+					<div class="stl_01" style="left:37.8542em;top:45.2413em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01 stl_1114" style="left:36.9908em;top:45.7515em;"><span class="stl_1109 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1108" style="left:23.2492em;top:44.9187em;z-index:563;"><span class="stl_1129 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1110" style="left:17.5196em;top:44.9647em;z-index:552;"><span class="stl_1130 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1112" style="left:29.1975em;top:44.9627em;z-index:575;"><span class="stl_1131 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1114" style="left:35.1532em;top:44.9627em;z-index:587;"><span class="stl_1129 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1108" style="left:21.3442em;top:45.7183em;"><span class="stl_1132 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1110" style="left:15.731em;top:45.7515em;"><span class="stl_1133 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1110" style="left:19.3062em;top:45.7515em;"><span class="stl_1111 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1112" style="left:27.3715em;top:45.7515em;"><span class="stl_1134 stl_08 stl_18">3</span></div>
+					<div class="stl_01 stl_1112" style="left:31.0071em;top:45.7515em;"><span class="stl_1113 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1114" style="left:33.2523em;top:45.7515em;"><span class="stl_1132 stl_08 stl_18">4</span></div>
+					<div class="stl_01 stl_1110" style="left:17.4254em;top:46.5929em;"><span class="stl_1111 stl_08 stl_1135">i</span><span class="stl_1136 stl_87 stl_1137"></span><span class="stl_1133 stl_08 stl_1137">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1108" style="left:23.1492em;top:46.5714em;"><span class="stl_1109 stl_08 stl_892">i</span><span class="stl_1138 stl_87 stl_247"></span><span class="stl_1132 stl_08 stl_247">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1112" style="left:29.1071em;top:46.5883em;"><span class="stl_1113 stl_08 stl_1139">i</span><span class="stl_1140 stl_87 stl_1141"></span><span class="stl_1134 stl_08 stl_1141">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1114" style="left:35.1206em;top:46.589em;"><span class="stl_1109 stl_08 stl_118">i</span><span class="stl_1138 stl_87 stl_1142"></span><span class="stl_1132 stl_08 stl_1142">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1143" style="left:24.1344em;top:48.4001em;z-index:614;"><span class="stl_1144 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1145" style="left:18.5949em;top:48.4565em;z-index:602;"><span class="stl_1146 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1147" style="left:32.3778em;top:48.4565em;z-index:630;"><span class="stl_1148 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1145" style="left:15.7576em;top:49.229em;"><span class="stl_1149 stl_08 stl_18" style="word-spacing:0.5536em;">S </span><span class="stl_1150 stl_87 stl_18" style="word-spacing:0.5536em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1145" style="left:19.6299em;top:49.3619em;"><span class="stl_1149 stl_08 stl_18">y</span></div>
+					<div class="stl_01" style="left:20.7683em;top:49.3638em;"><span class="stl_19 stl_08 stl_18">;</span></div>
+					<div class="stl_01" style="left:28.7717em;top:49.3638em;"><span class="stl_19 stl_08 stl_18" style="word-spacing:6.8019em;">; . &nbsp;</span></div>
+					<div class="stl_01 stl_1147" style="left:29.5554em;top:49.2291em;"><span class="stl_1151 stl_08 stl_18" style="word-spacing:0.5973em;">S </span><span class="stl_1152 stl_87 stl_18" style="word-spacing:1.0597em;"> </span><span class="stl_1153 stl_08 stl_1154">(</span><span class="stl_1151 stl_08 stl_1155">x</span><sup style="top: -0.5169em;"><span class="stl_1156 stl_08 stl_18" style="word-spacing:0.1011em;">2 </span></sup><span class="stl_1152 stl_87 stl_18" style="word-spacing:-0.0009em;"> </span><span class="stl_1151 stl_08 stl_18" style="word-spacing:0.156em;">y </span><span class="stl_1153 stl_08 stl_18" style="word-spacing:0.156em;">) &nbsp;</span></div>
+					<div class="stl_01 stl_1143" style="left:21.2567em;top:49.1849em;"><span class="stl_1157 stl_08 stl_18" style="word-spacing:0.5588em;">S </span><span class="stl_1158 stl_87 stl_18" style="word-spacing:1.0843em;"> </span><span class="stl_1159 stl_08 stl_1160">(</span><span class="stl_1157 stl_08 stl_18" style="word-spacing:0.259em;">x </span><span class="stl_1158 stl_87 stl_18" style="word-spacing:-0.0149em;"> </span><span class="stl_1157 stl_08 stl_18" style="word-spacing:0.1421em;">y </span><span class="stl_1159 stl_08 stl_18" style="word-spacing:0.1421em;">) &nbsp;</span></div>
+					<div class="stl_01 stl_1143" style="left:27.7735em;top:49.8373em;"><span class="stl_1144 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1147" style="left:30.2063em;top:49.8705em;"><span class="stl_1161 stl_08 stl_18" style="word-spacing:3.7145em;">7 </span><span class="stl_1148 stl_08 stl_18" style="word-spacing:1.661em;">i i &nbsp;</span></div>
+					<div class="stl_01 stl_1143" style="left:23.8262em;top:49.0386em;z-index:610;"><span class="stl_1162 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1145" style="left:18.2885em;top:49.0847em;z-index:599;"><span class="stl_1163 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1147" style="left:32.0716em;top:49.0847em;z-index:626;"><span class="stl_1164 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1143" style="left:21.9126em;top:49.8373em;"><span class="stl_1165 stl_08 stl_18">6</span></div>
+					<div class="stl_01 stl_1143" style="left:26.0502em;top:49.8373em;"><span class="stl_1144 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1145" style="left:16.3949em;top:49.8705em;"><span class="stl_1166 stl_08 stl_18">5</span></div>
+					<div class="stl_01 stl_1145" style="left:20.1759em;top:49.8705em;"><span class="stl_1146 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1145" style="left:18.189em;top:50.7095em;"><span class="stl_1146 stl_08 stl_1057">i</span><span class="stl_1167 stl_87 stl_871"></span><span class="stl_1166 stl_08 stl_871">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1143" style="left:23.7269em;top:50.6898em;"><span class="stl_1144 stl_08 stl_1168">i</span><span class="stl_1169 stl_87 stl_1170"></span><span class="stl_1165 stl_08 stl_1170">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1147" style="left:32.0413em;top:50.7096em;"><span class="stl_1148 stl_08 stl_1171">i</span><span class="stl_1172 stl_87 stl_1173"></span><span class="stl_1161 stl_08 stl_1173">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:52.4238em;"><span class="stl_13 stl_08 stl_12" style="word-spacing:0.0015em;">С учетом принятых обозначений система (20) примет вид: &nbsp;</span></div>
+					<div class="stl_01 stl_1174" style="left:20.2772em;top:54.2033em;"><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.4094em;">a </span><span class="stl_1176 stl_87 stl_1177"></span><span class="stl_1175 stl_08 stl_18" style="word-spacing:-0.0634em;">n </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.051em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.2745em;">a </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0954em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.3551em;">S </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.049em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.4211em;">a </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0952em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.5599em;">S </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:0.0087em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.2817em;">S </span><span class="stl_1178 stl_08 stl_18" style="word-spacing:0.2817em;">, &nbsp;</span></div>
+					<div class="stl_01 stl_1174" style="left:19.318em;top:54.3016em;z-index:694;"><span class="stl_1176 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1174" style="left:19.318em;top:55.2762em;z-index:692;"><span class="stl_1176 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1174" style="left:19.318em;top:56.1489em;z-index:693;"><span class="stl_1176 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1174" style="left:20.8839em;top:54.8506em;"><span class="stl_1179 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1174" style="left:24.2863em;top:54.8506em;"><span class="stl_1179 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1174" style="left:25.9977em;top:54.8506em;"><span class="stl_1179 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1174" style="left:28.2301em;top:54.8506em;"><span class="stl_1179 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1174" style="left:30.1136em;top:54.8506em;"><span class="stl_1179 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1174" style="left:32.5624em;top:54.8506em;"><span class="stl_1179 stl_08 stl_18">5</span></div>
+					<div class="stl_01 stl_1174" style="left:19.9492em;top:55.9486em;"><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.4094em;">a </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0954em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.3552em;">S </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0511em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.2763em;">a </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0972em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.5039em;">S </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0506em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.4211em;">a </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0952em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.5129em;">S </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:0.0066em;"> </span><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.3044em;">S </span><span class="stl_1178 stl_08 stl_18" style="word-spacing:0.3044em;">, &nbsp;</span></div>
+					<div class="stl_01 stl_1174" style="left:20.556em;top:56.5961em;"><span class="stl_1179 stl_08 stl_18">0</span></div>
+					<div class="stl_01 stl_1174" style="left:22.3391em;top:56.5961em;"><span class="stl_1179 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1174" style="left:24.4687em;top:56.5961em;"><span class="stl_1179 stl_08 stl_18">1</span></div>
+					<div class="stl_01 stl_1174" style="left:26.2825em;top:56.5961em;"><span class="stl_1179 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1174" style="left:28.584em;top:56.5961em;"><span class="stl_1179 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1174" style="left:30.4417em;top:56.5961em;"><span class="stl_1179 stl_08 stl_18">3</span></div>
+					<div class="stl_01 stl_1174" style="left:32.8738em;top:56.5961em;"><span class="stl_1179 stl_08 stl_18">6</span></div>
+					<div class="stl_01 stl_1174" style="left:19.318em;top:57.2723em;z-index:690;"><span class="stl_1176 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1174" style="left:19.9021em;top:57.694em;"><span class="stl_1175 stl_08 stl_18" style="word-spacing:0.4094em;">a </span><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0954em;"> </span><span class="stl_1175 stl_08 stl_613">S</span><sub style="top: 0.2916em;"><span class="stl_1180 stl_08 stl_18" style="word-spacing:0.1231em;">2 </span></sub><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0493em;"> </span><span class="stl_1175 stl_08 stl_1181">a</span><sub style="top: 0.2916em;"><span class="stl_1180 stl_08 stl_18" style="word-spacing:-0.0105em;">1 </span></sub><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0954em;"> </span><span class="stl_1175 stl_08 stl_1182">S</span><sub style="top: 0.2916em;"><span class="stl_1180 stl_08 stl_18" style="word-spacing:0.0942em;">3 </span></sub><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0508em;"> </span><span class="stl_1175 stl_08 stl_1183">a</span><sub style="top: 0.2916em;"><span class="stl_1180 stl_08 stl_18" style="word-spacing:0.0652em;">2 </span></sub><span class="stl_1176 stl_87 stl_18" style="word-spacing:-0.0973em;"> </span><span class="stl_1175 stl_08 stl_388">S</span><sub style="top: 0.2916em;"><span class="stl_1180 stl_08 stl_18" style="word-spacing:0.1991em;">4 </span></sub><span class="stl_1176 stl_87 stl_18" style="word-spacing:0.0066em;"> </span><span class="stl_1175 stl_08 stl_1184">S</span><sub style="top: 0.2916em;"><span class="stl_1180 stl_08 stl_588">7</span></sub><span class="stl_1178 stl_08 stl_587">. &nbsp;</span></div>
+					<div class="stl_01 stl_1174" style="left:19.318em;top:57.9962em;z-index:691;"><span class="stl_1176 stl_87 stl_18" style="word-spacing:0.2734em;"> </span><sup style="top: -0.0102em;"><span class="stl_1180 stl_08 stl_18" style="word-spacing:0.3477em;">0 &nbsp;</span></sup></div>
+					<div class="stl_01" style="left:9.4442em;top:61.3656em;"><span class="stl_13 stl_08 stl_43" style="word-spacing:0.0122em;">Коэффициенты </span><span class="stl_21 stl_08 stl_18">a</span><sub style="top: 0.16em;"><span class="stl_23 stl_08 stl_417">0</span></sub><span class="stl_21 stl_08 stl_18" style="word-spacing:0.0172em;">, a</span><sub style="top: 0.16em;"><span class="stl_23 stl_08 stl_18">1</span></sub><span class="stl_21 stl_08 stl_18" style="word-spacing:0.0172em;">, a</span><sub style="top: 0.16em;"><span class="stl_23 stl_08 stl_18" style="word-spacing:0.1184em;">2 </span></sub><span class="stl_13 stl_08 stl_43" style="word-spacing:0.0054em;">найдутся методом Крамера, согласно которому: &nbsp;</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_20.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_20.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01 stl_1185" style="left:22.4727em;top:4.5616em;"><span class="stl_1186 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1185" style="left:22.7071em;top:6.207em;"><span class="stl_1186 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1185" style="left:26.8508em;top:4.5616em;"><span class="stl_1186 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1185" style="left:27.0274em;top:6.207em;"><span class="stl_1186 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1185" style="left:31.2384em;top:4.5616em;"><span class="stl_1186 stl_87 stl_1187"></span><sub style="top: 0.3044em;"><span class="stl_1188 stl_08 stl_858">2 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1185" style="left:31.4786em;top:6.207em;"><span class="stl_1186 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1185" style="left:20.2171em;top:5.2958em;"><span class="stl_1189 stl_08 stl_425">a</span><sub style="top: 0.3022em;"><span class="stl_1188 stl_08 stl_18" style="word-spacing:0.2649em;">0 </span></sub><span class="stl_1186 stl_87 stl_18" style="word-spacing:0.6883em;"> </span><sup style="top: -0.4301em;"><span class="stl_1188 stl_08 stl_18" style="word-spacing:0.1634em;">0 </span></sup><span class="stl_1190 stl_08 stl_18" style="word-spacing:0.2209em;">, </span><span class="stl_1189 stl_08 stl_1191">a</span><sub style="top: 0.3022em;"><span class="stl_1188 stl_08 stl_18" style="word-spacing:0.1867em;">1 </span></sub><span class="stl_1186 stl_87 stl_18" style="word-spacing:0.6363em;"> </span><sup style="top: -0.4301em;"><span class="stl_1188 stl_08 stl_18" style="word-spacing:0.0855em;">1 </span></sup><span class="stl_1190 stl_08 stl_18" style="word-spacing:0.2209em;">, </span><span class="stl_1189 stl_08 stl_700">a</span><sub style="top: 0.3022em;"><span class="stl_1188 stl_08 stl_18" style="word-spacing:0.2603em;">2 </span></sub><span class="stl_1186 stl_87 stl_18" style="word-spacing:0.1506em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1185" style="left:32.6378em;top:5.4306em;"><span class="stl_1190 stl_08 stl_18">,</span></div>
+					<div class="stl_01" style="left:7.082em;top:8.1113em;"><span class="stl_13 stl_08 stl_65">где &nbsp;</span></div>
+					<div class="stl_01 stl_1192" style="left:12.0994em;top:10.0308em;"><span class="stl_1193 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1192" style="left:13.9986em;top:10.0308em;"><span class="stl_1193 stl_08 stl_1194">S</span><sub style="top: 0.2867em;"><span class="stl_1195 stl_08 stl_18" style="word-spacing:1.5733em;">1 </span></sub><span class="stl_1193 stl_08 stl_1196">S</span><sub style="top: 0.2867em;"><span class="stl_1195 stl_08 stl_1197">2 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1198" style="left:20.5219em;top:10.0308em;"><span class="stl_1199 stl_08 stl_314">S</span><sub style="top: 0.2867em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:1.677em;">5 </span></sub><span class="stl_1199 stl_08 stl_1201">S</span><sub style="top: 0.2867em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:1.589em;">1 </span></sub><span class="stl_1199 stl_08 stl_1202">S</span><sub style="top: 0.2867em;"><span class="stl_1200 stl_08 stl_1203">2 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1204" style="left:29.2051em;top:10.0308em;"><span class="stl_1205 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1204" style="left:31.0678em;top:10.0308em;"><span class="stl_1205 stl_08 stl_1206">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:1.5812em;">5 </span></sub><span class="stl_1205 stl_08 stl_533">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_1208">2 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1209" style="left:37.7927em;top:10.0308em;"><span class="stl_1210 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1209" style="left:39.7055em;top:10.0308em;"><span class="stl_1210 stl_08 stl_167">S</span><sub style="top: 0.2867em;"><span class="stl_1211 stl_08 stl_18" style="word-spacing:1.6158em;">1 </span></sub><span class="stl_1210 stl_08 stl_315">S</span><sub style="top: 0.2867em;"><span class="stl_1211 stl_08 stl_647">5 &nbsp;</span></sub></div>
+					<div class="stl_01" style="left:17.3458em;top:11.5338em;"><span class="stl_19 stl_08 stl_18">;</span></div>
+					<div class="stl_01" style="left:25.97em;top:11.5338em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01" style="left:34.4342em;top:11.5338em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01" style="left:43.0758em;top:11.5338em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1192" style="left:9.9282em;top:11.5624em;"><span class="stl_1212 stl_87 stl_18" style="word-spacing:-0.0193em;"> </span><span class="stl_1212 stl_87 stl_18" style="word-spacing:0.1871em;">&nbsp;</span><span class="stl_1193 stl_08 stl_1213">S</span><sub style="top: 0.2868em;"><span class="stl_1195 stl_08 stl_18" style="word-spacing:1.5757em;">1 </span></sub><span class="stl_1193 stl_08 stl_1214">S</span><sub style="top: 0.2868em;"><span class="stl_1195 stl_08 stl_18" style="word-spacing:1.594em;">2 </span></sub><span class="stl_1193 stl_08 stl_341">S</span><sub style="top: 0.2868em;"><span class="stl_1195 stl_08 stl_18" style="word-spacing:1.6517em;">3 </span></sub><span class="stl_1215 stl_87 stl_1216"></span><sub style="top: 0.2868em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:0.2829em;">0 </span></sub><span class="stl_1215 stl_87 stl_18" style="word-spacing:0.1454em;"> </span><span class="stl_1199 stl_08 stl_698">S</span><sub style="top: 0.2868em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:1.5918em;">6 </span></sub><span class="stl_1199 stl_08 stl_718">S</span><sub style="top: 0.2868em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:1.6124em;">2 </span></sub><span class="stl_1199 stl_08 stl_307">S</span><sub style="top: 0.2868em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:1.6235em;">3 </span></sub><span class="stl_1217 stl_87 stl_1218"></span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:0.202em;">1 </span></sub><span class="stl_1217 stl_87 stl_18" style="word-spacing:0.1921em;"> </span><span class="stl_1205 stl_08 stl_1219">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:1.601em;">1 </span></sub><span class="stl_1205 stl_08 stl_1220">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:1.615em;">6 </span></sub><span class="stl_1205 stl_08 stl_728">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:1.5325em;">3 </span></sub><span class="stl_1221 stl_87 stl_1222"></span><sub style="top: 0.2868em;"><span class="stl_1211 stl_08 stl_18" style="word-spacing:0.2838em;">2 </span></sub><span class="stl_1221 stl_87 stl_18" style="word-spacing:0.1939em;"> </span><span class="stl_1210 stl_08 stl_1078">S</span><sub style="top: 0.2868em;"><span class="stl_1211 stl_08 stl_18" style="word-spacing:1.5945em;">1 </span></sub><span class="stl_1210 stl_08 stl_1223">S</span><sub style="top: 0.2868em;"><span class="stl_1211 stl_08 stl_18" style="word-spacing:1.5866em;">2 </span></sub><span class="stl_1210 stl_08 stl_528">S</span><sub style="top: 0.2868em;"><span class="stl_1211 stl_08 stl_1224">6 &nbsp;</span></sub></div>
+					<div class="stl_01 stl_1192" style="left:11.8869em;top:13.3474em;"><span class="stl_1193 stl_08 stl_516">S</span><sub style="top: 0.2867em;"><span class="stl_1195 stl_08 stl_18" style="word-spacing:1.5941em;">2 </span></sub><span class="stl_1193 stl_08 stl_944">S</span><sub style="top: 0.2867em;"><span class="stl_1195 stl_08 stl_18" style="word-spacing:1.5621em;">3 </span></sub><span class="stl_1193 stl_08 stl_516">S</span><sub style="top: 0.2867em;"><span class="stl_1195 stl_08 stl_18" style="word-spacing:5.4116em;">4 </span></sub><span class="stl_1199 stl_08 stl_313">S</span><sub style="top: 0.2867em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:1.6208em;">7 </span></sub><span class="stl_1199 stl_08 stl_1225">S</span><sub style="top: 0.2867em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:1.5748em;">3 </span></sub><span class="stl_1199 stl_08 stl_1226">S</span><sub style="top: 0.2867em;"><span class="stl_1200 stl_08 stl_18" style="word-spacing:5.2555em;">4 </span></sub><span class="stl_1205 stl_08 stl_1227">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:1.5777em;">2 </span></sub><span class="stl_1205 stl_08 stl_1228">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:1.5947em;">7 </span></sub><span class="stl_1205 stl_08 stl_1229">S</span><sub style="top: 0.2867em;"><span class="stl_1207 stl_08 stl_18" style="word-spacing:5.3473em;">4 </span></sub><span class="stl_1210 stl_08 stl_1227">S</span><sub style="top: 0.2867em;"><span class="stl_1211 stl_08 stl_18" style="word-spacing:1.6123em;">2 </span></sub><span class="stl_1210 stl_08 stl_1230">S</span><sub style="top: 0.2867em;"><span class="stl_1211 stl_08 stl_18" style="word-spacing:1.5813em;">3 </span></sub><span class="stl_1210 stl_08 stl_1231">S</span><sub style="top: 0.2867em;"><span class="stl_1211 stl_08 stl_1232">7 &nbsp;</span></sub></div>
+					<div class="stl_01" style="left:9.4442em;top:15.4538em;"><span class="stl_75 stl_08 stl_196">4.2.</span><span class="stl_07 stl_08 stl_45" style="word-spacing:0.0071em;">4. Аппроксимация в виде показательной функции &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:17.0538em;"><span class="stl_13 stl_08 stl_39" style="word-spacing:0.2576em;">При обработке данных эксперимента в некоторых случаях возникает &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:18.3955em;"><span class="stl_13 stl_08 stl_12" style="word-spacing:0.0011em;">необходимость воспользоваться зависимостью вида &nbsp;</span></div>
+					<div class="stl_01 stl_1233" style="left:30.2854em;top:19.8343em;"><span class="stl_1234 stl_08 stl_18" style="word-spacing:-0.0941em;">a </span><span class="stl_1235 stl_87 stl_18" style="word-spacing:-0.0616em;"> </span><span class="stl_1234 stl_08 stl_18" style="word-spacing:-0.0616em;">x &nbsp;</span></div>
+					<div class="stl_01 stl_1233" style="left:26.693em;top:20.3509em;"><span class="stl_1234 stl_08 stl_18" style="word-spacing:0.0237em;">y </span><span class="stl_1235 stl_87 stl_18" style="word-spacing:-0.0385em;"> </span><span class="stl_1234 stl_08 stl_1236">b</span><span class="stl_1235 stl_87 stl_1237"></span><span class="stl_1234 stl_08 stl_1237">e &nbsp;</span></div>
+					<div class="stl_01" style="left:32.2517em;top:20.4755em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01" style="left:44.1358em;top:20.4755em;"><span class="stl_19 stl_08 stl_927">(21) &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:22.2429em;"><span class="stl_13 stl_08 stl_65" style="word-spacing:0.0069em;">где </span><span class="stl_21 stl_08 stl_18">a</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0em;">, </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.0086em;">b </span><span class="stl_342 stl_87 stl_18" style="word-spacing:0.0115em;"> </span><span class="stl_13 stl_08 stl_26" style="word-spacing:0.0107em;">неизвестные коэффициенты. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:23.7155em;"><span class="stl_13 stl_08 stl_143" style="word-spacing:0.0166em;">Прологарифмировав уравнение (15), получим &nbsp;</span></div>
+					<div class="stl_01 stl_1238" style="left:21.999em;top:25.2371em;z-index:355;"><span class="stl_1239 stl_08 stl_479" style="word-spacing:0.0935em;">ln( </span><span class="stl_1240 stl_08 stl_720">y</span><span class="stl_1239 stl_08 stl_18" style="word-spacing:-0.0054em;">) </span><span class="stl_1241 stl_87 stl_18" style="word-spacing:-0.023em;"> </span><span class="stl_1239 stl_08 stl_479">ln</span><span class="stl_1239 stl_08 stl_1242">(</span><span class="stl_1240 stl_08 stl_1243">b</span><span class="stl_1239 stl_08 stl_18" style="word-spacing:-0.064em;">) </span><span class="stl_1241 stl_87 stl_18" style="word-spacing:-0.0523em;"> </span><span class="stl_1240 stl_08 stl_18" style="word-spacing:-0.0931em;">a </span><span class="stl_1241 stl_87 stl_18" style="word-spacing:-0.0617em;"> </span><span class="stl_1240 stl_08 stl_18" style="word-spacing:-0.0617em;">x &nbsp;</span></div>
+					<div class="stl_01" style="left:30.9917em;top:25.318em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01" style="left:9.4442em;top:27.158em;"><span class="stl_13 stl_08 stl_68" style="word-spacing:0.0131em;">Введя обозначения: &nbsp;</span></div>
+					<div class="stl_01" style="left:21.2883em;top:28.498em;"><span class="stl_21 stl_08 stl_1244">Y</span><span class="stl_19 stl_08 stl_480">=ln(</span><span class="stl_21 stl_08 stl_22">y</span><span class="stl_19 stl_08 stl_700" style="word-spacing:0.0268em;">), </span><span class="stl_21 stl_08 stl_472">B</span><span class="stl_19 stl_08 stl_24">=ln(</span><span class="stl_21 stl_08 stl_18">b</span><span class="stl_19 stl_08 stl_1047" style="word-spacing:0.0252em;">), </span><span class="stl_21 stl_08 stl_472">A</span><span class="stl_19 stl_08 stl_65">=</span><span class="stl_11 stl_08 stl_18">а</span><span class="stl_19 stl_08 stl_18">, &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:30.338em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.0056em;">получим линейный многочлен первой степени &nbsp;</span></div>
+					<div class="stl_01" style="left:24.21em;top:32.1071em;"><span class="stl_21 stl_08 stl_197">Y=</span><span class="stl_11 stl_08 stl_1245">В</span><span class="stl_21 stl_08 stl_1022">+</span><span class="stl_11 stl_08 stl_1245">А</span><span class="stl_342 stl_87 stl_79" style="font-style:italic;"></span><span class="stl_21 stl_08 stl_22">x</span><span class="stl_19 stl_08 stl_22">. &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:33.8596em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.0006em;">Далее уравнение решается по методу наименьших квадратов &nbsp;</span></div>
+					<div class="stl_01 stl_1246" style="left:21.2802em;top:35.2982em;z-index:498;"><span class="stl_1247 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1246" style="left:18.9331em;top:36.0715em;"><span class="stl_1248 stl_08 stl_18" style="word-spacing:0.1008em;">F </span><span class="stl_1249 stl_87 stl_18" style="word-spacing:0.1008em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1250" style="left:22.1674em;top:35.7252em;z-index:495;"><span class="stl_1251 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1246" style="left:22.4577em;top:36.0715em;z-index:505;"><span class="stl_1248 stl_08 stl_18" style="word-spacing:0.2741em;">Y </span><span class="stl_1249 stl_87 stl_18" style="word-spacing:0.2741em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1250" style="left:24.5407em;top:35.7252em;"><span class="stl_1251 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1246" style="left:24.9379em;top:36.0715em;z-index:508;"><span class="stl_1248 stl_08 stl_18" style="word-spacing:-0.0371em;">B </span><span class="stl_1249 stl_87 stl_18" style="word-spacing:0.0388em;"> </span><span class="stl_1248 stl_08 stl_1252">A</span><span class="stl_1249 stl_87 stl_18" style="word-spacing:-0.0512em;"> </span><span class="stl_1248 stl_08 stl_1253">x</span><sub style="top: 0.2877em;"><span class="stl_1254 stl_08 stl_18" style="word-spacing:-0.0078em;">i </span></sub><span class="stl_1251 stl_87 stl_1255"></span><sup style="top: -0.5411em;"><span class="stl_1256 stl_08 stl_18" style="word-spacing:0.2124em;">2 </span></sup><span class="stl_1249 stl_87 stl_18" style="word-spacing:-0.0103em;"> </span><span class="stl_1257 stl_08 stl_1065">m</span><span class="stl_1257 stl_08 stl_936">i</span><span class="stl_1257 stl_08 stl_936">n &nbsp;</span></div>
+					<div class="stl_01" style="left:34.1942em;top:36.4848em;"><span class="stl_701 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1246" style="left:20.9818em;top:35.9243em;z-index:517;"><span class="stl_1258 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1246" style="left:23.0546em;top:36.7122em;"><span class="stl_1247 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1246" style="left:32.9409em;top:37.3297em;"><span class="stl_1247 stl_08 stl_18">x</span></div>
+					<div class="stl_01 stl_1246" style="left:20.9495em;top:37.5498em;"><span class="stl_1247 stl_08 stl_1171">i</span><span class="stl_1259 stl_87 stl_1260"></span><span class="stl_1261 stl_08 stl_1260">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:10.0842em;top:38.7596em;"><span class="stl_13 stl_08 stl_80" style="word-spacing:0.1738em;">Формулы для вычисления коэффициентов </span><span class="stl_11 stl_08 stl_18" style="word-spacing:0.1736em;">А </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.1825em;">и </span><span class="stl_11 stl_08 stl_18" style="word-spacing:0.1564em;">В </span><span class="stl_13 stl_08 stl_80" style="word-spacing:0.165em;">аналогичны как для &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:40.1013em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.0051em;">случая линейной аппроксимации (1</span><span class="stl_19 stl_08 stl_39" style="word-spacing:0.0113em;">6, 17): &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:18.2678em;top:41.9799em;z-index:654;"><span class="stl_1263 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1262" style="left:24.0852em;top:41.9799em;z-index:651;"><span class="stl_1263 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1262" style="left:27.042em;top:41.9799em;z-index:648;"><span class="stl_1263 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1264" style="left:32.3508em;top:42.352em;z-index:672;"><span class="stl_1037 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1264" style="left:36.3974em;top:42.352em;z-index:673;"><span class="stl_1037 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1262" style="left:16.6549em;top:42.7605em;"><span class="stl_1265 stl_08 stl_1266">n</span><span class="stl_1267 stl_87 stl_18" style="word-spacing:1.001em;"> </span><span class="stl_1268 stl_08 stl_1269">(</span><span class="stl_1265 stl_08 stl_18" style="word-spacing:0.2659em;">x </span><span class="stl_1267 stl_87 stl_1270"></span><span class="stl_1265 stl_08 stl_18" style="word-spacing:0.0888em;">Y </span><span class="stl_1268 stl_08 stl_18" style="word-spacing:-0.0591em;">) </span><span class="stl_1267 stl_87 stl_18" style="word-spacing:1.108em;"> </span><span class="stl_1265 stl_08 stl_18" style="word-spacing:0.266em;">x </span><span class="stl_1267 stl_87 stl_18" style="word-spacing:0.9536em;"> </span><span class="stl_1265 stl_08 stl_18" style="word-spacing:0.9536em;">Y &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:17.9579em;top:42.6141em;z-index:636;"><span class="stl_1271 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1262" style="left:23.7759em;top:42.6141em;z-index:634;"><span class="stl_1271 stl_87 stl_18" style="word-spacing:0.9976em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_1264" style="left:33.196em;top:42.9555em;"><span class="stl_1033 stl_08 stl_18" style="word-spacing:0.1277em;">Y </span><span class="stl_1034 stl_87 stl_18" style="word-spacing:0.0133em;"> </span><span class="stl_1033 stl_08 stl_18" style="word-spacing:0.9522em;">A x &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:20.1782em;top:43.4074em;"><span class="stl_1263 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1262" style="left:21.7747em;top:43.4074em;"><span class="stl_1263 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1262" style="left:25.5915em;top:43.4074em;"><span class="stl_1263 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1262" style="left:28.4992em;top:43.4074em;"><span class="stl_1263 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1264" style="left:31.8995em;top:42.6403em;z-index:688;"><span class="stl_1036 stl_87 stl_18" style="word-spacing:1.3392em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_1264" style="left:33.7576em;top:43.8251em;"><span class="stl_1037 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1264" style="left:37.8577em;top:43.8251em;"><span class="stl_1037 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1262" style="left:17.8574em;top:44.2531em;"><span class="stl_1263 stl_08 stl_1272">i</span><span class="stl_1273 stl_87 stl_20"></span><span class="stl_1274 stl_08 stl_20">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:23.675em;top:44.2531em;"><span class="stl_1263 stl_08 stl_1272">i</span><span class="stl_1273 stl_87 stl_700"></span><span class="stl_1274 stl_08 stl_700">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:26.6319em;top:44.2531em;"><span class="stl_1263 stl_08 stl_1272">i</span><span class="stl_1273 stl_87 stl_700"></span><span class="stl_1274 stl_08 stl_700">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1264" style="left:32.0935em;top:44.5457em;"><span class="stl_1037 stl_08 stl_1042">i</span><span class="stl_1043 stl_87 stl_762"></span><span class="stl_1032 stl_08 stl_762">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1264" style="left:36.1406em;top:44.5457em;"><span class="stl_1037 stl_08 stl_955">i</span><span class="stl_1043 stl_87 stl_762"></span><span class="stl_1032 stl_08 stl_762">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:14.6521em;top:44.4812em;"><span class="stl_1265 stl_08 stl_18" style="word-spacing:-0.0254em;">A </span><span class="stl_1267 stl_87 stl_18" style="word-spacing:-0.0254em;"> &nbsp;</span></div>
+					<div class="stl_01" style="left:29.1717em;top:44.6213em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01 stl_1264" style="left:29.9354em;top:44.4769em;"><span class="stl_1033 stl_08 stl_18" style="word-spacing:-0.0193em;">B </span><span class="stl_1034 stl_87 stl_18" style="word-spacing:-0.0193em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1264" style="left:38.3124em;top:44.6108em;"><span class="stl_1044 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1262" style="left:26.1642em;top:45.7954em;z-index:620;"><span class="stl_1267 stl_87 stl_1275"></span><sup style="top: -0.729em;"><span class="stl_1276 stl_08 stl_1015">2 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_1264" style="left:34.7437em;top:45.5096em;"><span class="stl_1033 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1262" style="left:19.8931em;top:45.8592em;z-index:645;"><span class="stl_1263 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1262" style="left:24.126em;top:45.8592em;z-index:642;"><span class="stl_1263 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1262" style="left:23.154em;top:45.7954em;z-index:624;"><span class="stl_1267 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1262" style="left:21.4936em;top:46.4741em;"><span class="stl_1274 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1262" style="left:23.154em;top:46.5407em;z-index:622;"><span class="stl_1267 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1262" style="left:26.1642em;top:46.5407em;z-index:618;"><span class="stl_1267 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1262" style="left:25.1072em;top:46.7756em;"><span class="stl_1265 stl_08 stl_18">x</span></div>
+					<div class="stl_01 stl_1262" style="left:18.2801em;top:46.6417em;"><span class="stl_1265 stl_08 stl_1266">n</span><span class="stl_1267 stl_87 stl_18" style="word-spacing:1.0639em;"> </span><span class="stl_1265 stl_08 stl_18" style="word-spacing:0.5409em;">x </span><span class="stl_1267 stl_87 stl_18" style="word-spacing:0.5409em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:19.5832em;top:46.4954em;z-index:633;"><span class="stl_1271 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1262" style="left:23.154em;top:46.4936em;z-index:632;"><sub style="top: 0.3115em;"><span class="stl_1277 stl_87 stl_18" style="word-spacing:-0.0682em;"> </span></sub><span class="stl_1271 stl_87 stl_18" style="word-spacing:-0.0529em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:25.6349em;top:47.1415em;z-index:617;"><sup style="top: -0.2118em;"><span class="stl_1278 stl_08 stl_18" style="word-spacing:0.0467em;">i </span></sup><span class="stl_1267 stl_87 stl_18" style="word-spacing:0.0367em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:21.3992em;top:47.2866em;"><span class="stl_1263 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1262" style="left:19.4827em;top:48.1324em;"><span class="stl_1263 stl_08 stl_1272">i</span><span class="stl_1273 stl_87 stl_20"></span><span class="stl_1274 stl_08 stl_20">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1262" style="left:23.154em;top:47.8888em;z-index:623;"><span class="stl_1267 stl_87 stl_1279"></span><sup style="top: -0.0061em;"><span class="stl_1278 stl_08 stl_1272">i</span></sup><span class="stl_1273 stl_87 stl_129"></span><span class="stl_1274 stl_08 stl_18" style="word-spacing:0.9565em;">1 </span><span class="stl_1267 stl_87 stl_18" style="word-spacing:0.7521em;"> &nbsp;</span></div>
+					<div class="stl_01" style="left:10.0842em;top:49.4438em;"><span class="stl_13 stl_08 stl_68" style="word-spacing:0.5948em;">После определения коэффициентов вернемся к принятым ранее &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:50.8038em;"><span class="stl_13 stl_08 stl_70">обозначениям: &nbsp;</span></div>
+					<div class="stl_01 stl_1280" style="left:21.3613em;top:52.3524em;"><span class="stl_1281 stl_08 stl_18" style="word-spacing:0.0068em;">a </span><span class="stl_1282 stl_87 stl_18" style="word-spacing:-0.0267em;"> </span><span class="stl_1281 stl_08 stl_1283">e</span><sup style="top: -0.5271em;"><span class="stl_1284 stl_08 stl_1285">A</span></sup><span class="stl_19 stl_08 stl_18" style="word-spacing:0.0172em;">, </span><span class="stl_21 stl_08 stl_136">b=B</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.2209em;">, </span><span class="stl_1286 stl_08 stl_28">y</span><sub style="top: 0.2847em;"><span class="stl_1287 stl_08 stl_18" style="word-spacing:0.1859em;">i </span></sub><span class="stl_1288 stl_87 stl_18" style="word-spacing:-0.0601em;"> </span><span class="stl_1286 stl_08 stl_69">e</span><sup style="top: -0.5341em;"><span class="stl_1287 stl_08 stl_77">Y &nbsp;</span></sup></div>
+					<div class="stl_01" style="left:31.6517em;top:52.5038em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1289" style="left:31.1327em;top:52.5699em;"><span class="stl_1290 stl_08 stl_18">i</span></div>
+					<div class="stl_01" style="left:9.4442em;top:54.5855em;"><span class="stl_75 stl_08 stl_70">2.5</span><span class="stl_07 stl_08 stl_81" style="word-spacing:0.0114em;">. Аппроксимация в виде степенной функции &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:56.1655em;"><span class="stl_13 stl_08 stl_73" style="word-spacing:0.0076em;">Степенная функция имеет вид &nbsp;</span></div>
+					<div class="stl_01 stl_1291" style="left:26.115em;top:58.1823em;"><span class="stl_1292 stl_08 stl_18" style="word-spacing:0.0224em;">y </span><span class="stl_1293 stl_87 stl_18" style="word-spacing:-0.0358em;"> </span><span class="stl_1292 stl_08 stl_1294">b</span><span class="stl_1293 stl_87 stl_18" style="word-spacing:-0.0606em;"> </span><span class="stl_1292 stl_08 stl_407">x</span><sup style="top: -0.5085em;"><span class="stl_1295 stl_08 stl_295">a &nbsp;</span></sup></div>
+					<div class="stl_01" style="left:30.4117em;top:58.3055em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01" style="left:44.1358em;top:58.3055em;"><span class="stl_19 stl_08 stl_927">(22) &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:60.3855em;"><span class="stl_13 stl_08 stl_45" style="word-spacing:0.0108em;">Логарифмируя последнее уравнение, получим &nbsp;</span></div>
+					<div class="stl_01 stl_1296" style="left:21.1996em;top:62.0125em;z-index:886;"><span class="stl_1297 stl_08 stl_479" style="word-spacing:0.09em;">lg( </span><span class="stl_1298 stl_08 stl_720">y</span><span class="stl_1297 stl_08 stl_18" style="word-spacing:-0.0054em;">) </span><span class="stl_1299 stl_87 stl_18" style="word-spacing:-0.0212em;"> </span><span class="stl_1297 stl_08 stl_479">lg</span><span class="stl_1297 stl_08 stl_1300">(</span><span class="stl_1298 stl_08 stl_147">b</span><span class="stl_1297 stl_08 stl_18" style="word-spacing:-0.0658em;">) </span><span class="stl_1299 stl_87 stl_18" style="word-spacing:-0.0506em;"> </span><span class="stl_1298 stl_08 stl_18" style="word-spacing:-0.0948em;">a </span><span class="stl_1299 stl_87 stl_1301"></span><span class="stl_1297 stl_08 stl_479" style="word-spacing:0.0447em;">lg( </span><span class="stl_1298 stl_08 stl_1302">x</span><span class="stl_1297 stl_08 stl_1303">)</span><sub style="top: 0.0397em;"><span class="stl_1304 stl_08 stl_1305">. &nbsp;</span></sub></div>
+				</div>
+			</div>
+		</div>
+		<div class="stl_ stl_02">
+			<div class="stl_03">
+				<object data="Converted_files/img_21.svg" type="image/svg+xml" class="stl_04" style="position:absolute; width:49.5833em; height:70.0833em;">
+					<embed src="Converted_files/img_21.svg" type="image/svg+xml" />
+				</object>
+			</div>
+			<div class="stl_view">
+				<div class="stl_05 stl_06">
+					<div class="stl_01" style="left:9.4442em;top:4.6713em;"><span class="stl_13 stl_08 stl_47" style="word-spacing:0.0144em;">Введем обозначения</span><span class="stl_19 stl_08 stl_47" style="word-spacing:0.0144em;">: &nbsp;</span></div>
+					<div class="stl_01" style="left:19.1883em;top:6.5113em;"><span class="stl_21 stl_08 stl_1244">Y</span><span class="stl_19 stl_08 stl_24">=lg(</span><span class="stl_21 stl_08 stl_22">y</span><span class="stl_19 stl_08 stl_700" style="word-spacing:0.0268em;">), </span><span class="stl_21 stl_08 stl_440">B</span><span class="stl_19 stl_08 stl_24">=lg(</span><span class="stl_21 stl_08 stl_18">b</span><span class="stl_19 stl_08 stl_1306" style="word-spacing:-0.0145em;">); </span><span class="stl_21 stl_08 stl_472">A</span><span class="stl_19 stl_08 stl_63">=</span><span class="stl_21 stl_08 stl_18">a</span><span class="stl_19 stl_08 stl_18" style="word-spacing:0.0067em;">; </span><span class="stl_21 stl_08 stl_472">X</span><span class="stl_19 stl_08 stl_24">=lg(</span><span class="stl_21 stl_08 stl_22">x</span><span class="stl_19 stl_08 stl_20">). &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:8.3513em;"><span class="stl_13 stl_08 stl_35" style="word-spacing:0.9576em;">Используя метод наименьших квадратов, найдем неизвестные &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:9.6913em;"><span class="stl_13 stl_08 stl_47" style="word-spacing:0.012em;">коэффициенты </span><span class="stl_21 stl_08 stl_18" style="word-spacing:0.0012em;">B </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.0079em;">и </span><span class="stl_11 stl_08 stl_1245">А</span><span class="stl_19 stl_08 stl_1245">: &nbsp;</span></div>
+					<div class="stl_01 stl_1307" style="left:21.017em;top:11.6565em;z-index:119;"><span class="stl_1308 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1307" style="left:18.5758em;top:12.4276em;"><span class="stl_1309 stl_08 stl_18" style="word-spacing:0.092em;">F </span><span class="stl_1310 stl_87 stl_18" style="word-spacing:0.092em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1311" style="left:21.9176em;top:12.0815em;z-index:116;"><span class="stl_1312 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1307" style="left:22.2151em;top:12.4276em;z-index:126;"><span class="stl_1309 stl_08 stl_18" style="word-spacing:0.2584em;">Y </span><span class="stl_1310 stl_87 stl_18" style="word-spacing:0.2584em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1311" style="left:24.3116em;top:12.0815em;"><span class="stl_1312 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1307" style="left:24.7198em;top:12.4276em;z-index:129;"><span class="stl_1309 stl_08 stl_18" style="word-spacing:-0.0441em;">B </span><span class="stl_1310 stl_87 stl_18" style="word-spacing:0.0319em;"> </span><span class="stl_1313 stl_08 stl_1314">А</span><span class="stl_1310 stl_87 stl_18" style="word-spacing:-0.0271em;"> </span><span class="stl_1309 stl_08 stl_1168">X</span><sub style="top: 0.2877em;"><span class="stl_1315 stl_08 stl_18" style="word-spacing:-0.0124em;">i </span></sub><span class="stl_1312 stl_87 stl_1316"></span><sup style="top: -0.5371em;"><span class="stl_1317 stl_08 stl_18" style="word-spacing:0.197em;">2 </span></sup><span class="stl_1310 stl_87 stl_18" style="word-spacing:-0.0174em;"> </span><span class="stl_1318 stl_08 stl_889">m</span><span class="stl_1318 stl_08 stl_890">i</span><span class="stl_1318 stl_08 stl_890">n &nbsp;</span></div>
+					<div class="stl_01" style="left:34.4542em;top:12.5538em;"><span class="stl_19 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1307" style="left:20.7114em;top:12.2847em;z-index:138;"><span class="stl_1319 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1307" style="left:22.8182em;top:13.0705em;"><span class="stl_1308 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1307" style="left:33.1759em;top:13.688em;"><span class="stl_1308 stl_08 stl_18">x</span></div>
+					<div class="stl_01 stl_1307" style="left:20.6109em;top:13.9084em;"><span class="stl_1308 stl_08 stl_1135">i</span><span class="stl_1320 stl_87 stl_894"></span><span class="stl_1321 stl_08 stl_894">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:15.6138em;"><span class="stl_13 stl_08 stl_74" style="word-spacing:0.2386em;">Формулы для вычисления коэффициентов </span><span class="stl_11 stl_08 stl_18" style="word-spacing:0.2254em;">А </span><span class="stl_13 stl_08 stl_18" style="word-spacing:0.2342em;">и </span><span class="stl_11 stl_08 stl_18" style="word-spacing:0.2254em;">В </span><span class="stl_13 stl_08 stl_80" style="word-spacing:0.2345em;">аналогичны как для &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:16.9538em;"><span class="stl_13 stl_08 stl_43" style="word-spacing:0.008em;">случая линейной аппроксимации (12, 13): &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:17.6958em;top:18.8424em;z-index:275;"><span class="stl_1323 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1322" style="left:23.8672em;top:18.8424em;z-index:272;"><span class="stl_1323 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1322" style="left:27.1851em;top:18.8424em;z-index:269;"><span class="stl_1323 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1324" style="left:32.5489em;top:19.2105em;z-index:293;"><span class="stl_1325 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1324" style="left:36.6266em;top:19.2105em;z-index:294;"><span class="stl_1325 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1322" style="left:16.0883em;top:19.6227em;"><span class="stl_1326 stl_08 stl_1327">n</span><span class="stl_1328 stl_87 stl_18" style="word-spacing:0.9939em;"> </span><span class="stl_1329 stl_08 stl_170">(</span><span class="stl_1326 stl_08 stl_18" style="word-spacing:0.3774em;">X </span><span class="stl_1328 stl_87 stl_1270"></span><span class="stl_1326 stl_08 stl_18" style="word-spacing:0.0835em;">Y </span><span class="stl_1329 stl_08 stl_18" style="word-spacing:-0.0608em;">) </span><span class="stl_1328 stl_87 stl_18" style="word-spacing:1.1293em;"> </span><span class="stl_1326 stl_08 stl_18" style="word-spacing:0.3793em;">X </span><span class="stl_1328 stl_87 stl_18" style="word-spacing:0.9465em;"> </span><span class="stl_1326 stl_08 stl_18" style="word-spacing:0.9465em;">Y &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:17.3875em;top:19.4766em;z-index:257;"><span class="stl_1330 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1322" style="left:23.5566em;top:19.4766em;z-index:255;"><span class="stl_1330 stl_87 stl_18" style="word-spacing:1.2331em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_1324" style="left:33.4004em;top:19.8142em;"><span class="stl_1331 stl_08 stl_18" style="word-spacing:0.1329em;">Y </span><span class="stl_1332 stl_87 stl_18" style="word-spacing:0.0171em;"> </span><span class="stl_1331 stl_08 stl_18" style="word-spacing:0.0171em;">A &nbsp;</span></div>
+					<div class="stl_01 stl_1324" style="left:37.6395em;top:19.9485em;"><span class="stl_1331 stl_08 stl_18">X</span></div>
+					<div class="stl_01 stl_1324" style="left:38.4664em;top:20.6849em;"><span class="stl_1325 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1322" style="left:19.9714em;top:20.2699em;"><span class="stl_1323 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1322" style="left:21.5626em;top:20.2699em;"><span class="stl_1323 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1322" style="left:25.7396em;top:20.2699em;"><span class="stl_1323 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1322" style="left:28.6357em;top:20.2699em;"><span class="stl_1323 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1324" style="left:32.0945em;top:19.499em;z-index:309;"><span class="stl_1333 stl_87 stl_18" style="word-spacing:1.3506em;">  &nbsp;</span></div>
+					<div class="stl_01 stl_1324" style="left:33.9674em;top:20.6849em;"><span class="stl_1325 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1322" style="left:17.2867em;top:21.1154em;"><span class="stl_1323 stl_08 stl_1334">i</span><span class="stl_1335 stl_87 stl_853"></span><span class="stl_1336 stl_08 stl_853">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:23.458em;top:21.1154em;"><span class="stl_1323 stl_08 stl_1104">i</span><span class="stl_1335 stl_87 stl_1337"></span><span class="stl_1336 stl_08 stl_1337">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:26.7759em;top:21.1154em;"><span class="stl_1323 stl_08 stl_1104">i</span><span class="stl_1335 stl_87 stl_853"></span><span class="stl_1336 stl_08 stl_853">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1324" style="left:32.291em;top:21.406em;"><span class="stl_1325 stl_08 stl_1042">i</span><span class="stl_1338 stl_87 stl_1082"></span><span class="stl_1339 stl_08 stl_1082">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1324" style="left:36.3683em;top:21.406em;"><span class="stl_1325 stl_08 stl_820">i</span><span class="stl_1338 stl_87 stl_1082"></span><span class="stl_1339 stl_08 stl_1082">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:14.0922em;top:21.3434em;"><span class="stl_1326 stl_08 stl_18" style="word-spacing:-0.029em;">A </span><span class="stl_1328 stl_87 stl_18" style="word-spacing:-0.029em;"> &nbsp;</span></div>
+					<div class="stl_01" style="left:29.3517em;top:21.4755em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+					<div class="stl_01 stl_1324" style="left:30.1171em;top:21.3371em;"><span class="stl_1331 stl_08 stl_18" style="word-spacing:-0.0158em;">B </span><span class="stl_1332 stl_87 stl_18" style="word-spacing:-0.0158em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1324" style="left:38.9276em;top:21.4713em;"><span class="stl_1340 stl_08 stl_18">.</span></div>
+					<div class="stl_01 stl_1322" style="left:26.3275em;top:22.6579em;z-index:241;"><span class="stl_1328 stl_87 stl_1160"></span><sup style="top: -0.729em;"><span class="stl_1341 stl_08 stl_1342">2 &nbsp;</span></sup></div>
+					<div class="stl_01 stl_1324" style="left:35.1445em;top:22.3709em;"><span class="stl_1331 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1322" style="left:19.2992em;top:22.7217em;z-index:266;"><span class="stl_1323 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1322" style="left:23.9265em;top:22.7217em;z-index:263;"><span class="stl_1323 stl_08 stl_18">n</span></div>
+					<div class="stl_01 stl_1322" style="left:22.9561em;top:22.6579em;z-index:245;"><span class="stl_1328 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1322" style="left:21.3015em;top:23.3366em;"><span class="stl_1336 stl_08 stl_18">2</span></div>
+					<div class="stl_01 stl_1322" style="left:22.9561em;top:23.4032em;z-index:243;"><span class="stl_1328 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1322" style="left:26.3275em;top:23.4032em;z-index:239;"><span class="stl_1328 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1322" style="left:25.7997em;top:24.0033em;z-index:238;"><sup style="top: -0.2118em;"><span class="stl_1343 stl_08 stl_18" style="word-spacing:0.044em;">i </span></sup><span class="stl_1328 stl_87 stl_18" style="word-spacing:0.0346em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:26.3275em;top:24.7513em;z-index:240;"><span class="stl_1328 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1322" style="left:17.6937em;top:23.504em;"><span class="stl_1326 stl_08 stl_1327">n</span><span class="stl_1328 stl_87 stl_18" style="word-spacing:1.0868em;"> </span><span class="stl_1326 stl_08 stl_18" style="word-spacing:0.6821em;">X </span><span class="stl_1328 stl_87 stl_18" style="word-spacing:0.6821em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:24.9403em;top:23.6381em;"><span class="stl_1326 stl_08 stl_18">X</span></div>
+					<div class="stl_01 stl_1322" style="left:18.9909em;top:23.3579em;z-index:254;"><span class="stl_1330 stl_87 stl_18"></span></div>
+					<div class="stl_01 stl_1322" style="left:22.9561em;top:23.3555em;z-index:253;"><sub style="top: 0.3115em;"><span class="stl_1344 stl_87 stl_18" style="word-spacing:-0.0696em;"> </span></sub><span class="stl_1330 stl_87 stl_18" style="word-spacing:-0.0541em;"> &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:21.174em;top:24.1491em;"><span class="stl_1323 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1322" style="left:18.8922em;top:24.9947em;"><span class="stl_1323 stl_08 stl_1345">i</span><span class="stl_1335 stl_87 stl_20"></span><span class="stl_1336 stl_08 stl_20">1 &nbsp;</span></div>
+					<div class="stl_01 stl_1322" style="left:22.9561em;top:24.7513em;z-index:244;"><span class="stl_1328 stl_87 stl_1346"></span><sup style="top: -0.0061em;"><span class="stl_1343 stl_08 stl_865">i</span></sup><span class="stl_1335 stl_87 stl_853"></span><span class="stl_1336 stl_08 stl_853">1 &nbsp;</span></div>
+					<div class="stl_01" style="left:9.4442em;top:26.798em;"><span class="stl_13 stl_08 stl_68" style="word-spacing:0.6866em;">После определения коэффициентов вернемся к принятым ранее &nbsp;</span></div>
+					<div class="stl_01" style="left:7.082em;top:28.138em;"><span class="stl_13 stl_08 stl_70">обозначениям: &nbsp;</span></div>
+					<div class="stl_01 stl_1347" style="left:7.1983em;top:29.698em;"><span class="stl_1348 stl_08 stl_18" style="word-spacing:-0.0102em;">b </span><span class="stl_1349 stl_87 stl_1350"></span><span class="stl_1351 stl_08 stl_1352">10</span><sup style="top: -0.5271em;"><span class="stl_1353 stl_08 stl_430">B &nbsp;</span></sup></div>
+					<div class="stl_01 stl_1354" style="left:11.5601em;top:29.695em;"><span class="stl_1355 stl_08 stl_18" style="word-spacing:-0.0004em;">a </span><span class="stl_1356 stl_87 stl_18" style="word-spacing:0.0566em;"> </span><span class="stl_1355 stl_08 stl_18" style="word-spacing:0.0566em;">A &nbsp;</span></div>
+					<div class="stl_01" style="left:14.3458em;top:29.838em;"><span class="stl_19 stl_08 stl_18" style="word-spacing:3.6573em;">, ,</span><span class="stl_19 stl_08 stl_18" style="word-spacing:3.9842em;">&nbsp;</span><span class="stl_19 stl_08 stl_18" style="word-spacing:3.6573em;">. &nbsp;</span></div>
+					<div class="stl_01 stl_1357" style="left:15.1783em;top:29.7168em;"><span class="stl_1358 stl_08 stl_1052">y</span><sub style="top: 0.2854em;"><span class="stl_1359 stl_08 stl_18" style="word-spacing:0.2475em;">i </span></sub><span class="stl_1360 stl_87 stl_1361"></span><span class="stl_1362 stl_08 stl_1363">1</span><span class="stl_1362 stl_08 stl_462">0</span><sup style="top: -0.5353em;"><span class="stl_1359 stl_08 stl_18" style="word-spacing:1.0757em;">Y </span></sup><span class="stl_1364 stl_08 stl_570">x</span><sub style="top: 0.2854em;"><span class="stl_1365 stl_08 stl_18" style="word-spacing:0.2937em;">i </span></sub><span class="stl_1366 stl_87 stl_18" style="word-spacing:-0.086em;"> </span><span class="stl_1367 stl_08 stl_1368" style="word-spacing:0.0044em;">10 </span><sup style="top: -0.5353em;"><span class="stl_1365 stl_08 stl_1369" style="word-spacing:0.0055em;">X &nbsp;</span></sup></div>
+					<div class="stl_01 stl_1357" style="left:18.6968em;top:29.9083em;"><span class="stl_1370 stl_08 stl_18">i</span></div>
+					<div class="stl_01 stl_1371" style="left:23.9202em;top:29.9083em;"><span class="stl_1372 stl_08 stl_18">i</span></div>
+					<div class="stl_01" style="left:10.8242em;top:29.838em;"><span class="stl_19 stl_08 stl_18">,</span></div>
+				</div>
+			</div>
+		</div>
+	
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- our service section end -->
+      <!-- copyright section start -->
+
+      <div class="copyright_section">
+         <p class="copyright_text">Вагенгейм Александр, ИСС-11</p>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>
+      <div id="footer" style="display: none">
+         <p> | <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> | <a href="http://brullworfel.ru/turbosite">TurboSite</a></p>
+      </div>
+   </body>
+</html>

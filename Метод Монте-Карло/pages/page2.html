@@ -1,0 +1,744 @@
+﻿<HTML><BODY><html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Найти минимум функции
+P(x,y,z) при заданных ограничениях.</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:18.0pt;background:white'><span style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:black'><br>
+<img width=407 height=39 id="Рисунок 7" src="Пример.files/image001.png"
+alt="https://tex.z-dn.net/?f=P(x%2Cy%2Cz)%3Dsin2x%2Bcos3y%2Bsin%5E2(4z%2B1)%3B%20%5C%5C%20x%20%5Cin%20%5B-2%3B2%5D%2C%20%5C%20y%20%5Cin%20%5B-1.5%3B1.5%5D%2C%20%5C%20z%20%5Cin%20%5B-5%3B5%5D%2C%20%5C%20x%3Ey%2C%20%5C%20x*z%20%5Cgeq%200"></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'><br>
+Как видно из условия, имеется пять ограничений. Конечно, в данном случае можно
+решить задачу методом простого перебора параметров с каким-то шагом, сначала
+найти примерное положение минимума (или минимумов, если их несколько), а потом
+уменьшить шаг и повторить поиск, но методом Монте-Карло задача решается намного
+изящнее.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span lang=EN-US style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>function </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>f(x, y, z:
+</span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+color:blue'>real</span><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;color:black'>): </span><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;color:blue'>real</span><span lang=EN-US style='font-size:
+12.0pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>begin</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>f := sin(</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>2 </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>* x) +
+cos(</span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+color:darkgreen'>3 </span><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;color:black'>* y) + sqr(sin(</span><span lang=EN-US style='font-size:
+12.0pt;font-family:Consolas;color:darkgreen'>4 </span><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>* z + </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>1</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>))</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>end</span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>var</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>x, y, z,
+p, x1, y1, z1, p1: </span><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;color:blue'>real</span><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  i, n: </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>longint</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>begin</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>Write(</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>'</span><span
+style='font-size:12.0pt;font-family:Consolas;color:blue'>Введите</span><span
+style='font-size:12.0pt;font-family:Consolas;color:blue'> </span><span
+style='font-size:12.0pt;font-family:Consolas;color:blue'>число</span><span
+style='font-size:12.0pt;font-family:Consolas;color:blue'> </span><span
+style='font-size:12.0pt;font-family:Consolas;color:blue'>проб</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>: '</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  </span><span
+style='font-size:12.0pt;font-family:Consolas;color:black'>Readln(n);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span style='font-size:12.0pt;
+font-family:Consolas;color:black'>  Randomize;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  p1 := </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>1e20</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  <b>for </b>i := </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>1 </span><b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>to </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>n <b>do</b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  begin</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>    repeat</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>      </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>x := </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>4 </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>* Random -
+</span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+color:darkgreen'>2</span><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>      y := </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>3 </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>* Random -
+</span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+color:darkgreen'>1.5</span><span lang=EN-US style='font-size:12.0pt;font-family:
+Consolas;color:black'>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>      z := </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>10 </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>* Random -
+</span><span lang=EN-US style='font-size:12.0pt;font-family:Consolas;
+color:darkgreen'>5</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>    </span><b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>until </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>(x&gt;</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>0</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>) <b>and </b>(x*z&gt;=</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>0</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>    p := f(x, y, z);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>    <b>if </b>p1 &gt;
+p <b>then begin</b></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>      </span></b><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>x1 := x;
+y1 := y; z1 := z; p1 := p</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>    <b>end</b>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  <b>end</b>;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  Writeln(</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>'n='</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>, n:</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>8</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  Writeln(</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>'x='</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>, x1:</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>0</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>:</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>4</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>, </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>'; y='</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>, y1:</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>0</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>:</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>4</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>, </span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>'; z='</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>, z1:</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>0</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>:</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:darkgreen'>4</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#FBD4B4;text-autospace:none'><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>  Writeln(</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>'</span><span
+style='font-size:12.0pt;font-family:Consolas;color:blue'>Минимум</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:blue'>='</span><span
+lang=EN-US style='font-size:12.0pt;font-family:Consolas;color:black'>, p1);</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+18.0pt;background:#FBD4B4'><b><span lang=EN-US style='font-size:12.0pt;
+font-family:Consolas;color:black'>end</span></b><span lang=EN-US
+style='font-size:12.0pt;font-family:Consolas;color:black'>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+18.0pt;background:white'><span lang=EN-US style='font-size:14.0pt;font-family:
+"Times New Roman","serif";color:black'><br>
+</span><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>Результаты работы программы:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Значение </span><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif"'>n</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Координаты
+  точки</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Найденный
+  минимум</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=1.9241;
+  y=1.1249; z=1.3765</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-1.57349141777441</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>10000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=1.9861;
+  y=1.0960; z=2.8687</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-1.71926868545747</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>100000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=1.9943;
+  y=-1.0017; z=1.3185</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-1.73986731608857</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1000000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=1.9981;
+  y=1.0471; z=3.6810</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-1.75399783728077</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>10000000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=1.9999;
+  y=-1.0476; z=4.4562</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-1.75610542978854</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'><br>
+Посмотрим, как будут отыскиваться экстремумы с теми же ограничениями на те же
+параметры, если целевую функцию заменить на непериодическую:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:18.0pt;background:white'><span style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:black'><br>
+<img width=294 height=19 id="Рисунок 2" src="Пример.files/image002.png"
+alt="https://tex.z-dn.net/?f=P(x%2Cy%2Cz)%3D3.5x%5E2%2B2.4(y-1)%5E2-6.18yz"></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'><br>
+<br>
+В программе при этом надо будет только изменить формулу целевой функции:</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:18.0pt;background:white'><span style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:black'><br>
+f := 3.5*sqr(x)+2.4*sqr(y-1)-6.18*y*z</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:18.0pt;background:white'><span style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+18.0pt;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>Результаты работы программы:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Значение </span><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif"'>n</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Координаты
+  точки</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Найденный
+  минимум</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.1302;
+  y=1.4289; z=4.8359</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-42.2027744394228</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>10000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.1984;
+  y=1.4528; z=4.9963</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-44.2292651182142</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>100000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.2639;
+  y=1.4836; z=4.9828</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-44.8800105262881</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1000000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.0124;
+  y=1.4956; z=4.9859</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-45.4924486001467</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>10000000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.0672;
+  y=1.4984; z=4.9971</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>-45.662380390057</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'><br>
+Проведём испытания ещё и на непериодической функции, содержащей логарифм.
+Изменим целевую функцию в программе:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:18.0pt;background:white'><span lang=EN-US
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>f :=
+3.5*sqr(x)+2.4*(5*y)-ln(y*z)</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:18.0pt;background:white'><span style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+18.0pt;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>Результаты работы программы:</span></p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Значение </span><span
+  lang=EN-US style='font-size:14.0pt;font-family:"Times New Roman","serif"'>n</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Координаты
+  точки</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal;text-autospace:none'><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>Найденный
+  минимум</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.0013;
+  y=0.0578; z=4.9085</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1.95349722637719</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>10000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.0205;
+  y=0.0727; z=4.6951</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1.94883751513914</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>100000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.0364;
+  y=0.0871; z=4.9903</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1.88304587921572</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1000000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.0074;
+  y=0.0793; z=4.9477</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1.88741064353287</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=158 style='width:118.8pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  18.0pt'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>10000000</span></p>
+  </td>
+  <td width=265 valign=top style='width:7.0cm;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>x=0.0057;
+  y=0.0896; z=4.9980</span></p>
+  </td>
+  <td width=215 valign=top style='width:161.3pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal;text-autospace:none'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>1.8786601328007</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:18.0pt;background:white'><span lang=EN-US style='font-size:
+14.0pt;font-family:"Times New Roman","serif";color:black'><br>
+<br>
+<br>
+</span></p>
+
+</div>
+
+</body>
+
+</html>
+
+</BODY></HTML>

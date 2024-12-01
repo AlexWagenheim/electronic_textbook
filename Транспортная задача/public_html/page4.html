@@ -1,0 +1,956 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Метод потенциалов - Транспортная задача. Методы решения</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+   <body>
+      <!-- section header start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="logo" style="font-size: 28px; color: #ffffff;">
+<!--                     <a href="index.html"><img src="images/logo.png"></a>-->
+                     Транспортная задача. Методы решения
+                  </div>
+               </div>
+<!--               <div class="col-md-8">-->
+<!--                  <div class="menu_text">-->
+<!--                     <ul>-->
+<!--                        <li><a style="" href="index.html">Глава 3. Транспортная задача</a></li>
+-->
+<!--&lt;!&ndash;                        <li><a href="#"><img src="images/search-icon.png"></a></li>&ndash;&gt;-->
+<!--                     </ul>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="col-md-1">
+                  <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle.png" class="toggle_menu"></span>
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <div class="overlay-content" >
+                        <ul style="list-style: none">
+                           <li><a style="" href="index.html">Глава 3. Транспортная задача</a></li>
+<li><a style="" href="page1.html">Математическая постановка транспортной задачи</a></li>
+<li><a style="" href="page2.html">Определение опорного плана. Предварительные сведения</a></li>
+<li><a style="" href="page3.html">Метод минимального элемента</a></li>
+<li class="active"><a style="" href="page4.html">Метод потенциалов</a></li>
+
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li style="font-size: 20pt; color:white;"><a href="../../index.html">На главную</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- section header end -->
+      <!-- our service section start -->
+      <div class="our_section layout_padding">
+         <div class="container">
+            <h1 class="our_text"><strong>Метод потенциалов</strong></h1>
+            <div class="row padding_top_0">
+               <div class="col-12" style="font-size: 14pt">
+                   <html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Процедура нахождения
+оптимального плана транспортной задачи имеет два этапа. На первом этапе находят
+опорной план транспортной задачи. Далее последовательно улучшают найденный
+опорный план до получения оптимального плана.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Для определения опорного
+плана будем пользоваться методом наименьшего элемента.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При применении этих методов
+получаем&nbsp;<i>m+n</i>&#8722;1 занятых клеток в исходном плане. Отметим, что
+в некоторых клетках могут стоять нули. Полученный план следует проверить на
+оптимальность.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Теорема</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Если для некоторого опорного
+плана&nbsp;<img width=80 height=30 id="Рисунок 38"
+src="Метод%20потенциалов.files/image001.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img33.jpg">&nbsp;(<i>i</i>=1,..,<i>m</i>;&nbsp;<i>j</i>=1,...,<i>n</i>)
+транспортной задачи существуют такие числа&nbsp;<i>&#945;</i><sub>1</sub>,&nbsp;<i>&#945;</i><sub>1</sub>,
+...,&nbsp;<i>&#945;<sub>m</sub></i>,&nbsp;<i>&#946;</i><sub>1</sub>,&nbsp;<i>&#946;</i><sub>2</sub>,
+...,&nbsp;<i>&#946;<sub>n</sub></i>, что</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=174 height=65
+  id="Рисунок 39" src="Метод%20потенциалов.files/image002.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img32.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>для всех&nbsp;<i>i</i>=1,..,<i>m</i>;&nbsp;<i>j</i>=1,...,<i>n</i>,
+то&nbsp;<img width=80 height=30 id="Рисунок 40"
+src="Метод%20потенциалов.files/image001.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img33.jpg">&nbsp;&#8722;
+оптимальный план транспортной задачи.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Определение</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Числа&nbsp;<i>&#945;<sub>i</sub></i>&nbsp;и&nbsp;<i>&#946;<sub>j</sub></i>&nbsp;(<i>i</i>=1,..,<i>m</i>;&nbsp;<i>j</i>=1,...,<i>n</i>)
+называются&nbsp;<b>потенциалами</b>&nbsp;пунктов отправления и пунктов
+назначения, соответственно.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Вышеизложенная теорема
+позволяет построить алгоритм нахождения оптимального плана транспортной задачи.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Алгоритм состоит в
+следующем. Предположим, что одним из рассмотренных выше методов найден опорный
+план транспортной задачи. Для каждого из пунктов отправления и назначения
+определяют потенциалы&nbsp;<i>&#945;<sub>i</sub></i>&nbsp;и&nbsp;<i>&#946;<sub>j</sub></i>&nbsp;(<i>i</i>=1,..,<i>m</i>;&nbsp;<i>j</i>=1,...,<i>n</i>)
+из системы уравнений</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=82 height=28 id="Рисунок 41"
+  src="Метод%20потенциалов.files/image003.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img34.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>,</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>(6.1)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>где&nbsp;<i>с<sub>ij</sub></i>&nbsp;&#8722; тарифы транспортной
+задачи в заполненных клетках.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Так как число заполненных
+клеток равно&nbsp;<i>m+n</i>&#8722;1, то система (6.1) с&nbsp;<i>m+n</i>&nbsp;неизвестными
+содержит&nbsp;<i>m+n</i>&#8722;1 уравнений. Для решения данной задачи одно из
+неизвестных можно сделать равным нулю и найти остальные неизвестные. После
+этого, для свободных клеток определяем числа</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=122 height=30
+  id="Рисунок 42" src="Метод%20потенциалов.files/image004.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img35.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Если среди чисел&nbsp;<i>&#945;<sub>ij</sub></i>&nbsp;нет
+положительных, то найденный опорный план является оптимальным. Если же для
+некоторой свободной клетки&nbsp;<i>&#945;<sub>ij</sub></i>&gt;0, то данный
+опорный план не является оптимальным и необходимо перейти к новому опорному
+плану. Для этого рассматривают все свободные клетки, для которых&nbsp;<i>&#945;<sub>ij</sub></i>&gt;0
+и среди данных чисел выбирают максимальное. Клетку с данным числом следует
+заполнить.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Надо учитывать, что при
+заполнении данной клетки необходимо изменить объем поставок в нескольких других
+клетках.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Определение</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><b><i><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></i></b><b><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>Циклом</span></b><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>&nbsp;в
+таблице условий транспортной задачи называется ломанная линия, вершины которой
+расположены в занятых клетках таблицы, а звеня расположены вдоль строк и
+столбцов. В каждой вершине цикла встречается два звена, одно из которых
+находится в строке, а другой в столбце.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Если ломаннная линия,
+образующая цикл, самопересекается, то место пересечения не является вершиной.
+Некоторые циклы представлены на рисунке Рис.6.1.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=284 height=191
+  id="Рисунок 43" src="Метод%20потенциалов.files/image005.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img37.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При правильном строении
+опорного плана для любой свободной клетки можно построить только один цикл.
+После построения цикла следует перейти к новому опорному плану. Для этого в
+каждой из клеток, находящихся на вершине цикла записывают определенный знак
+&quot;+&quot; или &quot;&#8722;&quot; . В свободной клетке записывают знак
+&quot;+&quot; и поочередно проходя по циклу записывают знаки
+&quot;&#8722;&quot; и &quot;+&quot;. Назовем клетки с записанными в них знаками
+плюсовыми и минусовыми.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Далее в свободную клетку
+переносят меньшее из чисел&nbsp;<i>x</i><sub>ij</sub>, находящихся в минусовых
+клетках. Это число прибавляют к числам, стоящим в плюсовых клетках а вычисляют
+из чисел, стоящих в минусовых клетках. Клетка, которая была свободной,
+становится занятой, а минусовая клетка с минимальным из чисел&nbsp;<i>x</i><sub>ij</sub>,
+находящихся в минусовых клетках считается свободным.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>В результате вышеуказанных
+перемещений груза по циклу, получим новый опорный план транспортной задачи.
+Описанный переход от одного опорного плана транспортной задачи к другому
+опорному плану называется&nbsp;<b>сдвигом по циклу пересчета</b>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При сдвиге по циклу
+пересчета число занятых клеток не изменяется и равно&nbsp;<i>m+n</i>&#8722;1.
+Если в минусовых клетках имеется два и более одинаковых минимальных числа&nbsp;<i>x</i><sub>ij</sub>,
+то освобождают только одину, о остальные оставляют занятыми с нулевыми
+значениями.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Далее полученный опорный
+план проверяют на оптимальность. Для этого определяют потенциалы пунктов
+отправления и назначения и находят числа&nbsp;<i>&#945;<sub>ij</sub></i>=<i>&#946;<sub>j</sub></i>&#8722;<i>&#945;<sub>i</sub></i>&#8722;<i>c<sub>ij</sub></i>&nbsp;для
+всех свободных клеток. Если среди них не окажется положительный, то получен
+оптимальный план. Если же среди них есть положительный, то нужно перейти к
+новому опорному плану. После конечнего числа шагов получяют оптимальный план.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Таким образом алгоритм
+нахождения оптимального плана содержит следующие этапы:</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>1. Нахождение опорного
+плана. При этом число заполненных клеток должно быть равным&nbsp;<i>m+n</i>&#8722;1.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>2. Нахождение
+потенциалов&nbsp;<i>&#945;<sub>i</sub></i>&nbsp;и&nbsp;<i>&#946;<sub>j</sub></i>&nbsp;(<i>i</i>=1,..,<i>m</i>;&nbsp;<i>j</i>=1,...,<i>n</i>)
+пунктов отправления и назначения соответственно.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>3. Определение числа&nbsp;<i>&#945;<sub>ij</sub></i>&nbsp;для
+каждой свободной клетки. Если среди&nbsp;<i>&#945;<sub>ij</sub></i>&nbsp;нет
+положительных, то получен оптимальный план транспортной задачи. Если же они
+имеются, то делается переход к новому опорному плану.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>4. Выбор максимального среди
+положительных чисел&nbsp;<i>&#945;<sub>ij</sub></i>&nbsp;. Определение
+свободной клетки, которую нужно заполнить. Построение цикла пересчета для
+выбранной свободной клетки. Сдвиг по циклу пересчета.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>5. Проверка полученного
+опорного плана на оптимальность, т.е. переход к пункту 2.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Отметим, что в некотором
+шаге опорный план может стать вырожденным. Чтобы избежать зацикливания следует
+преобразовать вырожденный план в невыроженный путем замены соответствующий
+нулевых элементов опорного плана на сколь угодно малыми положительными
+числами&nbsp;<i>&#948;</i>&nbsp;и решить задачу. После решения, в оптимальном
+плане нужно заменить&nbsp;<i>&#948;</i>&nbsp;нулем.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Рассмотрим метод потенциалов
+на примере.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Пример</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Решить транспортную задачу,
+заданную в таблице условий методом потенциалов:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=389 height=175
+  id="Рисунок 44" src="Метод%20потенциалов.files/image006.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img39.jpg"></span></p>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+  #F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+  color:#32322E'>Решение</span></i></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Найдем сначала опорный план
+с помощью одного из методов описанного выше. Пусть это будет метод минимального
+элемента. Тогда после&nbsp;<i>m+n</i>&#8722;1 шагов получим следующую таблицу с
+опорным планом:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=410 height=276
+  id="Рисунок 45" src="Метод%20потенциалов.files/image007.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img38.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Опорный план имеет следующий
+вид:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=210 height=82
+  id="Рисунок 46" src="Метод%20потенциалов.files/image008.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img40.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При этом плане стоимость
+перевозок вычисляется так:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><i><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'>F</span></i><span style='font-size:
+  14.0pt;font-family:"Times New Roman","serif"'><img width=198 height=20
+  id="Рисунок 47" src="Метод%20потенциалов.files/image009.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img41_1.jpg"><img
+  width=153 height=24 id="Рисунок 48"
+  src="Метод%20потенциалов.files/image010.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img41_2.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Проверяем полученный опорный
+план на оптимальность. Для этого находим потенциалы пунктов отправления и
+назначения. Для заполненных клеток составляем систему из 6 уравнений с 7
+неизвестными:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=89 height=135
+  id="Рисунок 49" src="Метод%20потенциалов.files/image011.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img42.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Полагая&nbsp;<i>&#945;</i><sub>1</sub>=0,
+находим&nbsp;<i>&#946;</i><sub>2</sub>=2,&nbsp;<i>&#946;</i><sub>3</sub>=1,&nbsp;<i>&#945;</i><sub>2</sub>=-1,&nbsp;<i>&#945;</i><sub>3</sub>=-3,&nbsp;<i>&#946;</i><sub>4</sub>=0,&nbsp;<i>&#946;</i><sub>2</sub>=5</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Для каждой свободной клетки
+вычисляем число&nbsp;<i>&#945;<sub>ij</sub></i>=<i>&#946;<sub>j</sub></i>&#8722;<i>&#945;<sub>i</sub></i>&#8722;<i>c<sub>ij</sub></i>.&nbsp;<i>&#945;</i><sub>12</sub>=2,&nbsp;<i>&#945;</i><sub>14</sub>=-2,&nbsp;<i>&#945;</i><sub>22</sub>=2,&nbsp;<i>&#945;</i><sub>23</sub>=-3,&nbsp;<i>&#945;</i><sub>33</sub>=-1,&nbsp;<i>&#945;</i><sub>34</sub>=-3.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Полученные числа заключаем в
+рамки и записываем их в соотвестствующие клетки таблицы:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=389 height=229
+  id="Рисунок 50" src="Метод%20потенциалов.files/image012.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img43.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Среди чисел&nbsp;<i>&#945;<sub>ij</sub></i>&nbsp;есть
+положительные. Следовательно данный опорный план не является оптимальным.
+Наибольшее положительное число 2 находится в пересечении строки&nbsp;<i>A</i><sub>1</sub>&nbsp;и
+столбца&nbsp;<i>B</i><sub>2</sub>. Для данной свободной клетки строим цикл
+пересчета. Для этого вставим в эту клетку знак &quot;+&quot; а остальные клетки
+цикла поочередно знаки &quot;&#8722;&quot; и &quot;+&quot;.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=392 height=228
+  id="Рисунок 51" src="Метод%20потенциалов.files/image013.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img44.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Наименьшее из чисел в
+минусовых клетках равно 80. Клетка, в которой находится это число становится
+свободной. В новой таблице другие числа получаются так. Числам, находящимся в
+плюсовых клетках добавляется 80, а из чисел, находящихся в минусовых клентках
+вычитается это число.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=365 height=230
+  id="Рисунок 52" src="Метод%20потенциалов.files/image014.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img45.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Опорный план имеет следующий
+вид:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=201 height=79
+  id="Рисунок 53" src="Метод%20потенциалов.files/image015.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img46.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При этом плане стоимость
+перевозок вычисляется так:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><i><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'>F</span></i><span style='font-size:
+  14.0pt;font-family:"Times New Roman","serif"'>&nbsp;<img width=196 height=23
+  id="Рисунок 54" src="Метод%20потенциалов.files/image016.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img47_1.jpg"><img
+  width=144 height=27 id="Рисунок 55"
+  src="Метод%20потенциалов.files/image017.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img47_2.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Проверяем полученный опорный
+план на оптимальность. Для этого находим потенциалы пунктов отправления и назначения.
+Для заполненных клеток составляем систему из 6 уравнений с 7 неизвестными:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=84 height=142
+  id="Рисунок 56" src="Метод%20потенциалов.files/image018.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img48.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Полагая&nbsp;<i>&#945;</i><sub>1</sub>=0,
+находим&nbsp;<i>&#946;</i><sub>2</sub>=3,&nbsp;<i>&#946;</i><sub>3</sub>=1,&nbsp;<i>&#945;</i><sub>3</sub>=-3,&nbsp;<i>&#946;</i><sub>1</sub>=0,&nbsp;<i>&#945;</i><sub>2</sub>=-3,&nbsp;<i>&#946;</i><sub>4</sub>=-2</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Для каждой свободной клетки
+вычисляем число&nbsp;<i>&#945;<sub>ij</sub></i>=<i>&#946;<sub>j</sub></i>&#8722;<i>&#945;<sub>i</sub></i>&#8722;<i>c<sub>ij</sub></i>.&nbsp;<i>&#945;</i><sub>11</sub>=-2,&nbsp;<i>&#945;</i><sub>14</sub>=-4,&nbsp;<i>&#945;</i><sub>22</sub>=2,&nbsp;<i>&#945;</i><sub>23</sub>=-1,&nbsp;<i>&#945;</i><sub>33</sub>=1,&nbsp;<i>&#945;</i><sub>34</sub>=-3.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Полученные числа заключаем в
+рамки и записываем их в соотвестствующие клетки таблицы:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=388 height=231
+  id="Рисунок 57" src="Метод%20потенциалов.files/image019.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img49.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Полученные числа заключаем в
+рамки и записываем их в соотвестствующие клетки таблицы:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=387 height=228
+  id="Рисунок 58" src="Метод%20потенциалов.files/image020.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img50.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Среди чисел&nbsp;<i>&#945;<sub>ij</sub></i>&nbsp;есть
+положительные. Следовательно данный опорный план не является оптимальным.
+Наибольшее положительное число 2 находится в пересечении строки&nbsp;<i>A</i><sub>2</sub>&nbsp;и
+столбца&nbsp;<i>B</i><sub>2</sub>. Для данной свободной клетки строим цикл
+пересчета. Для этого вставим в эту клетку знак &quot;+&quot; а остальные клетки
+цикла поочередно знаки &quot;&#8722;&quot; и &quot;+&quot;.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=387 height=227
+  id="Рисунок 59" src="Метод%20потенциалов.files/image021.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img51.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Наименьшее из чисел в
+минусовых клетках равно 20. Клетка, в которой находится это число становится
+свободной. В новой таблице другие числа получаются так. Числам, находящимся в
+плюсовых клетках добавляется 20, а из чисел, находящихся в минусовых клентках вычитается
+это число.</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=374 height=228
+  id="Рисунок 60" src="Метод%20потенциалов.files/image022.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img52.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Опорный план имеет следующий
+вид:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=213 height=80
+  id="Рисунок 61" src="Метод%20потенциалов.files/image023.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img53.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При этом плане стоимость
+перевозок вычисляется так:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><i><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'>F</span></i><span style='font-size:
+  14.0pt;font-family:"Times New Roman","serif"'>&nbsp;<img width=198 height=24
+  id="Рисунок 62" src="Метод%20потенциалов.files/image024.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img54_1.jpg"><img
+  width=154 height=29 id="Рисунок 63"
+  src="Метод%20потенциалов.files/image025.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img54_2.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Проверяем полученный опорный
+план на оптимальность. Для этого находим потенциалы пунктов отправления и
+назначения. Для заполненных клеток составляем систему из 6 уравнений с 7
+неизвестными:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=91 height=138
+  id="Рисунок 64" src="Метод%20потенциалов.files/image026.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img55.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Полагая&nbsp;<i>&#945;</i><sub>1</sub>=0,
+находим&nbsp;<i>&#946;</i><sub>2</sub>=3,&nbsp;<i>&#946;</i><sub>3</sub>=1,&nbsp;<i>&#945;</i><sub>2</sub>=-1,&nbsp;<i>&#946;</i><sub>1</sub>=2,&nbsp;<i>&#946;</i><sub>4</sub>=0,&nbsp;<i>&#945;</i><sub>3</sub>=-1</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Для каждой свободной клетки
+вычисляем число&nbsp;<i>&#945;<sub>ij</sub></i>=<i>&#946;<sub>j</sub></i>&#8722;<i>&#945;<sub>i</sub></i>&#8722;<i>c<sub>ij</sub></i>.&nbsp;<i>&#945;</i><sub>11</sub>=0,&nbsp;<i>&#945;</i><sub>14</sub>=-2,&nbsp;<i>&#945;</i><sub>23</sub>=-3,&nbsp;<i>&#945;</i><sub>32</sub>=-2,&nbsp;<i>&#945;</i><sub>33</sub>=-1,&nbsp;<i>&#945;</i><sub>34</sub>=-3.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Среди чисел&nbsp;<i>&#945;<sub>ij</sub></i>&nbsp;нет
+положительных. Следовательно данный опорный план является оптимальным.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Ответ</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Оптимальный план имеет
+следующий вид:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=213 height=80
+  id="Рисунок 65" src="Метод%20потенциалов.files/image023.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img53.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>При этом плане стоимость
+перевозок вычисляется так:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><i><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'>F</span></i><span style='font-size:
+  14.0pt;font-family:"Times New Roman","serif"'>&nbsp;<img width=198 height=24
+  id="Рисунок 66" src="Метод%20потенциалов.files/image024.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img54_1.jpg"><img
+  width=154 height=29 id="Рисунок 67"
+  src="Метод%20потенциалов.files/image025.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img54_2.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+</div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- our service section end -->
+      <!-- copyright section start -->
+
+      <div class="copyright_section">
+         <p class="copyright_text">Вагенгейм Александр, ИСС-11</p>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>
+      <div id="footer" style="display: none">
+         <p> | <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> | <a href="http://brullworfel.ru/turbosite">TurboSite</a></p>
+      </div>
+   </body>
+</html>

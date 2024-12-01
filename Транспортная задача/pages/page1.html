@@ -1,0 +1,368 @@
+﻿<HTML><BODY><html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Общая постановка
+транспортной задачи заключается в определении оптимального плана перевозок
+некоторого однородного груза из пунктов отправления&nbsp;<i>A</i><sub>1</sub>,&nbsp;<i>A</i><sub>2</sub>,...,&nbsp;<i>A<sub>m</sub></i>&nbsp;в
+пункты назначения&nbsp;<i>B</i><sub>1</sub>,&nbsp;<i>B</i><sub>2</sub>,...,&nbsp;<i>B<sub>n</sub></i>.
+Критерий оптимальности берется минимальная стоимость перевозки или минимальное
+время доставки груза.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Рассмотрим транспортную
+задачу, где в качестве критерия оптимальности взята минимальная стоимость
+перевозок всего груза. Обозначим через&nbsp;<i>С<sub>ij</sub></i>&nbsp;тарифы
+перевозки единицы груза из пункта отправления&nbsp;<i>i</i>&nbsp;в пункт назначения&nbsp;<i>j</i>.
+Обозначим через&nbsp;<i>A<sub>i</sub></i>&nbsp;запасы груза&nbsp;<i>i</i>-м
+пункте отправления, а через&nbsp;<i>B<sub>j</sub></i>&nbsp;потребности
+груза&nbsp;<i>j</i>-м пункте назначения, а через&nbsp;<i>X<sub>j</sub></i>&nbsp;количество
+единиц груза переводимого из пункта отправления&nbsp;<i>i</i>&nbsp;в пункт
+назначения&nbsp;<i>j</i>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Тогда математическая модель
+транспортной задачи состоит в определении минимального значения функции</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=137 height=58 id="Рисунок 1"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image001.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img1.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>(1.1)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>при условиях</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=192 height=52 id="Рисунок 2"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image002.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img2.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>(1.2)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black;display:none'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=197 height=53 id="Рисунок 3"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image003.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img3.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>(1.3)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black;display:none'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=245 height=27 id="Рисунок 4"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image004.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img4.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>(1.4)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Поскольку удовлетворяется
+условия (1.2)&#8722;(1.4), то обеспечивается доставка необходимого количества
+груза в каждый из пунктов назначения, вывоз груза из всех пунктов отправления,
+а также исключаются обратные перевозки.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Определение</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Любое неотрицательное
+решение&nbsp;<i>X<sub>ij</sub></i>=</span><span style='font-size:14.0pt;
+font-family:"Cambria Math","serif";color:black'>&#8741;</span><i><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'>x<sub>ij</sub></span></i><span
+style='font-size:14.0pt;font-family:"Cambria Math","serif";color:black'>&#8741;</span><span
+style='font-size:14.0pt;font-family:"Times New Roman","serif";color:black'> (<i>i</i>=1,..,<i>m</i>;&nbsp;<i>j</i>=1,...,<i>n</i>)
+систем (1.2) и (1.3) называется&nbsp;<b>допустимым планом</b>&nbsp;транспортной
+задачи.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Определение</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>План&nbsp;<img width=275
+height=35 id="Рисунок 5"
+src="Математическая%20постановка%20транспортной%20задачи.files/image005.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img5.jpg">&nbsp;при
+котором функция (1.1) принимает минимальное значение, называется оптимальным
+планом транспортной задачи.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Если сумма груза у
+поставщиков равно общей сумме потребностей в пунктах назначения:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=102 height=59 id="Рисунок 6"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image006.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img6.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;line-height:normal'><span style='font-size:14.0pt;font-family:"Times New Roman","serif"'>(1.5)</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>то модель транспортной задачи называется&nbsp;<b>закрытой</b>&nbsp;(или&nbsp;<b>сбалансированной</b>).
+Если (1.5) не удовлетворяется, то модель транспортной задачи называется&nbsp;<b>открытой</b>&nbsp;(или&nbsp;<b>несбалансированной</b>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:11.25pt;line-height:normal;background:
+#F8F7F7'><i><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:#32322E'>Теорема</span></i></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Для разрешимости
+транспортной задачи необходимо и достаточно, чтобы выполнялось условие (1.5).</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>В случае превышения запаса
+над потребностью, т.е. при</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=114 height=58 id="Рисунок 7"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image007.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img7.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>,</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;line-height:
+normal;background:white'><span style='font-size:14.0pt;font-family:"Times New Roman","serif";
+color:black'>вводится фиктивный (<i>n</i>+1)-ый пункт назначения с потребностью</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=167 height=57 id="Рисунок 8"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image008.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img8.jpg"></span><span
+  style='font-size:14.0pt;font-family:"Times New Roman","serif"'>.</span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Соответствующие тарифы
+считаются равными нулю:&nbsp;<i>c<sub>i&nbsp;n</sub></i><sub>+1</sub>=0 (<i>i</i>=1,...,<i>m</i>).
+После этих преобразований получим закрытую модель транспортной задачи.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Аналогично, при&nbsp;<img
+width=113 height=59 id="Рисунок 9"
+src="Математическая%20постановка%20транспортной%20задачи.files/image009.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img9.jpg">&nbsp;вводится
+фиктивный (<i>m</i>+1) пункт отправления с грузом&nbsp;<img width=164
+height=54 id="Рисунок 10"
+src="Математическая%20постановка%20транспортной%20задачи.files/image010.jpg"
+alt="https://matworld.ru/images/transportnaya-zadacha/img10.jpg">&nbsp;а тарифы
+полагаются равными нулю:&nbsp;<i>c<sub>m</sub></i><sub>+1j</sub>=0 (<i>j</i>=1,...,<i>n</i>).
+После этих преобразований получим закрытую модель транспортной задачи.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Мы будем рассматривать
+закрытую модель транспортной задачи. Если же модель транспортной задачи
+является открытой, то с помощью вышеизложенных преобразований строим закрытую
+модель транспортной задачи.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Обычно данные транспортной
+задачи записывают в виде таблицы:</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse'>
+ <tr>
+  <td style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:14.0pt;
+  font-family:"Times New Roman","serif"'><img width=440 height=357
+  id="Рисунок 11"
+  src="Математическая%20постановка%20транспортной%20задачи.files/image011.jpg"
+  alt="https://matworld.ru/images/transportnaya-zadacha/img11.jpg"></span></p>
+  </td>
+  <td width=30 style='width:22.5pt;padding:0cm 0cm 0cm 0cm'></td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Число переменных&nbsp;<i>X<sub>ij</sub></i>&nbsp;равно&nbsp;<i>mn</i>,
+где&nbsp;<i>m</i>&nbsp;число пунктов отправнения , а&nbsp;<i>n</i>&nbsp;число
+пунктов назначения. Число уравнений в (1.2) и (1.3) равно&nbsp;<i>m+n</i>. Так
+как мы рассматриваем закрытую модель транспортной задачи (выполняется равенство
+(1.5)), то число линейно независимых уравнений равно&nbsp;<i>m+n</i>&#8722;1.
+Следовательно опорный план транспортной задачи может иметь не более&nbsp;<i>m+n</i>&#8722;1
+отличных от нуля неизвестных.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Если в опорном плане
+количество отличных от нуля компонентов равно в точности&nbsp;<i>m+n</i>&#8722;1,
+то опорный план называется невырожденным, а если меньше &#8722; то вырожденным.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Для решения транспортной
+задачи сначала определяется начальный опорный план, а затем определяется
+оптимальный план путем улучшения текущего опорного плана.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-indent:
+15.0pt;line-height:normal;background:white'><span style='font-size:14.0pt;
+font-family:"Times New Roman","serif";color:black'>Для определения начального
+опорного плана существует несколько методов. Мы рассмоьтрим три метода. Метод
+северно-западного угла, метод минимального элемента и метод аппроксимации
+Фогеля.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:14.0pt;
+line-height:115%;font-family:"Times New Roman","serif"'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
+
+</BODY></HTML>

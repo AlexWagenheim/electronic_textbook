@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Метод Монте-Карло - Приближённое вычисление площади методом Монте-Карло</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+<meta name="generator" content="TurboSite 1.7.1" />
+
+</head>
+
+   <body>
+      <!-- section header start -->
+      <div class="header_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="logo" style="font-size: 28px; color: #ffffff;">
+<!--                     <a href="index.html"><img src="images/logo.png"></a>-->
+                     Приближённое вычисление площади методом Монте-Карло
+                  </div>
+               </div>
+<!--               <div class="col-md-8">-->
+<!--                  <div class="menu_text">-->
+<!--                     <ul>-->
+<!--                        <li><a style="" href="index.html">Главная</a></li>
+-->
+<!--&lt;!&ndash;                        <li><a href="#"><img src="images/search-icon.png"></a></li>&ndash;&gt;-->
+<!--                     </ul>-->
+<!--                  </div>-->
+<!--               </div>-->
+               <div class="col-md-1">
+                  <span  style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img src="images/toggle.png" class="toggle_menu"></span>
+                  <div id="myNav" class="overlay">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <div class="overlay-content" >
+                        <ul style="list-style: none">
+                           <li><a style="" href="index.html">Главная</a></li>
+<li class="active"><a style="" href="page1.html">Метод Монте-Карло</a></li>
+<li><a style="" href="page2.html">Алгоритм вычисления площади фигуры</a></li>
+<li><a style="" href="page3.html">Задача</a></li>
+
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li><br></li>
+                           <li style="font-size: 20pt; color:white;"><a href="../../index.html">На главную</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- section header end -->
+      <!-- our service section start -->
+      <div class="our_section layout_padding">
+         <div class="container">
+            <h1 class="our_text"><strong>Метод Монте-Карло</strong></h1>
+            <div class="row padding_top_0">
+               <div class="col-12" style="font-size: 14pt">
+                             <html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-link:"Основной текст Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+span.a
+	{mso-style-name:"Основной текст Знак";
+	mso-style-link:"Основной текст";
+	font-family:"Times New Roman","serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=RU>
+
+<div class=WordSection1>
+
+<p class=MsoBodyText style='margin-top:0cm;margin-right:5.3pt;margin-bottom:
+0cm;margin-left:5.05pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+27.0pt'><span style='font-size:14.0pt'>Метод Монте-Карло — численный метод,
+основанный на воспроизведении большого<span style='letter-spacing:-2.85pt'> </span>числа
+реализаций случайного процесса, специально построенного по условиям задачи. В<span
+style='letter-spacing:.05pt'> </span>настоящее время этот метод применяется при
+исследовании функционирования сложных<span style='letter-spacing:.05pt'> </span>систем,<span
+style='letter-spacing:.05pt'> </span>к<span style='letter-spacing:.05pt'> </span>которым<span
+style='letter-spacing:.05pt'> </span>относятся<span style='letter-spacing:.05pt'>
+</span>разнообразные<span style='letter-spacing:.05pt'> </span>производственные<span
+style='letter-spacing:.05pt'> </span>и<span style='letter-spacing:.05pt'> </span>информационные<span
+style='letter-spacing:.05pt'> </span>системы, автоматизированные системы
+управления, многопроцессорные, вычислительные<span style='letter-spacing:-2.85pt'>
+</span>системы,<span style='letter-spacing:-.05pt'> </span>некоторые<span
+style='letter-spacing:-.05pt'> </span>биологические,<span style='letter-spacing:
+-.05pt'> </span>экономические<span style='letter-spacing:-.05pt'> </span>системы.</span></p>
+
+<p class=MsoBodyText style='margin-top:0cm;margin-right:5.3pt;margin-bottom:
+0cm;margin-left:5.05pt;margin-bottom:.0001pt;text-align:justify;text-indent:
+27.0pt'><span style='font-size:14.0pt'>При<span style='letter-spacing:.05pt'> </span>решении<span
+style='letter-spacing:.05pt'> </span>подобных<span style='letter-spacing:.05pt'>
+</span>задач<span style='letter-spacing:.05pt'> </span>ранее,<span
+style='letter-spacing:.05pt'> </span>без<span style='letter-spacing:.05pt'> </span>применения<span
+style='letter-spacing:.05pt'> </span>компьютеров,<span style='letter-spacing:
+.05pt'> </span>источником<span style='letter-spacing:.05pt'> </span>случайных<span
+style='letter-spacing:.05pt'> </span>чисел<span style='letter-spacing:.05pt'> </span>служили<span
+style='letter-spacing:.05pt'> </span>различные<span style='letter-spacing:.05pt'>
+</span>эксперименты:<span style='letter-spacing:.05pt'> </span>бросание<span
+style='letter-spacing:.05pt'> </span>монеты<span style='letter-spacing:.05pt'> </span>или<span
+style='letter-spacing:.05pt'> </span>кубика,<span style='letter-spacing:.05pt'>
+</span>верчение<span style='letter-spacing:.05pt'> </span>рулетки<span
+style='letter-spacing:.05pt'> </span>и<span style='letter-spacing:.05pt'> </span>т.п.<span
+style='letter-spacing:.05pt'> </span>С<span style='letter-spacing:.05pt'> </span>именем<span
+style='letter-spacing:.05pt'> </span>города<span style='letter-spacing:.05pt'> </span>в<span
+style='letter-spacing:.05pt'> </span>княжестве<span style='letter-spacing:.05pt'>
+</span>Монако,<span style='letter-spacing:.05pt'> </span>известного<span
+style='letter-spacing:.05pt'> </span>своими<span style='letter-spacing:.05pt'> </span>игорными<span
+style='letter-spacing:-.05pt'> </span>домами,<span style='letter-spacing:-.05pt'>
+</span>и<span style='letter-spacing:-.05pt'> </span>связано происхождение<span
+style='letter-spacing:-.05pt'> </span>названия метода.</span></p>
+
+</div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- our service section end -->
+      <!-- copyright section start -->
+
+      <div class="copyright_section">
+         <p class="copyright_text">Вагенгейм Александр, ИСС-11</p>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+            });
+            
+            $(".zoom").hover(function(){
+            
+            $(this).addClass('transition');
+            }, function(){
+            
+            $(this).removeClass('transition');
+            });
+            });
+            
+      </script> 
+      <script>
+         function openNav() {
+         document.getElementById("myNav").style.width = "100%";
+         }
+         
+         function closeNav() {
+         document.getElementById("myNav").style.width = "0%";
+         }
+      </script>
+      <div id="footer" style="display: none">
+         <p> | <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> | <a href="http://brullworfel.ru/turbosite">TurboSite</a></p>
+      </div>
+   </body>
+</html>

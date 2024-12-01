@@ -1,0 +1,21 @@
+[Test]
+Programm=SimpleTest
+Version=0.1
+TestName=Диаграммы
+Author=Александр Вагенгейм
+MessageOnComplete=Тест завершен!
+AllowFinish=0
+ShowResult=1
+DisableOpenTest=1
+ExitOnComplete=0
+LastQ=0
+
+[Q0]
+QLabel=1
+LastA=4
+A0=1
+A1=2
+A2=3
+A3=4
+A4=*5
+
